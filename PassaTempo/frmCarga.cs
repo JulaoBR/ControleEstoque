@@ -72,7 +72,7 @@ namespace PassaTempo
         {                    
             if (!VerificaCamposCodigos()) //VERIFICA SE TODOS OS CAMPOS FOROM PREENCHIDOS
             {
-                if(Convert.ToInt32(txtQtdTotal.Text) < Convert.ToInt32(txtEstoqueAtual.Text)) //VERIFICA SE TEM ESTOQUE SUFICIENTE PARA VENDA
+                if(Convert.ToInt32(txtQtdTotal.Text) <= Convert.ToInt32(txtEstoqueAtual.Text)) //VERIFICA SE TEM ESTOQUE SUFICIENTE PARA VENDA
                 {
                     if (VerificaQuantidate()) //VERIFICA SE AS QUANTIDADES DIGITADAS CONFERE
                     {
