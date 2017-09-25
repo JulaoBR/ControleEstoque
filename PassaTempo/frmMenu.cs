@@ -111,5 +111,11 @@ namespace PassaTempo
             frmRotas.ShowDialog();
             
         }
+
+        private void cALCULAPESOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCalculaPesoCarga frmCalcula = new frmCalculaPesoCarga();
+            frmCalcula.ShowDialog();
+        }
     }
 }

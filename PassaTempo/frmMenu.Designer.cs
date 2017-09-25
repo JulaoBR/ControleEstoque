@@ -45,11 +45,12 @@
             this.rASTREAMENTODELOTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fERRAMENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cALCULADORADEDATAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rOTASDEENTREGAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONFIGURAÇÕESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rOTASDEENTREGAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cALCULAPESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,7 +184,8 @@
             // 
             this.fERRAMENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cALCULADORADEDATAToolStripMenuItem,
-            this.rOTASDEENTREGAToolStripMenuItem});
+            this.rOTASDEENTREGAToolStripMenuItem,
+            this.cALCULAPESOToolStripMenuItem});
             this.fERRAMENTASToolStripMenuItem.Name = "fERRAMENTASToolStripMenuItem";
             this.fERRAMENTASToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.fERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS";
@@ -194,6 +196,13 @@
             this.cALCULADORADEDATAToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
             this.cALCULADORADEDATAToolStripMenuItem.Text = "CALCULADORA DE DATA";
             this.cALCULADORADEDATAToolStripMenuItem.Click += new System.EventHandler(this.cALCULADORADEDATAToolStripMenuItem_Click);
+            // 
+            // rOTASDEENTREGAToolStripMenuItem
+            // 
+            this.rOTASDEENTREGAToolStripMenuItem.Name = "rOTASDEENTREGAToolStripMenuItem";
+            this.rOTASDEENTREGAToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
+            this.rOTASDEENTREGAToolStripMenuItem.Text = "ROTAS DE ENTREGA";
+            this.rOTASDEENTREGAToolStripMenuItem.Click += new System.EventHandler(this.rOTASDEENTREGAToolStripMenuItem_Click);
             // 
             // cONFIGURAÇÕESToolStripMenuItem
             // 
@@ -224,12 +233,12 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-            // rOTASDEENTREGAToolStripMenuItem
+            // cALCULAPESOToolStripMenuItem
             // 
-            this.rOTASDEENTREGAToolStripMenuItem.Name = "rOTASDEENTREGAToolStripMenuItem";
-            this.rOTASDEENTREGAToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
-            this.rOTASDEENTREGAToolStripMenuItem.Text = "ROTAS DE ENTREGA";
-            this.rOTASDEENTREGAToolStripMenuItem.Click += new System.EventHandler(this.rOTASDEENTREGAToolStripMenuItem_Click);
+            this.cALCULAPESOToolStripMenuItem.Name = "cALCULAPESOToolStripMenuItem";
+            this.cALCULAPESOToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
+            this.cALCULAPESOToolStripMenuItem.Text = "CALCULA PESO ";
+            this.cALCULAPESOToolStripMenuItem.Click += new System.EventHandler(this.cALCULAPESOToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -276,6 +285,7 @@
         private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cIDADEESTADOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rOTASDEENTREGAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cALCULAPESOToolStripMenuItem;
     }
 }
 
