@@ -1,0 +1,5 @@
+C:\Users\Usuário\Desktop\PassaTempo\BLL\bin\Debug\BLL.exe.config
+C:\Users\Usuário\Desktop\PassaTempo\BLL\bin\Debug\BLL.exe
+C:\Users\Usuário\Desktop\PassaTempo\BLL\bin\Debug\BLL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\BLL\obj\Debug\BLL.exe
+C:\Users\Usuário\Desktop\PassaTempo\BLL\obj\Debug\BLL.pdb

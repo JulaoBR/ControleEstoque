@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2B79F00-B104-47E3-8EC1-37F3E6C76E41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PassaTempo</RootNamespace>
+    <AssemblyName>PassaTempo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastro.Designer.cs">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadCidadeEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadCidadeEstado.Designer.cs">
+      <DependentUpon>frmCadCidadeEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadClientes.Designer.cs">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadProdutos.Designer.cs">
+      <DependentUpon>frmCadProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadUsuario.Designer.cs">
+      <DependentUpon>frmCadUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculadora.Designer.cs">
+      <DependentUpon>frmCalculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarga.Designer.cs">
+      <DependentUpon>frmCarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCargaDetalhada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargaDetalhada.Designer.cs">
+      <DependentUpon>frmCargaDetalhada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovimentacao.Designer.cs">
+      <DependentUpon>frmMovimentacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaCidade.Designer.cs">
+      <DependentUpon>frmPesquisaCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaCliente.Designer.cs">
+      <DependentUpon>frmPesquisaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaEntrada.Designer.cs">
+      <DependentUpon>frmPesquisaEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaEstado.Designer.cs">
+      <DependentUpon>frmPesquisaEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaEstoque.Designer.cs">
+      <DependentUpon>frmPesquisaEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaProduto.Designer.cs">
+      <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaSaida.Designer.cs">
+      <DependentUpon>frmPesquisaSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaUsuario.Designer.cs">
+      <DependentUpon>frmPesquisaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRastreioDeLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRastreioDeLotes.Designer.cs">
+      <DependentUpon>frmRastreioDeLotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRotasEntregas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRotasEntregas.Designer.cs">
+      <DependentUpon>frmRotasEntregas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTelaDePesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTelaDePesquisa.Designer.cs">
+      <DependentUpon>frmTelaDePesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastro.resx">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadCidadeEstado.resx">
+      <DependentUpon>frmCadCidadeEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadClientes.resx">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadProdutos.resx">
+      <DependentUpon>frmCadProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadUsuario.resx">
+      <DependentUpon>frmCadUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalculadora.resx">
+      <DependentUpon>frmCalculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarga.resx">
+      <DependentUpon>frmCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCargaDetalhada.resx">
+      <DependentUpon>frmCargaDetalhada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMovimentacao.resx">
+      <DependentUpon>frmMovimentacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaCidade.resx">
+      <DependentUpon>frmPesquisaCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaCliente.resx">
+      <DependentUpon>frmPesquisaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaEntrada.resx">
+      <DependentUpon>frmPesquisaEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaEstado.resx">
+      <DependentUpon>frmPesquisaEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaEstoque.resx">
+      <DependentUpon>frmPesquisaEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaProduto.resx">
+      <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaSaida.resx">
+      <DependentUpon>frmPesquisaSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaUsuario.resx">
+      <DependentUpon>frmPesquisaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRastreioDeLotes.resx">
+      <DependentUpon>frmRastreioDeLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRotasEntregas.resx">
+      <DependentUpon>frmRotasEntregas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTelaDePesquisa.resx">
+      <DependentUpon>frmTelaDePesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CONTROL\CONTROL.csproj">
+      <Project>{e71a310c-66f0-47d1-b6e9-bef1b78c856a}</Project>
+      <Name>CONTROL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{69fe8897-a31a-4e20-b28d-9ccd07075715}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{c3a2010d-baff-466d-a16f-0e8c9995725a}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
