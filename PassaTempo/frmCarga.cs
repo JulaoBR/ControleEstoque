@@ -724,7 +724,7 @@ namespace PassaTempo
         {
             foreach (var item in filaLotes)
             {
-                if (Convert.ToInt32(txtCodProduto.Text) == item.Id_produto && quantidade <= item.quantidade && lote.Equals(item.lote))
+                if (Convert.ToInt32(txtCodProduto.Text) == item.Id_produto && quantidade <= (item.quantidade - item.total) && lote.Equals(item.lote))
                 {
                     return true;
                 }
