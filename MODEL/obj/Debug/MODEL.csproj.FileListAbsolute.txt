@@ -16,3 +16,9 @@ D:\MEUS_PROJETOS\PassaTempo2.3\MODEL\bin\Debug\MODEL.pdb
 D:\MEUS_PROJETOS\PassaTempo2.3\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
 D:\MEUS_PROJETOS\PassaTempo2.3\MODEL\obj\Debug\MODEL.exe
 D:\MEUS_PROJETOS\PassaTempo2.3\MODEL\obj\Debug\MODEL.pdb
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\bin\Debug\MODEL.exe.config
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\bin\Debug\MODEL.exe
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\bin\Debug\MODEL.pdb
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\obj\Debug\MODEL.exe
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\obj\Debug\MODEL.pdb
