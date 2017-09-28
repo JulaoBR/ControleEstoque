@@ -34,7 +34,8 @@
             this.rbAjuste = new System.Windows.Forms.RadioButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.rbPesquisaNome = new System.Windows.Forms.RadioButton();
+            this.txtPesquisaData = new System.Windows.Forms.TextBox();
             this.rbLote = new System.Windows.Forms.RadioButton();
             this.rbDataFabricacao = new System.Windows.Forms.RadioButton();
             this.rbDataProducao = new System.Windows.Forms.RadioButton();
@@ -95,30 +96,46 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.rbPesquisaNome);
+            this.groupBox2.Controls.Add(this.txtPesquisaData);
             this.groupBox2.Controls.Add(this.rbLote);
             this.groupBox2.Controls.Add(this.rbDataFabricacao);
             this.groupBox2.Controls.Add(this.rbDataProducao);
             this.groupBox2.Location = new System.Drawing.Point(135, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(447, 76);
+            this.groupBox2.Size = new System.Drawing.Size(611, 76);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opções de filtragem";
             // 
-            // maskedTextBox1
+            // rbPesquisaNome
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(6, 46);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(426, 21);
-            this.maskedTextBox1.TabIndex = 3;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rbPesquisaNome.AutoSize = true;
+            this.rbPesquisaNome.Checked = true;
+            this.rbPesquisaNome.Location = new System.Drawing.Point(11, 23);
+            this.rbPesquisaNome.Name = "rbPesquisaNome";
+            this.rbPesquisaNome.Size = new System.Drawing.Size(161, 19);
+            this.rbPesquisaNome.TabIndex = 4;
+            this.rbPesquisaNome.TabStop = true;
+            this.rbPesquisaNome.Text = "NOME DO PRODUTO";
+            this.rbPesquisaNome.UseVisualStyleBackColor = true;
+            this.rbPesquisaNome.CheckedChanged += new System.EventHandler(this.rbPesquisaNome_CheckedChanged);
+            // 
+            // txtPesquisaData
+            // 
+            this.txtPesquisaData.Location = new System.Drawing.Point(443, 49);
+            this.txtPesquisaData.MaxLength = 10;
+            this.txtPesquisaData.Name = "txtPesquisaData";
+            this.txtPesquisaData.ReadOnly = true;
+            this.txtPesquisaData.Size = new System.Drawing.Size(162, 21);
+            this.txtPesquisaData.TabIndex = 3;
+            this.txtPesquisaData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPesquisaData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaData_KeyPress);
             // 
             // rbLote
             // 
             this.rbLote.AutoSize = true;
-            this.rbLote.Location = new System.Drawing.Point(372, 22);
+            this.rbLote.Location = new System.Drawing.Point(178, 23);
             this.rbLote.Name = "rbLote";
             this.rbLote.Size = new System.Drawing.Size(60, 19);
             this.rbLote.TabIndex = 2;
@@ -130,7 +147,7 @@
             // rbDataFabricacao
             // 
             this.rbDataFabricacao.AutoSize = true;
-            this.rbDataFabricacao.Location = new System.Drawing.Point(185, 22);
+            this.rbDataFabricacao.Location = new System.Drawing.Point(436, 23);
             this.rbDataFabricacao.Name = "rbDataFabricacao";
             this.rbDataFabricacao.Size = new System.Drawing.Size(169, 19);
             this.rbDataFabricacao.TabIndex = 1;
@@ -142,7 +159,7 @@
             // rbDataProducao
             // 
             this.rbDataProducao.AutoSize = true;
-            this.rbDataProducao.Location = new System.Drawing.Point(7, 22);
+            this.rbDataProducao.Location = new System.Drawing.Point(255, 23);
             this.rbDataProducao.Name = "rbDataProducao";
             this.rbDataProducao.Size = new System.Drawing.Size(162, 19);
             this.rbDataProducao.TabIndex = 0;
@@ -215,7 +232,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.RadioButton rbLote;
         private System.Windows.Forms.RadioButton rbDataFabricacao;
         private System.Windows.Forms.RadioButton rbDataProducao;
@@ -225,5 +241,7 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnLimparPesquisa;
         private System.Windows.Forms.DataGridView gridEntrada;
+        private System.Windows.Forms.TextBox txtPesquisaData;
+        private System.Windows.Forms.RadioButton rbPesquisaNome;
     }
 }
