@@ -58,3 +58,15 @@ D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\CONTROL\obj\Debug\CONTROL.csprojResolveAssemblyReference.cache
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\CONTROL\obj\Debug\CONTROL.exe
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\CONTROL\obj\Debug\CONTROL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\CONTROL.exe.config
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\CONTROL.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\CONTROL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\DAO.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\MODEL.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\DAO.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\MODEL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\obj\Debug\CONTROL.csprojResolveAssemblyReference.cache
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\obj\Debug\CONTROL.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\obj\Debug\CONTROL.pdb

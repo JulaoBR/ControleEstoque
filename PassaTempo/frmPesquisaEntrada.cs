@@ -21,19 +21,29 @@ namespace PassaTempo
             PreencheGrid(registro.BuscaString(txtPesquisa.Text));
         }
 
+        private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisaData.ReadOnly = true;
+            txtPesquisa.ReadOnly = false;
+        }
+
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtPesquisaData.ReadOnly = false;
+            txtPesquisa.ReadOnly = true;
         }
+
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtPesquisaData.ReadOnly = false;
+            txtPesquisa.ReadOnly = true;
         }
 
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtPesquisaData.ReadOnly = true;
+            txtPesquisa.ReadOnly = false;
         }
 
    
@@ -56,6 +66,15 @@ namespace PassaTempo
         private void btnLimparPesquisa_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPesquisaData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ControleFormato.FormataData(ref txtPesquisaData);
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
 
         private void LimpaGrid()
@@ -84,5 +103,7 @@ namespace PassaTempo
                 MessageBox.Show("Sem dados para selecionar!!", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
     }
 }

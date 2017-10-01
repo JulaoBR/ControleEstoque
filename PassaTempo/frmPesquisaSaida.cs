@@ -34,16 +34,25 @@ namespace PassaTempo
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             seletor = 1;
+            txtCampoData.ReadOnly = true;
+            txtPesquisa.ReadOnly = false;
+            LimpaCampo();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             seletor = 2;
+            txtCampoData.ReadOnly = true;
+            txtPesquisa.ReadOnly = false;
+            LimpaCampo();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             seletor = 3;
+            txtCampoData.ReadOnly = false;
+            txtPesquisa.ReadOnly = true;
+            LimpaCampo();            
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -54,6 +63,15 @@ namespace PassaTempo
         private void txtCampoData_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void txtCampoData_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            ControleFormato.FormataData(ref txtCampoData);
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
 
         private void LimpaGrid()
@@ -105,6 +123,17 @@ namespace PassaTempo
             {
                 return;
             }
+        }
+
+        private void LimpaCampo()
+        {
+            txtCampoData.Clear();
+            txtPesquisa.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpaCampo();
         }
     }
 }
