@@ -113,5 +113,22 @@ namespace DAO
             }
 
         }
+
+        public DataTable RastreioLotes(string lote, string nome_produto, string data, string numero_carga)      //BUSCA POR ID
+         {
+            DataTable tb = new DataTable();
+            try
+            {
+
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Fk_carga 'CARGA', D.nome_cliente 'CLIENTE', B.dsc_produto 'PRODUTO', A.qtd_produto 'QUANTIDADE', A.lote 'LOTE', C.data_carregamento 'CARREGAMENTO' FROM lote AS A JOIN produto AS B JOIN carga AS C JOIN cliente AS D WHERE A.Fk_produto = B.Id_produto AND A.Fk_carga = C.Id_carga AND C.Fk_cliente = D.Id_cliente AND A.lote LIKE '%" + lote + "%' AND B.dsc_produto LIKE '%"+nome_produto+ "%' AND C.data_carregamento LIKE '%" + data + "%' AND A.Fk_carga LIKE '%"+numero_carga+"%' ", conexao.StringConexao);
+                da.Fill(tb);
+                conexao.Desconectar();
+                return tb;
+            }
+            catch
+            {
+                return tb;
+            }
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_carga 'ID', B.nome_cliente 'CLIENTE', B.endereco 'ENDEREÇO', A.data_carregamento 'DT CARREGAMENTO', A.nome_comprador 'COMPRADOR' FROM carga AS A JOIN cliente AS B WHERE A.Fk_cliente = B.Id_cliente AND nome_cliente LIKE '%" +
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_carga 'ID', B.nome_cliente 'CLIENTE', B.endereco 'ENDEREÇO', A.data_carregamento 'CARREGAMENTO', A.nome_comprador 'COMPRADOR' FROM carga AS A JOIN cliente AS B WHERE A.Fk_cliente = B.Id_cliente AND nome_cliente LIKE '%" +
                 valor + "%'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
@@ -93,7 +93,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_carga 'ID', B.nome_cliente 'CLIENTE', B.endereco 'ENDEREÇO', A.data_carregamento 'DT CARREGAMENTO', A.nome_comprador 'COMPRADOR' FROM carga AS A JOIN cliente AS B WHERE A.Fk_cliente = B.Id_cliente AND Id_carga ='" +
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_carga 'ID', B.nome_cliente 'CLIENTE', B.endereco 'ENDEREÇO', A.data_carregamento 'CARREGAMENTO', A.nome_comprador 'COMPRADOR' FROM carga AS A JOIN cliente AS B WHERE A.Fk_cliente = B.Id_cliente AND Id_carga ='" +
                 Id + "'", conexao.StringConexao))
                 {
                     da.Fill(tb);

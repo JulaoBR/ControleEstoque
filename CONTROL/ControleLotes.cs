@@ -47,6 +47,12 @@ namespace CONTROL
             }
             return false;
         }
-       
+
+        public DataTable RastreioLotes(string valor, string nome_produto, string data, string numero_carga)
+        {         
+
+            DAOLotes dao = new DAOLotes(cx);
+            return dao.RastreioLotes(valor, nome_produto, data, numero_carga);
+        }
     }
 }
