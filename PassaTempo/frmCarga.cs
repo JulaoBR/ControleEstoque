@@ -334,7 +334,9 @@ namespace PassaTempo
 
         private void txtLote1_Leave(object sender, EventArgs e)
         {
-            if(!VerificaCamposCodigos())
+
+
+            if (!VerificaCamposCodigos())
             {
                 if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd1.Text), txtLote1.Text))
                 {

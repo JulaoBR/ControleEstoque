@@ -104,7 +104,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM usuario WHERE nome_usuario LIKE '%" +
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_usuario 'ID USUARIO', nome_usuario 'NOME', funcao 'FUNÇÃO', login 'LOGIN', senha 'SENHA' FROM usuario WHERE nome_usuario LIKE '%" +
                 valor + "%'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
