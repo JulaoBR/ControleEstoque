@@ -31,11 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCampoData = new System.Windows.Forms.TextBox();
-            this.rbDataCarregamento = new System.Windows.Forms.RadioButton();
             this.rbNumPedido = new System.Windows.Forms.RadioButton();
             this.rbNomeCliente = new System.Windows.Forms.RadioButton();
+            this.txtCampoData = new System.Windows.Forms.TextBox();
             this.gridSaidaCarga = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -44,6 +45,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
@@ -53,11 +55,17 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txtCampoData);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.SetChildIndex(this.btnCancelar, 0);
             this.panel2.Controls.SetChildIndex(this.txtPesquisa, 0);
             this.panel2.Controls.SetChildIndex(this.btnPesquisar, 0);
             this.panel2.Controls.SetChildIndex(this.groupBox1, 0);
+            this.panel2.Controls.SetChildIndex(this.txtCampoData, 0);
+            this.panel2.Controls.SetChildIndex(this.label1, 0);
+            this.panel2.Controls.SetChildIndex(this.label2, 0);
             // 
             // btnCancelar
             // 
@@ -69,45 +77,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtCampoData);
-            this.groupBox1.Controls.Add(this.rbDataCarregamento);
             this.groupBox1.Controls.Add(this.rbNumPedido);
             this.groupBox1.Controls.Add(this.rbNomeCliente);
             this.groupBox1.Location = new System.Drawing.Point(4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(723, 68);
+            this.groupBox1.Size = new System.Drawing.Size(688, 57);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opções para pesquisa";
-            // 
-            // txtCampoData
-            // 
-            this.txtCampoData.Location = new System.Drawing.Point(512, 28);
-            this.txtCampoData.MaxLength = 10;
-            this.txtCampoData.Name = "txtCampoData";
-            this.txtCampoData.ReadOnly = true;
-            this.txtCampoData.Size = new System.Drawing.Size(191, 21);
-            this.txtCampoData.TabIndex = 3;
-            this.txtCampoData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCampoData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampoData_KeyPress_1);
-            // 
-            // rbDataCarregamento
-            // 
-            this.rbDataCarregamento.AutoSize = true;
-            this.rbDataCarregamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rbDataCarregamento.Location = new System.Drawing.Point(287, 29);
-            this.rbDataCarregamento.Name = "rbDataCarregamento";
-            this.rbDataCarregamento.Size = new System.Drawing.Size(199, 19);
-            this.rbDataCarregamento.TabIndex = 2;
-            this.rbDataCarregamento.Text = "DATA DE CARREGAMENTO";
-            this.rbDataCarregamento.UseVisualStyleBackColor = true;
-            this.rbDataCarregamento.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // rbNumPedido
             // 
             this.rbNumPedido.AutoSize = true;
             this.rbNumPedido.ForeColor = System.Drawing.Color.Red;
-            this.rbNumPedido.Location = new System.Drawing.Point(161, 30);
+            this.rbNumPedido.Location = new System.Drawing.Point(158, 29);
             this.rbNumPedido.Name = "rbNumPedido";
             this.rbNumPedido.Size = new System.Drawing.Size(96, 19);
             this.rbNumPedido.TabIndex = 1;
@@ -123,11 +106,21 @@
             this.rbNomeCliente.Location = new System.Drawing.Point(6, 29);
             this.rbNomeCliente.Name = "rbNomeCliente";
             this.rbNomeCliente.Size = new System.Drawing.Size(127, 19);
-            this.rbNomeCliente.TabIndex = 0;
+            this.rbNomeCliente.TabIndex = 15;
             this.rbNomeCliente.TabStop = true;
             this.rbNomeCliente.Text = "NOME CLIENTE";
             this.rbNomeCliente.UseVisualStyleBackColor = true;
             this.rbNomeCliente.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // txtCampoData
+            // 
+            this.txtCampoData.Location = new System.Drawing.Point(501, 86);
+            this.txtCampoData.MaxLength = 10;
+            this.txtCampoData.Name = "txtCampoData";
+            this.txtCampoData.Size = new System.Drawing.Size(191, 21);
+            this.txtCampoData.TabIndex = 1;
+            this.txtCampoData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCampoData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCampoData_KeyPress_1);
             // 
             // gridSaidaCarga
             // 
@@ -148,7 +141,26 @@
             this.gridSaidaCarga.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridSaidaCarga.Size = new System.Drawing.Size(909, 452);
             this.gridSaidaCarga.TabIndex = 0;
+            this.gridSaidaCarga.TabStop = false;
             this.gridSaidaCarga.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSaidaCarga_CellDoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(498, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Digite da data de carregamento:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Digite o nome do cliente:";
             // 
             // frmPesquisaSaida
             // 
@@ -171,10 +183,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbDataCarregamento;
         private System.Windows.Forms.RadioButton rbNumPedido;
         private System.Windows.Forms.RadioButton rbNomeCliente;
         private System.Windows.Forms.DataGridView gridSaidaCarga;
         private System.Windows.Forms.TextBox txtCampoData;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

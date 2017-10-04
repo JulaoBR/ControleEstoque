@@ -71,13 +71,13 @@ namespace DAO
 
         }
 
-        public DataTable LocalizaPorString(string valor) //BUSCA COM STRING
+        public DataTable LocalizaPorString(string valor, string data) //BUSCA COM STRING
         {
             DataTable tb = new DataTable();
             try
             {
                 SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_carga 'ID', B.nome_cliente 'CLIENTE', B.endereco 'ENDEREÇO', A.data_carregamento 'CARREGAMENTO', A.nome_comprador 'COMPRADOR' FROM carga AS A JOIN cliente AS B WHERE A.Fk_cliente = B.Id_cliente AND nome_cliente LIKE '%" +
-                valor + "%'", conexao.StringConexao);
+                valor + "%' AND A.data_carregamento LIKE '%"+data+"%'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
             }

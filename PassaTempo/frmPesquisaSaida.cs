@@ -19,8 +19,16 @@ namespace PassaTempo
         private void frmPesquisaSaida_Load(object sender, EventArgs e)
         {
             ControleCarga carga = new ControleCarga();
-            
-            PreencheGrid(carga.BuscaCarga(seletor ,txtPesquisa.Text));           
+
+            if (txtCampoData.Text == string.Empty)
+            {
+                PreencheGrid(carga.BuscaCarga(seletor, txtPesquisa.Text, txtCampoData.Text));
+            }
+            else
+            {
+                PreencheGrid(carga.BuscaCarga(seletor, txtPesquisa.Text, Convert.ToDateTime(txtCampoData.Text).ToString("yyyy-MM-dd 00:00:00")));
+            }
+                   
             
             gridSaidaCarga.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -34,7 +42,7 @@ namespace PassaTempo
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             seletor = 1;
-            txtCampoData.ReadOnly = true;
+            txtCampoData.ReadOnly = false;
             txtPesquisa.ReadOnly = false;
             LimpaCampo();
         }
@@ -45,14 +53,6 @@ namespace PassaTempo
             txtCampoData.ReadOnly = true;
             txtPesquisa.ReadOnly = false;
             LimpaCampo();
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            seletor = 3;
-            txtCampoData.ReadOnly = false;
-            txtPesquisa.ReadOnly = true;
-            LimpaCampo();            
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -87,20 +87,29 @@ namespace PassaTempo
 
         private void gridSaidaCarga_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                int codigo = Convert.ToInt32(gridSaidaCarga.Rows[e.RowIndex].Cells[0].Value);
-
-                if (opcao == 1) // SE IGUAL A EXCLUI CARGA
+                if (e.RowIndex >= 0)
                 {
-                    ExcluirCarga(codigo);
+                    int codigo = Convert.ToInt32(gridSaidaCarga.Rows[e.RowIndex].Cells[0].Value);
 
-                }else if (opcao == 2) // ABRE TELA DE CARGA DETALHADA
-                {
-                    frmCargaDetalhada frmDetalhada = new frmCargaDetalhada(codigo);
-                    frmDetalhada.ShowDialog();
-                }               
+                    if (opcao == 1) // SE IGUAL A EXCLUI CARGA
+                    {
+                        ExcluirCarga(codigo);
+
+                    }
+                    else if (opcao == 2) // ABRE TELA DE CARGA DETALHADA
+                    {
+                        frmCargaDetalhada frmDetalhada = new frmCargaDetalhada(codigo);
+                        frmDetalhada.ShowDialog();
+                    }
+                }
             }
+            catch
+            {
+                MessageBox.Show("Selecione uma linha valida!","Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         private void ExcluirCarga(int codigo)

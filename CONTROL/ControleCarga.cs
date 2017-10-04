@@ -34,23 +34,19 @@ namespace CONTROL
             return false;
         }
 
-        public DataTable BuscaCarga(int opcao, string valor)
+        public DataTable BuscaCarga(int opcao, string valor, string data)
         {
             DAOCarga dao = new DAOCarga(cx);
             try
             {
                 if (opcao == 1)
                 {
-                    return dao.LocalizaPorString(valor);
+                    return dao.LocalizaPorString(valor, data);
                 }
                 else if (opcao == 2)
                 {
                     return dao.LocalizarPorInt(Convert.ToInt32(valor));
-                }
-                else if (opcao == 3)
-                {
-                    return dao.LocalizaPorString(valor);
-                }
+                }               
             }
             catch
             {
