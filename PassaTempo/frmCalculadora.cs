@@ -43,7 +43,7 @@ namespace PassaTempo
         {
             try
             {
-                cbNomeProduto.ValueMember = "PRAZO VALIDADE";
+                cbNomeProduto.ValueMember = "PRAZO";
                 prazoValidade = Convert.ToInt32(cbNomeProduto.SelectedValue);
                 this.LimpaCampo();
                 txtPrazoValidade.Text = Convert.ToString(prazoValidade);

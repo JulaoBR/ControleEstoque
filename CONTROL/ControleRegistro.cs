@@ -1,5 +1,6 @@
 ﻿using DAO;
 using MODEL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -85,10 +86,27 @@ namespace CONTROL
             return false;
         }
 
-        public DataTable BuscaString(string valor)
+        public DataTable BuscaString(string produto, string data, string lote)
         {
             DAORegistro dao = new DAORegistro(cx);
-            return dao.LocalizaPorString(valor);
+            try
+            {
+                if (data == string.Empty)
+                {
+                    return dao.LocalizaPorString(produto, data, lote);
+                }
+                else
+                {
+                    return dao.LocalizaPorString(produto, Convert.ToDateTime(data).ToString("yyyy-MM-dd 00:00:00"), lote);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Dados nao encontrados!","Operação Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            
+           
         }
 
         public DataTable BuscaInt(int valor)

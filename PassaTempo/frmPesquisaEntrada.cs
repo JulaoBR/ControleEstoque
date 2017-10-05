@@ -17,36 +17,8 @@ namespace PassaTempo
 
         private void frmPesquisaEntrada_Load(object sender, EventArgs e)
         {
-            ControleRegistro registro = new ControleRegistro();
-            PreencheGrid(registro.BuscaString(txtPesquisa.Text));
-        }
-
-        private void rbPesquisaNome_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaData.ReadOnly = true;
-            txtPesquisa.ReadOnly = false;
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaData.ReadOnly = false;
-            txtPesquisa.ReadOnly = true;
-        }
-
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaData.ReadOnly = false;
-            txtPesquisa.ReadOnly = true;
-        }
-
-        private void radioButton7_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaData.ReadOnly = true;
-            txtPesquisa.ReadOnly = false;
-        }
-
-   
+            
+        }        
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
@@ -60,12 +32,12 @@ namespace PassaTempo
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-
+            BuscaDados();
         }
 
         private void btnLimparPesquisa_Click(object sender, EventArgs e)
         {
-
+            LimpaCampo();
         }
 
         private void txtPesquisaData_KeyPress(object sender, KeyPressEventArgs e)
@@ -77,6 +49,13 @@ namespace PassaTempo
             }
         }
 
+        private void BuscaDados()
+        {
+            ControleRegistro registro = new ControleRegistro();
+
+            PreencheGrid(registro.BuscaString(txtPesquisa.Text, txtPesquisaData.Text, txtLote.Text));
+        }
+
         private void LimpaGrid()
         {
             gridEntrada.DataSource = null;
@@ -84,8 +63,8 @@ namespace PassaTempo
         }
 
         private void PreencheGrid(DataTable tb)
-        {
-            gridEntrada.DataSource = tb;
+        {            
+            gridEntrada.DataSource = tb;                      
         }
 
         private void gridEntrada_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -104,6 +83,12 @@ namespace PassaTempo
             }
         }
 
+        private void LimpaCampo()
+        {
+            txtLote.Clear();
+            txtPesquisa.Clear();
+            txtPesquisaData.Clear();
 
+        }
     }
 }

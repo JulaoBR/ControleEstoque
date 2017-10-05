@@ -140,13 +140,13 @@ namespace DAO
 
         }
 
-        public DataTable LocalizaPorString(string valor) //BUSCA COM STRING
+        public DataTable LocalizaPorString(string produto, string data, string lote) //BUSCA COM STRING
         {
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_registro 'ID', B.dsc_produto 'PRODUTO', A.lote 'LOTE', A.qtd_produto 'QUANTIDADE', A.data_fabricacao 'FABRICAÇÃO', A.data_vencimento 'VENCIMENTO', A.data_operacao 'OPERAÇÃO', A.tipo_operacao 'TIPO.OPER', A.marcacao 'MARCAÇÃO', A.ajuste 'AJUSTE', A.observacao 'OBSERVAÇÃO' FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND A.tipo_operacao = 0 AND B.dsc_produto LIKE '%" +
-                valor + "%'", conexao.StringConexao);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_registro 'ID', B.dsc_produto 'PRODUTO', A.lote 'LOTE', A.qtd_produto 'QUANTIDADE', A.data_fabricacao 'FABRICAÇÃO', A.data_vencimento 'VENCIMENTO', A.data_operacao 'PRODUÇÃO', A.tipo_operacao 'TIPO.OPER', A.marcacao 'MARCAÇÃO', A.ajuste 'AJUSTE', A.observacao 'OBSERVAÇÃO' FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND A.tipo_operacao = 0 AND B.dsc_produto LIKE '%" +
+                produto + "%' AND A.data_operacao LIKE '%"+data+"%' AND A.lote LIKE '%"+lote+"%' ", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
             }

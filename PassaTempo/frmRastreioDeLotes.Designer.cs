@@ -40,6 +40,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.gridRastreioLotes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,6 +79,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.gridRastreioLotes);
             this.panel1.Location = new System.Drawing.Point(13, 149);
             this.panel1.Size = new System.Drawing.Size(920, 447);
@@ -190,7 +192,7 @@
             this.gridRastreioLotes.ReadOnly = true;
             this.gridRastreioLotes.RowTemplate.Height = 24;
             this.gridRastreioLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridRastreioLotes.Size = new System.Drawing.Size(909, 454);
+            this.gridRastreioLotes.Size = new System.Drawing.Size(909, 421);
             this.gridRastreioLotes.TabIndex = 0;
             this.gridRastreioLotes.TabStop = false;
             this.gridRastreioLotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRastreioLotes_CellDoubleClick);
@@ -205,6 +207,18 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Digite o nome do produto";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(2, 425);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(569, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Para visualizar a carga com mais detalhes, de um dublo clique sobre a carga que d" +
+    "eseja visualizar.";
+            // 
             // frmRastreioDeLotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +229,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRastreioLotes)).EndInit();
@@ -234,5 +249,6 @@
         private System.Windows.Forms.TextBox txtNumeroCarga;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

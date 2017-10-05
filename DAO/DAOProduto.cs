@@ -111,7 +111,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_produto AS 'ID', dsc_produto AS 'PRODUTO', qtd_minimo AS 'QTD.MINIMO', qtd_maximo AS 'QTD.MAXIMO', prazo_validade AS 'PRAZO.VAL', peso_liquido AS 'PESO LIQ', peso_bruto AS 'PESO BT', unidade_medida AS 'UNI.MEDIDA' FROM produto WHERE dsc_produto LIKE '%" +
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_produto AS 'ID', dsc_produto AS 'PRODUTO', qtd_minimo AS 'QTD.MINIMO', qtd_maximo AS 'QTD.MAXIMO', prazo_validade AS 'PRAZO', peso_liquido AS 'PESO LIQ', peso_bruto AS 'PESO BT', unidade_medida AS 'UNI.MEDIDA' FROM produto WHERE dsc_produto LIKE '%" +
                 valor + "%' AND tipo_produto = '"+tipoProduto+"'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;

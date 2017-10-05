@@ -37,6 +37,7 @@
             this.gridSaidaCarga = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.gridSaidaCarga);
             // 
             // groupBox1
@@ -139,7 +141,7 @@
             this.gridSaidaCarga.Name = "gridSaidaCarga";
             this.gridSaidaCarga.ReadOnly = true;
             this.gridSaidaCarga.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridSaidaCarga.Size = new System.Drawing.Size(909, 452);
+            this.gridSaidaCarga.Size = new System.Drawing.Size(909, 436);
             this.gridSaidaCarga.TabIndex = 0;
             this.gridSaidaCarga.TabStop = false;
             this.gridSaidaCarga.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSaidaCarga_CellDoubleClick);
@@ -162,6 +164,18 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Digite o nome do cliente:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(4, 443);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(569, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Para visualizar a carga com mais detalhes, de um dublo clique sobre a carga que d" +
+    "eseja visualizar.";
+            // 
             // frmPesquisaSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +187,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSaidaCarga)).EndInit();
@@ -189,5 +204,6 @@
         private System.Windows.Forms.TextBox txtCampoData;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
