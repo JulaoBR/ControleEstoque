@@ -120,5 +120,28 @@ namespace CONTROL
             DAORegistro dao = new DAORegistro(cx);
             return dao.LocalizarDadosCarga(valor);
         }
+
+        public List<ModelRegistro> PreencheListaProdutos(int valor)
+        {
+            List<ModelRegistro> lista = new List<ModelRegistro>();
+
+            var dt = LocalizarDadosCarga(valor);
+
+            //LOOP PARA JOGAR O DATATABLE EM UMA LISTA
+            foreach (DataRow item in dt.Rows)
+            {
+                ModelRegistro model = new ModelRegistro();
+                model.Fk_produto = Convert.ToInt32(item["Fk_produto"].ToString());
+                model.dsc_produto = item["dsc_produto"].ToString();
+                model.lote = item["lote"].ToString();
+                model.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
+                model.pesoLiquido += Convert.ToDouble(item["peso_liquido"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString());
+                model.pesoBruto += Convert.ToDouble(item["peso_bruto"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString());
+                                 
+                lista.Add(model);
+            }
+
+            return lista;
+        }
     }
 }

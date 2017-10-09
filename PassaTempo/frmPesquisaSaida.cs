@@ -7,8 +7,9 @@ namespace PassaTempo
 {
     public partial class frmPesquisaSaida : PassaTempo.frmTelaDePesquisa
     {
-        private int opcao = 0; //1 = nome , 2 = codigo carga, 3 = data carregamento
-        private int seletor = 1;
+        private int opcao = 0;
+        public int codigo_carga = 0;
+        private int seletor = 1; //1 = nome , 2 = codigo carga, 3 = data carregamento
 
         public frmPesquisaSaida(int opcao)
         {
@@ -102,6 +103,11 @@ namespace PassaTempo
                     {
                         frmCargaDetalhada frmDetalhada = new frmCargaDetalhada(codigo);
                         frmDetalhada.ShowDialog();
+                    }
+                    else if (opcao == 3)
+                    {
+                        codigo_carga = codigo;
+                        this.Dispose();
                     }
                 }
             }

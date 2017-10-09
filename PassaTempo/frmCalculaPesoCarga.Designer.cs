@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculaPesoCarga));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPesoBruto = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
@@ -59,15 +61,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTotalItens = new System.Windows.Forms.Label();
             this.lbTotalCaixa = new System.Windows.Forms.Label();
-            this.lbPesoTotal = new System.Windows.Forms.Label();
+            this.lbPesoBruto = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.gridProdutos = new System.Windows.Forms.DataGridView();
-            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,8 +73,14 @@
             this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.txtTotalItens = new System.Windows.Forms.TextBox();
             this.txtItens = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtPesoBruto = new System.Windows.Forms.TextBox();
+            this.btnCargaExistente = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPesoLiquido = new System.Windows.Forms.Label();
+            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,6 +91,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.btnCargaExistente);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txtPesoBruto);
             this.panel2.Controls.Add(this.btnPesquisar);
@@ -103,6 +109,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(470, 167);
             this.panel2.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(139, 106);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 16);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Peso Bruto:";
+            // 
+            // txtPesoBruto
+            // 
+            this.txtPesoBruto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtPesoBruto.ForeColor = System.Drawing.Color.White;
+            this.txtPesoBruto.Location = new System.Drawing.Point(140, 122);
+            this.txtPesoBruto.Name = "txtPesoBruto";
+            this.txtPesoBruto.ReadOnly = true;
+            this.txtPesoBruto.Size = new System.Drawing.Size(108, 22);
+            this.txtPesoBruto.TabIndex = 9;
+            this.txtPesoBruto.TabStop = false;
             // 
             // btnPesquisar
             // 
@@ -361,9 +387,11 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtPesoLiquido);
+            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.lbTotalItens);
             this.panel1.Controls.Add(this.lbTotalCaixa);
-            this.panel1.Controls.Add(this.lbPesoTotal);
+            this.panel1.Controls.Add(this.lbPesoBruto);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -378,7 +406,7 @@
             this.lbTotalItens.AutoSize = true;
             this.lbTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalItens.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalItens.Location = new System.Drawing.Point(426, 260);
+            this.lbTotalItens.Location = new System.Drawing.Point(446, 260);
             this.lbTotalItens.Name = "lbTotalItens";
             this.lbTotalItens.Size = new System.Drawing.Size(17, 18);
             this.lbTotalItens.TabIndex = 6;
@@ -389,28 +417,28 @@
             this.lbTotalCaixa.AutoSize = true;
             this.lbTotalCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalCaixa.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalCaixa.Location = new System.Drawing.Point(302, 259);
+            this.lbTotalCaixa.Location = new System.Drawing.Point(358, 259);
             this.lbTotalCaixa.Name = "lbTotalCaixa";
             this.lbTotalCaixa.Size = new System.Drawing.Size(17, 18);
             this.lbTotalCaixa.TabIndex = 5;
             this.lbTotalCaixa.Text = "0";
             // 
-            // lbPesoTotal
+            // lbPesoBruto
             // 
-            this.lbPesoTotal.AutoSize = true;
-            this.lbPesoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPesoTotal.ForeColor = System.Drawing.Color.Red;
-            this.lbPesoTotal.Location = new System.Drawing.Point(99, 259);
-            this.lbPesoTotal.Name = "lbPesoTotal";
-            this.lbPesoTotal.Size = new System.Drawing.Size(17, 18);
-            this.lbPesoTotal.TabIndex = 4;
-            this.lbPesoTotal.Text = "0";
+            this.lbPesoBruto.AutoSize = true;
+            this.lbPesoBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPesoBruto.ForeColor = System.Drawing.Color.Red;
+            this.lbPesoBruto.Location = new System.Drawing.Point(197, 259);
+            this.lbPesoBruto.Name = "lbPesoBruto";
+            this.lbPesoBruto.Size = new System.Drawing.Size(17, 18);
+            this.lbPesoBruto.TabIndex = 4;
+            this.lbPesoBruto.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(371, 259);
+            this.label7.Location = new System.Drawing.Point(391, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 18);
             this.label7.TabIndex = 3;
@@ -420,21 +448,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(169, 259);
+            this.label6.Location = new System.Drawing.Point(250, 259);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 18);
+            this.label6.Size = new System.Drawing.Size(102, 18);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Total de caixas:";
+            this.label6.Text = "Total de CX:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 259);
+            this.label5.Location = new System.Drawing.Point(123, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 18);
+            this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Peso total:";
+            this.label5.Text = "Peso B:";
             // 
             // gridProdutos
             // 
@@ -461,38 +489,6 @@
             this.gridProdutos.Size = new System.Drawing.Size(468, 252);
             this.gridProdutos.TabIndex = 0;
             this.gridProdutos.TabStop = false;
-            // 
-            // Id_produto
-            // 
-            this.Id_produto.DataPropertyName = "Id_produto";
-            this.Id_produto.HeaderText = "ID";
-            this.Id_produto.Name = "Id_produto";
-            this.Id_produto.ReadOnly = true;
-            this.Id_produto.Width = 50;
-            // 
-            // nome_produto
-            // 
-            this.nome_produto.DataPropertyName = "nome_produto";
-            this.nome_produto.HeaderText = "PRODUTO";
-            this.nome_produto.Name = "nome_produto";
-            this.nome_produto.ReadOnly = true;
-            this.nome_produto.Width = 215;
-            // 
-            // qtd_produto
-            // 
-            this.qtd_produto.DataPropertyName = "qtd_produto";
-            this.qtd_produto.HeaderText = "QTD";
-            this.qtd_produto.Name = "qtd_produto";
-            this.qtd_produto.ReadOnly = true;
-            this.qtd_produto.Width = 80;
-            // 
-            // peso
-            // 
-            this.peso.DataPropertyName = "peso";
-            this.peso.HeaderText = "PESO";
-            this.peso.Name = "peso";
-            this.peso.ReadOnly = true;
-            this.peso.Width = 70;
             // 
             // panel3
             // 
@@ -573,25 +569,78 @@
             this.txtItens.TabStop = false;
             this.txtItens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label8
+            // btnCargaExistente
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(139, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 16);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Peso Bruto:";
+            this.btnCargaExistente.Location = new System.Drawing.Point(322, 19);
+            this.btnCargaExistente.Name = "btnCargaExistente";
+            this.btnCargaExistente.Size = new System.Drawing.Size(98, 23);
+            this.btnCargaExistente.TabIndex = 11;
+            this.btnCargaExistente.TabStop = false;
+            this.btnCargaExistente.Text = "...";
+            this.btnCargaExistente.UseVisualStyleBackColor = true;
+            this.btnCargaExistente.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtPesoBruto
+            // label17
             // 
-            this.txtPesoBruto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.txtPesoBruto.ForeColor = System.Drawing.Color.White;
-            this.txtPesoBruto.Location = new System.Drawing.Point(140, 122);
-            this.txtPesoBruto.Name = "txtPesoBruto";
-            this.txtPesoBruto.ReadOnly = true;
-            this.txtPesoBruto.Size = new System.Drawing.Size(108, 22);
-            this.txtPesoBruto.TabIndex = 9;
-            this.txtPesoBruto.TabStop = false;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(254, 2);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(214, 16);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Selecionar carga ja existente:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 259);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 18);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Peso L:";
+            // 
+            // txtPesoLiquido
+            // 
+            this.txtPesoLiquido.AutoSize = true;
+            this.txtPesoLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoLiquido.ForeColor = System.Drawing.Color.Red;
+            this.txtPesoLiquido.Location = new System.Drawing.Point(75, 259);
+            this.txtPesoLiquido.Name = "txtPesoLiquido";
+            this.txtPesoLiquido.Size = new System.Drawing.Size(17, 18);
+            this.txtPesoLiquido.TabIndex = 8;
+            this.txtPesoLiquido.Text = "0";
+            // 
+            // Id_produto
+            // 
+            this.Id_produto.DataPropertyName = "Id_produto";
+            this.Id_produto.HeaderText = "ID";
+            this.Id_produto.Name = "Id_produto";
+            this.Id_produto.ReadOnly = true;
+            this.Id_produto.Width = 50;
+            // 
+            // nome_produto
+            // 
+            this.nome_produto.DataPropertyName = "nome_produto";
+            this.nome_produto.HeaderText = "PRODUTO";
+            this.nome_produto.Name = "nome_produto";
+            this.nome_produto.ReadOnly = true;
+            this.nome_produto.Width = 225;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.HeaderText = "QTD";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Width = 80;
+            // 
+            // peso
+            // 
+            this.peso.DataPropertyName = "peso";
+            this.peso.HeaderText = "PESO";
+            this.peso.Name = "peso";
+            this.peso.ReadOnly = true;
+            this.peso.Width = 70;
             // 
             // frmCalculaPesoCarga
             // 
@@ -655,15 +704,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbTotalItens;
         private System.Windows.Forms.Label lbTotalCaixa;
-        private System.Windows.Forms.Label lbPesoTotal;
+        private System.Windows.Forms.Label lbPesoBruto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView gridProdutos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peso;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -673,5 +718,13 @@
         private System.Windows.Forms.TextBox txtItens;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPesoBruto;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnCargaExistente;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label txtPesoLiquido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peso;
     }
 }

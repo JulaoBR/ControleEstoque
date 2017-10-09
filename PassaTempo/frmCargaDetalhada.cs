@@ -10,9 +10,6 @@ namespace PassaTempo
     public partial class frmCargaDetalhada : Form
     {
         private int codigo = 0;
-        private double pesoLiquido = 0;
-        private double pesoBruto = 0;
-        private double totalCaixas = 0;
         private List<ModelRegistro> lista = new List<ModelRegistro>();
 
         public frmCargaDetalhada(int  codigo)
@@ -30,7 +27,7 @@ namespace PassaTempo
             txtPedido.Text = Convert.ToString(codigo);
 
             PreencheCampos(controlCarga.BuscaCargaDetalhada(codigo));
-            PreencheListaProdutos(controlRegistro.LocalizarDadosCarga(codigo));
+            lista = controlRegistro.PreencheListaProdutos(codigo);
 
             AtualizaGrid();
             AtualizaInfo();
@@ -47,25 +44,7 @@ namespace PassaTempo
             txtEstado.Text = dt.Rows[0]["nome_estado"].ToString();
             txtComprador.Text = dt.Rows[0]["nome_comprador"].ToString();
 
-        }
-
-        private void PreencheListaProdutos(DataTable dt)
-        {
-            //LOOP PARA JOGAR O DATATABLE EM UMA LISTA
-            foreach (DataRow item in dt.Rows)
-            {
-                ModelRegistro model = new ModelRegistro();
-                model.Fk_produto = Convert.ToInt32(item["Fk_produto"].ToString());
-                model.dsc_produto = item["dsc_produto"].ToString();
-                model.lote = item["lote"].ToString();
-                model.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
-                pesoLiquido += Convert.ToDouble(item["peso_liquido"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString());
-                pesoBruto += Convert.ToDouble(item["peso_bruto"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString());
-                totalCaixas += Convert.ToDouble(item["qtd_produto"].ToString());
-
-                lista.Add(model);
-            }
-        }
+        }      
 
         private void AtualizaGrid()
         {
@@ -75,10 +54,17 @@ namespace PassaTempo
 
         private void AtualizaInfo()
         {
+            double aux = 0, aux1 = 0, aux2 = 0;
+            foreach (var item in lista)
+            {               
+                aux += item.qtd_produto;
+                aux1 += item.pesoLiquido;
+                aux2 += item.pesoBruto;
+            }
             lbTotalItens.Text = Convert.ToString(lista.Count);
-            lbPesoLiquido.Text = Convert.ToString(pesoLiquido);
-            lbPesoBruto.Text = Convert.ToString(pesoBruto);
-            lbTotaCaixas.Text = Convert.ToString(totalCaixas);
+            lbTotaCaixas.Text = Convert.ToString(aux);
+            lbPesoLiquido.Text = Convert.ToString(aux1);
+            lbPesoBruto.Text = Convert.ToString(aux2);
         }
     }
 }

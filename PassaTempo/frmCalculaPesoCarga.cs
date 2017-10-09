@@ -52,5 +52,20 @@ namespace PassaTempo
         {
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmPesquisaSaida saida = new frmPesquisaSaida(3);
+            saida.ShowDialog();
+
+            if (saida.codigo_carga != 0)
+            {
+                
+            }
+            else
+            {
+                
+            }
+        }
     }
 }
