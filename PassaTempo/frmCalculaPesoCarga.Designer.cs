@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculaPesoCarga));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnCargaExistente = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPesoBruto = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -59,6 +61,8 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPesoLiquido = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.lbTotalItens = new System.Windows.Forms.Label();
             this.lbTotalCaixa = new System.Windows.Forms.Label();
             this.lbPesoBruto = new System.Windows.Forms.Label();
@@ -73,10 +77,6 @@
             this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.txtTotalItens = new System.Windows.Forms.TextBox();
             this.txtItens = new System.Windows.Forms.TextBox();
-            this.btnCargaExistente = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtPesoLiquido = new System.Windows.Forms.Label();
             this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +109,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(470, 167);
             this.panel2.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(254, 2);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(214, 16);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Selecionar carga ja existente:";
+            // 
+            // btnCargaExistente
+            // 
+            this.btnCargaExistente.Location = new System.Drawing.Point(322, 19);
+            this.btnCargaExistente.Name = "btnCargaExistente";
+            this.btnCargaExistente.Size = new System.Drawing.Size(98, 23);
+            this.btnCargaExistente.TabIndex = 11;
+            this.btnCargaExistente.TabStop = false;
+            this.btnCargaExistente.Text = "...";
+            this.btnCargaExistente.UseVisualStyleBackColor = true;
+            this.btnCargaExistente.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -401,66 +421,87 @@
             this.panel1.Size = new System.Drawing.Size(478, 286);
             this.panel1.TabIndex = 13;
             // 
+            // txtPesoLiquido
+            // 
+            this.txtPesoLiquido.AutoSize = true;
+            this.txtPesoLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoLiquido.ForeColor = System.Drawing.Color.Red;
+            this.txtPesoLiquido.Location = new System.Drawing.Point(64, 259);
+            this.txtPesoLiquido.Name = "txtPesoLiquido";
+            this.txtPesoLiquido.Size = new System.Drawing.Size(15, 15);
+            this.txtPesoLiquido.TabIndex = 8;
+            this.txtPesoLiquido.Text = "0";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 259);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(55, 15);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Peso L:";
+            // 
             // lbTotalItens
             // 
             this.lbTotalItens.AutoSize = true;
-            this.lbTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalItens.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalItens.Location = new System.Drawing.Point(446, 260);
+            this.lbTotalItens.Location = new System.Drawing.Point(439, 259);
             this.lbTotalItens.Name = "lbTotalItens";
-            this.lbTotalItens.Size = new System.Drawing.Size(17, 18);
+            this.lbTotalItens.Size = new System.Drawing.Size(15, 15);
             this.lbTotalItens.TabIndex = 6;
             this.lbTotalItens.Text = "0";
             // 
             // lbTotalCaixa
             // 
             this.lbTotalCaixa.AutoSize = true;
-            this.lbTotalCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalCaixa.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalCaixa.Location = new System.Drawing.Point(358, 259);
+            this.lbTotalCaixa.Location = new System.Drawing.Point(341, 259);
             this.lbTotalCaixa.Name = "lbTotalCaixa";
-            this.lbTotalCaixa.Size = new System.Drawing.Size(17, 18);
+            this.lbTotalCaixa.Size = new System.Drawing.Size(15, 15);
             this.lbTotalCaixa.TabIndex = 5;
             this.lbTotalCaixa.Text = "0";
             // 
             // lbPesoBruto
             // 
             this.lbPesoBruto.AutoSize = true;
-            this.lbPesoBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPesoBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPesoBruto.ForeColor = System.Drawing.Color.Red;
-            this.lbPesoBruto.Location = new System.Drawing.Point(197, 259);
+            this.lbPesoBruto.Location = new System.Drawing.Point(185, 259);
             this.lbPesoBruto.Name = "lbPesoBruto";
-            this.lbPesoBruto.Size = new System.Drawing.Size(17, 18);
+            this.lbPesoBruto.Size = new System.Drawing.Size(15, 15);
             this.lbPesoBruto.TabIndex = 4;
             this.lbPesoBruto.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(391, 259);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 18);
+            this.label7.Size = new System.Drawing.Size(42, 15);
             this.label7.TabIndex = 3;
             this.label7.Text = "Itens:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(250, 259);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 18);
+            this.label6.Size = new System.Drawing.Size(85, 15);
             this.label6.TabIndex = 2;
             this.label6.Text = "Total de CX:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(123, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 18);
+            this.label5.Size = new System.Drawing.Size(56, 15);
             this.label5.TabIndex = 1;
             this.label5.Text = "Peso B:";
             // 
@@ -569,50 +610,9 @@
             this.txtItens.TabStop = false;
             this.txtItens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnCargaExistente
-            // 
-            this.btnCargaExistente.Location = new System.Drawing.Point(322, 19);
-            this.btnCargaExistente.Name = "btnCargaExistente";
-            this.btnCargaExistente.Size = new System.Drawing.Size(98, 23);
-            this.btnCargaExistente.TabIndex = 11;
-            this.btnCargaExistente.TabStop = false;
-            this.btnCargaExistente.Text = "...";
-            this.btnCargaExistente.UseVisualStyleBackColor = true;
-            this.btnCargaExistente.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(254, 2);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(214, 16);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Selecionar carga ja existente:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 259);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 18);
-            this.label18.TabIndex = 7;
-            this.label18.Text = "Peso L:";
-            // 
-            // txtPesoLiquido
-            // 
-            this.txtPesoLiquido.AutoSize = true;
-            this.txtPesoLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoLiquido.ForeColor = System.Drawing.Color.Red;
-            this.txtPesoLiquido.Location = new System.Drawing.Point(75, 259);
-            this.txtPesoLiquido.Name = "txtPesoLiquido";
-            this.txtPesoLiquido.Size = new System.Drawing.Size(17, 18);
-            this.txtPesoLiquido.TabIndex = 8;
-            this.txtPesoLiquido.Text = "0";
-            // 
             // Id_produto
             // 
-            this.Id_produto.DataPropertyName = "Id_produto";
+            this.Id_produto.DataPropertyName = "Fk_produto";
             this.Id_produto.HeaderText = "ID";
             this.Id_produto.Name = "Id_produto";
             this.Id_produto.ReadOnly = true;
@@ -620,7 +620,7 @@
             // 
             // nome_produto
             // 
-            this.nome_produto.DataPropertyName = "nome_produto";
+            this.nome_produto.DataPropertyName = "dsc_produto";
             this.nome_produto.HeaderText = "PRODUTO";
             this.nome_produto.Name = "nome_produto";
             this.nome_produto.ReadOnly = true;
@@ -636,7 +636,7 @@
             // 
             // peso
             // 
-            this.peso.DataPropertyName = "peso";
+            this.peso.DataPropertyName = "pesoBruto";
             this.peso.HeaderText = "PESO";
             this.peso.Name = "peso";
             this.peso.ReadOnly = true;

@@ -46,11 +46,11 @@
             this.fERRAMENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cALCULADORADEDATAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOTASDEENTREGAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cALCULAPESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONFIGURAÇÕESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cALCULAPESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,6 +204,13 @@
             this.rOTASDEENTREGAToolStripMenuItem.Text = "ROTAS DE ENTREGA";
             this.rOTASDEENTREGAToolStripMenuItem.Click += new System.EventHandler(this.rOTASDEENTREGAToolStripMenuItem_Click);
             // 
+            // cALCULAPESOToolStripMenuItem
+            // 
+            this.cALCULAPESOToolStripMenuItem.Name = "cALCULAPESOToolStripMenuItem";
+            this.cALCULAPESOToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
+            this.cALCULAPESOToolStripMenuItem.Text = "CALCULA PESO ";
+            this.cALCULAPESOToolStripMenuItem.Click += new System.EventHandler(this.cALCULAPESOToolStripMenuItem_Click);
+            // 
             // cONFIGURAÇÕESToolStripMenuItem
             // 
             this.cONFIGURAÇÕESToolStripMenuItem.Name = "cONFIGURAÇÕESToolStripMenuItem";
@@ -233,13 +240,6 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-            // cALCULAPESOToolStripMenuItem
-            // 
-            this.cALCULAPESOToolStripMenuItem.Name = "cALCULAPESOToolStripMenuItem";
-            this.cALCULAPESOToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
-            this.cALCULAPESOToolStripMenuItem.Text = "CALCULA PESO ";
-            this.cALCULAPESOToolStripMenuItem.Click += new System.EventHandler(this.cALCULAPESOToolStripMenuItem_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +250,6 @@
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";

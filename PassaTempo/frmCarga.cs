@@ -605,7 +605,6 @@ namespace PassaTempo
             totalCaixas = 0;
         }
 
-
         private void PreencheCampos(DataTable tb)
         {
             txtCodCliente.Text = tb.Rows[0]["Id_cliente"].ToString();
@@ -661,7 +660,6 @@ namespace PassaTempo
             gridDadosCarga.DataSource = null;
         }
 
-
         //METODO DE VERIFICAR SE O PRODUTO JA ESTA NA LISTA
         private bool VerificaProdLista(int cd)
         {
@@ -680,7 +678,6 @@ namespace PassaTempo
         //METODO DE VERIFICAR SE OS CAMPOS COD_PEDIDO COD_CLIENTE COD_PRODUTO ESTAO VAZIOS
         private bool VerificaCamposCodigos()
         {
-
             if (txtPedido.Text == string.Empty || txtCodCliente.Text == string.Empty || txtCodProduto.Text == string.Empty || txtQtdTotal.Text == string.Empty )
             {
                 return true;
@@ -689,7 +686,6 @@ namespace PassaTempo
             {
                 return false;
             }
-
         }
 
         //VERIFICA A QUANTIDADE DIGITADA NOS CAMPOS DE LOTE E COMPARA COM A QUANTIDADE TOTAL
@@ -731,7 +727,6 @@ namespace PassaTempo
                     return true;
                 }
             }
-
             return false;
         }
 
@@ -767,6 +762,5 @@ namespace PassaTempo
                 }
             }
         }
-
     }
 }

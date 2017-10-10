@@ -1,20 +1,19 @@
-﻿using System;
+﻿using CONTROL;
+using MODEL;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PassaTempo
 {
     public partial class frmCalculaPesoCarga : Form
     {
+        private List<ModelRegistro> lista = new List<ModelRegistro>();
+
         public frmCalculaPesoCarga()
         {
             InitializeComponent();
+            gridProdutos.AutoGenerateColumns = false;
             txtCodigoProduto.Focus();
         }
 
@@ -56,16 +55,41 @@ namespace PassaTempo
         private void button1_Click(object sender, EventArgs e)
         {
             frmPesquisaSaida saida = new frmPesquisaSaida(3);
+            ControleRegistro controlRegistro = new ControleRegistro();
             saida.ShowDialog();
 
             if (saida.codigo_carga != 0)
             {
-                
+                lista = controlRegistro.PreencheListaProdutos(saida.codigo_carga);
+                PreencheGrid();
+                AtualizaInfo();
             }
             else
             {
-                
+                return;
             }
+        }
+
+
+        private void PreencheGrid()
+        {
+            gridProdutos.DataSource = null;
+            gridProdutos.DataSource = lista;
+        }
+
+        private void AtualizaInfo()
+        {
+            double aux = 0, aux1 = 0, aux2 = 0;
+            foreach (var item in lista)
+            {
+                aux += item.qtd_produto;
+                aux1 += item.pesoLiquido;
+                aux2 += item.pesoBruto;
+            }
+            lbTotalItens.Text = Convert.ToString(lista.Count);
+            lbTotalCaixa.Text = Convert.ToString(string.Format("{0:N}", aux));
+            txtPesoLiquido.Text = Convert.ToString(string.Format("{0:N}", aux1));
+            lbPesoBruto.Text = Convert.ToString(string.Format("{0:N}", aux2));
         }
     }
 }

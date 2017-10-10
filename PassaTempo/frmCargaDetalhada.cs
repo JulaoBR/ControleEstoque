@@ -12,7 +12,7 @@ namespace PassaTempo
         private int codigo = 0;
         private List<ModelRegistro> lista = new List<ModelRegistro>();
 
-        public frmCargaDetalhada(int  codigo)
+        public frmCargaDetalhada(int codigo)
         {
             InitializeComponent();
             gridCarga.AutoGenerateColumns = false;
@@ -44,7 +44,7 @@ namespace PassaTempo
             txtEstado.Text = dt.Rows[0]["nome_estado"].ToString();
             txtComprador.Text = dt.Rows[0]["nome_comprador"].ToString();
 
-        }      
+        }
 
         private void AtualizaGrid()
         {
@@ -62,9 +62,9 @@ namespace PassaTempo
                 aux2 += item.pesoBruto;
             }
             lbTotalItens.Text = Convert.ToString(lista.Count);
-            lbTotaCaixas.Text = Convert.ToString(aux);
-            lbPesoLiquido.Text = Convert.ToString(aux1);
-            lbPesoBruto.Text = Convert.ToString(aux2);
+            lbTotaCaixas.Text = Convert.ToString(string.Format("{0:N}", aux));
+            lbPesoLiquido.Text = Convert.ToString(string.Format("{0:N}", aux1));
+            lbPesoBruto.Text = Convert.ToString(string.Format("{0:N}", aux2));
         }
     }
 }
