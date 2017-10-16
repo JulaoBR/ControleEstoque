@@ -53,6 +53,7 @@
     <Compile Include="ControleProduto.cs" />
     <Compile Include="ControleRegistro.cs" />
     <Compile Include="ControleUsuario.cs" />
+    <Compile Include="ControleVeiculos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

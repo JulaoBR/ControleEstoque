@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculaPesoCarga));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -81,6 +81,8 @@
             this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.txtTotalCaixas = new System.Windows.Forms.TextBox();
             this.txtTotalCargas = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -395,6 +397,7 @@
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnCalcular
             // 
@@ -511,16 +514,16 @@
             // 
             // gridProdutos
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_produto,
@@ -573,6 +576,8 @@
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
@@ -620,7 +625,7 @@
             this.txtPesoTotal.Location = new System.Drawing.Point(227, 131);
             this.txtPesoTotal.Name = "txtPesoTotal";
             this.txtPesoTotal.ReadOnly = true;
-            this.txtPesoTotal.Size = new System.Drawing.Size(157, 26);
+            this.txtPesoTotal.Size = new System.Drawing.Size(141, 26);
             this.txtPesoTotal.TabIndex = 2;
             this.txtPesoTotal.TabStop = false;
             this.txtPesoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -631,7 +636,7 @@
             this.txtTotalCaixas.Location = new System.Drawing.Point(227, 77);
             this.txtTotalCaixas.Name = "txtTotalCaixas";
             this.txtTotalCaixas.ReadOnly = true;
-            this.txtTotalCaixas.Size = new System.Drawing.Size(157, 26);
+            this.txtTotalCaixas.Size = new System.Drawing.Size(141, 26);
             this.txtTotalCaixas.TabIndex = 1;
             this.txtTotalCaixas.TabStop = false;
             this.txtTotalCaixas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -642,10 +647,30 @@
             this.txtTotalCargas.Location = new System.Drawing.Point(227, 28);
             this.txtTotalCargas.Name = "txtTotalCargas";
             this.txtTotalCargas.ReadOnly = true;
-            this.txtTotalCargas.Size = new System.Drawing.Size(157, 26);
+            this.txtTotalCargas.Size = new System.Drawing.Size(141, 26);
             this.txtTotalCargas.TabIndex = 0;
             this.txtTotalCargas.TabStop = false;
             this.txtTotalCargas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(374, 139);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(34, 13);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Kilos";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(375, 85);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(26, 13);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Uni";
             // 
             // frmCalculaPesoCarga
             // 
@@ -663,7 +688,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCalculaPesoCarga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CALCULA PESO";
+            this.Text = "q";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCalculaPesoCarga_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -730,5 +755,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }

@@ -22,8 +22,21 @@ namespace PassaTempo
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            frmPesquisaProduto produto = new frmPesquisaProduto();
-            produto.Show();
+            frmPesquisaProduto frmproduto = new frmPesquisaProduto();           
+            frmproduto.ShowDialog();
+            
+            if (frmproduto.codigo != 0)
+            {
+                ControleProduto produto = new ControleProduto();
+
+                var dt = produto.BuscaInt(frmproduto.codigo);
+                txtCodigoProduto.Text = dt.Rows[0]["Id_produto"].ToString();
+                txtNomeProduto.Text = dt.Rows[0]["dsc_produto"].ToString();
+                txtLiquido.Text = dt.Rows[0]["peso_liquido"].ToString();
+                txtPesoBruto.Text = dt.Rows[0]["peso_bruto"].ToString();
+
+                txtQuantidade.Focus();
+            }
         }
 
         private void txtCodigoProduto_KeyPress(object sender, KeyPressEventArgs e)
@@ -113,6 +126,19 @@ namespace PassaTempo
         private void button2_Click(object sender, EventArgs e)
         {
             LimpaCampoCaminhao();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            lista.Clear();
+            LimpaCampoProduto();
+
+            lbPesoBruto.Text = "0";
+            lbTotalCaixa.Text = "0";
+            lbTotalItens.Text = "0";
+            lbPesoLiquido.Text = "0";
+
+            PreencheGrid();         
         }
 
         private void PreencheGrid()
@@ -228,6 +254,11 @@ namespace PassaTempo
             txtPesoTotal.Clear();
             txtTotalCaixas.Clear();
             txtTotalCargas.Clear();
+
+            totalCaixas = 0;
+            totalCarga = 0;
+            pesoTotal = 0;
         }
+
     }
 }

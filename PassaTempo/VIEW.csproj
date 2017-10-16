@@ -89,6 +89,12 @@
     <Compile Include="frmCadUsuario.Designer.cs">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCadVeilculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadVeilculos.Designer.cs">
+      <DependentUpon>frmCadVeilculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCalculadora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUsuario.resx">
       <DependentUpon>frmCadUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadVeilculos.resx">
+      <DependentUpon>frmCadVeilculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCalculadora.resx">
       <DependentUpon>frmCalculadora.cs</DependentUpon>

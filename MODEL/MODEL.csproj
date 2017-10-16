@@ -51,6 +51,7 @@
     <Compile Include="ModelProduto.cs" />
     <Compile Include="ModelRegistro.cs" />
     <Compile Include="ModelUsuario.cs" />
+    <Compile Include="ModelVeiculos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

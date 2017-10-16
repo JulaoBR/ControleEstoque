@@ -22,3 +22,9 @@ D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\bin\Debug\MODEL.pdb
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\obj\Debug\MODEL.exe
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\MODEL\obj\Debug\MODEL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\MODEL.exe.config
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\MODEL.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\MODEL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.pdb

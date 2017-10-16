@@ -51,6 +51,7 @@
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vEICULOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +86,8 @@
             this.pRODUTOSToolStripMenuItem,
             this.cLIENTESToolStripMenuItem,
             this.uSUARIOSToolStripMenuItem,
-            this.cIDADEESTADOToolStripMenuItem});
+            this.cIDADEESTADOToolStripMenuItem,
+            this.vEICULOSToolStripMenuItem});
             this.cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
             this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.cADASTROToolStripMenuItem.Text = "CADASTRO";
@@ -240,6 +242,13 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
+            // vEICULOSToolStripMenuItem
+            // 
+            this.vEICULOSToolStripMenuItem.Name = "vEICULOSToolStripMenuItem";
+            this.vEICULOSToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.vEICULOSToolStripMenuItem.Text = "VEICULOS";
+            this.vEICULOSToolStripMenuItem.Click += new System.EventHandler(this.vEICULOSToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem cIDADEESTADOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rOTASDEENTREGAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cALCULAPESOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vEICULOSToolStripMenuItem;
     }
 }
 

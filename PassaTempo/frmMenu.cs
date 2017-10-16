@@ -117,5 +117,11 @@ namespace PassaTempo
             frmCalculaPesoCarga frmCalcula = new frmCalculaPesoCarga();
             frmCalcula.ShowDialog();
         }
+
+        private void vEICULOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadVeilculos frmVeiculos = new frmCadVeilculos();
+            frmVeiculos.ShowDialog();
+        }
     }
 }
