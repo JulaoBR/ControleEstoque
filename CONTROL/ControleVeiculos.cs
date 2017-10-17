@@ -16,12 +16,19 @@ namespace CONTROL
 
         public void Inserir(ModelVeiculos modelo)
         {
-
             DAOVeiculos dao = new DAOVeiculos(cx);
-            if (!dao.Inserir(modelo))
+
+            if (modelo.dsc_veiculo == string.Empty || modelo.placa == string.Empty)
             {
-                MessageBox.Show("Erro na inserção", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Existem campos vazios!", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                if (!dao.Inserir(modelo))
+                {
+                    MessageBox.Show("Erro na inserção", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }          
             dao = null;
         }
     }

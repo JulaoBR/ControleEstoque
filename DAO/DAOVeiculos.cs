@@ -21,11 +21,12 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "INSERT INTO veiculos(dsc_veiculo, tara, lotacao)" +
-                    "VALUES (@nome, @tara, @lotacao, @pesoBruto)";
+                cmd.CommandText = "INSERT INTO veiculos(dsc_veiculo, tara, lotacao, placa)" +
+                    "VALUES (@nome, @tara, @lotacao, @placa)";
                 cmd.Parameters.AddWithValue("@nome", modelo.dsc_veiculo);
                 cmd.Parameters.AddWithValue("@tara", modelo.tara);
                 cmd.Parameters.AddWithValue("@lotacao", modelo.lotacao);
+                cmd.Parameters.AddWithValue("@placa", modelo.placa);
 
                 conexao.Conectar();
                 cmd.ExecuteNonQuery();

@@ -137,6 +137,12 @@
     <Compile Include="frmMovimentacao.Designer.cs">
       <DependentUpon>frmMovimentacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPesquisaCaminhao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaCaminhao.Designer.cs">
+      <DependentUpon>frmPesquisaCaminhao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPesquisaCidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovimentacao.resx">
       <DependentUpon>frmMovimentacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaCaminhao.resx">
+      <DependentUpon>frmPesquisaCaminhao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisaCidade.resx">
       <DependentUpon>frmPesquisaCidade.cs</DependentUpon>

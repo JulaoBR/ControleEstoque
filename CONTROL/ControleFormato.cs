@@ -25,6 +25,7 @@ namespace CONTROL
                 v = Convert.ToDouble(n) / 100;
                 txt.Text = string.Format("{0:N}", v);
                 txt.SelectionStart = txt.Text.Length;
+
             }
             catch
             {
@@ -48,6 +49,11 @@ namespace CONTROL
                     txt.SelectionStart = 9;
                     break;
             }
+        }
+
+        public static void ApagaCampo(ref TextBox txt)
+        {
+            txt.Clear();
         }
     }
 }
