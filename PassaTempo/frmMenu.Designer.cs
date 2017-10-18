@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,6 +36,7 @@
             this.cLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cIDADEESTADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vEICULOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mOVIMENTAÇÃOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cARGASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eNTRADASAIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +53,14 @@
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vEICULOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gridProduto = new System.Windows.Forms.DataGridView();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -119,6 +127,13 @@
             this.cIDADEESTADOToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.cIDADEESTADOToolStripMenuItem.Text = "CIDADE/ESTADO";
             this.cIDADEESTADOToolStripMenuItem.Click += new System.EventHandler(this.cIDADEESTADOToolStripMenuItem_Click);
+            // 
+            // vEICULOSToolStripMenuItem
+            // 
+            this.vEICULOSToolStripMenuItem.Name = "vEICULOSToolStripMenuItem";
+            this.vEICULOSToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.vEICULOSToolStripMenuItem.Text = "VEICULOS";
+            this.vEICULOSToolStripMenuItem.Click += new System.EventHandler(this.vEICULOSToolStripMenuItem_Click);
             // 
             // mOVIMENTAÇÃOToolStripMenuItem
             // 
@@ -242,12 +257,59 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-            // vEICULOSToolStripMenuItem
+            // panel1
             // 
-            this.vEICULOSToolStripMenuItem.Name = "vEICULOSToolStripMenuItem";
-            this.vEICULOSToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.vEICULOSToolStripMenuItem.Text = "VEICULOS";
-            this.vEICULOSToolStripMenuItem.Click += new System.EventHandler(this.vEICULOSToolStripMenuItem_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.monthCalendar1);
+            this.panel1.Controls.Add(this.gridProduto);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(681, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(323, 593);
+            this.panel1.TabIndex = 2;
+            // 
+            // gridProduto
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dsc_produto,
+            this.qtd_produto});
+            this.gridProduto.Location = new System.Drawing.Point(3, 4);
+            this.gridProduto.Name = "gridProduto";
+            this.gridProduto.ReadOnly = true;
+            this.gridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridProduto.Size = new System.Drawing.Size(313, 404);
+            this.gridProduto.TabIndex = 0;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(43, 418);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            // 
+            // dsc_produto
+            // 
+            this.dsc_produto.DataPropertyName = "DscProduto";
+            this.dsc_produto.HeaderText = "Produto";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            this.dsc_produto.Width = 190;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_estoque";
+            this.qtd_produto.HeaderText = "Qtd";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Width = 80;
             // 
             // frmMenu
             // 
@@ -255,6 +317,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 643);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -262,8 +325,11 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +361,11 @@
         private System.Windows.Forms.ToolStripMenuItem rOTASDEENTREGAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cALCULAPESOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vEICULOSToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView gridProduto;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
     }
 }
 

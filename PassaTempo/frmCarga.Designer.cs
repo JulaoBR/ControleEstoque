@@ -108,6 +108,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDadosCarga)).BeginInit();
             this.panel2.SuspendLayout();
@@ -962,11 +963,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Location = new System.Drawing.Point(759, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(215, 625);
+            this.panel4.TabIndex = 3;
+            // 
             // frmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 649);
+            this.ClientSize = new System.Drawing.Size(986, 649);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -1076,5 +1086,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.Label lbTotalCaixas;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel4;
     }
 }

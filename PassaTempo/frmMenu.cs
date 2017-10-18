@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CONTROL;
+using MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,7 @@ namespace PassaTempo
         public frmMenu()
         {
             InitializeComponent();
+            gridProduto.AutoGenerateColumns = false;
         }
 
         private void pRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,5 +126,41 @@ namespace PassaTempo
             frmCadVeilculos frmVeiculos = new frmCadVeilculos();
             frmVeiculos.ShowDialog();
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            var lista = ControleEstoqueAtual.BuscaDados(1, "");
+            PreencheGrid(lista);
+        }
+
+        //==========================================================================
+
+
+        private void PreencheGrid(List<ModelProduto> lista)
+        {
+            gridProduto.DataSource = null;
+            gridProduto.DataSource = lista;
+            ColorirCelulaEstoque(lista);
+        }
+
+        //METODO PARA COLORIR AS LINHAS DO GRID ESTOQUE
+        private void ColorirCelulaEstoque(List<ModelProduto> Lista)
+        {
+            int cont = 0;
+            int i = 0;
+            foreach (var item in Lista)
+            {
+                if (item.qtd_estoque < item.qtd_minimo)
+                {
+                    DataGridViewRow row = gridProduto.Rows[i];
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                    cont++;
+                }
+
+                i++;
+            }
+        }
+
+
     }
 }
