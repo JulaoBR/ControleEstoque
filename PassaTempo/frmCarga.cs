@@ -325,6 +325,25 @@ namespace PassaTempo
             }
            
         }
+
+        private void txtQtdTotal_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToDouble(txtQtdTotal.Text) > Convert.ToDouble(txtEstoqueAtual.Text))
+                {
+                    MessageBox.Show("Estoque insufuciente!", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtQtdTotal.Focus();
+                }
+            }
+            catch
+            {
+
+            }
+            
+        }
+
+
         //==========================================================
 
         private void PreencheCarga()
@@ -353,6 +372,10 @@ namespace PassaTempo
                 modeloLotes.qtd_produto = Convert.ToDouble(txtQtd1.Text);
                 modeloLotes.lote = txtLote1.Text;
                 listaLoteAux.Add(modeloLotes);
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos!","Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -515,13 +538,13 @@ namespace PassaTempo
         //METODO DE VERIFICAR SE OS CAMPOS CODIGO DO PRODUTO E QUATIDADE TOTAL
         private bool VerificaCamposCodigos2()
         {
-            if (txtCodProduto.Text == string.Empty || txtQtdTotal.Text == string.Empty)
+            if (txtQtd1.Text == string.Empty || txtLote1.Text == string.Empty)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
@@ -531,18 +554,18 @@ namespace PassaTempo
         private bool VerificaQuantidate()
         {
             double total = 0;
-
+                      
             if (txtQtd1.Text != "")
                 total += Convert.ToDouble(txtQtd1.Text);
-            
-            if (total == Convert.ToInt32(txtQtdTotal.Text))
+
+            if (total <= Convert.ToInt32(txtQtdTotal.Text))
             {
                 return true;
             }
             else
             {
-                return false;
-            }
+                 return false;
+            }                  
         }
 
 
@@ -561,18 +584,38 @@ namespace PassaTempo
 
         private void btnAddLote_Click(object sender, EventArgs e)
         {
-            if (VerificaQuantidate())
-            {
-                PreencheListaLotes();
-                PrencheGridLote();
 
-                txtQtd1.Clear();
-                txtLote1.Clear();
-            }else
+            if (VerificaCamposCodigos2())
             {
-                MessageBox.Show("Preencha todos os campos para esta operação!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }           
+                if (VerificaQuantidate())
+                {
+                    if ()
+                    {
+                        PreencheListaLotes();
+                        PrencheGridLote();
+
+                        txtQtd1.Clear();
+                        txtLote1.Clear();
+                    }
+                    else
+                    {
+
+                    }
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Quantidades invalidas!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos obrigatorios!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                    
         }
+
+
 
 
         //METODO PARA REMOVER ITENS DA LISTA

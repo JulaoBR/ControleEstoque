@@ -44,7 +44,7 @@ namespace DAO
             {
                 this._conexao.Open();
             }
-            catch (SQLiteException erro)
+            catch 
             {
                 //MessageBox.Show("Erro Na conexao com o banco!! " + erro);
             }
@@ -59,7 +59,7 @@ namespace DAO
             {
                 this._conexao.Close();
             }
-            catch (SQLiteException erro)
+            catch 
             {
                 //MessageBox.Show("Erro ao desconectar do banco!! " + erro);
             }

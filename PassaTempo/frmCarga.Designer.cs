@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTotalCaixas = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -450,12 +452,22 @@
             // 
             // gridLotes
             // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridLotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridLotes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gridLotes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Quantidade,
             this.LOT});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridLotes.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridLotes.Dock = System.Windows.Forms.DockStyle.Right;
             this.gridLotes.Location = new System.Drawing.Point(370, 17);
             this.gridLotes.Name = "gridLotes";
@@ -463,6 +475,7 @@
             this.gridLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridLotes.Size = new System.Drawing.Size(183, 186);
             this.gridLotes.TabIndex = 0;
+            this.gridLotes.TabStop = false;
             // 
             // Quantidade
             // 
@@ -580,6 +593,7 @@
             this.txtQtdTotal.Size = new System.Drawing.Size(100, 26);
             this.txtQtdTotal.TabIndex = 3;
             this.txtQtdTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdTotal_KeyPress);
+            this.txtQtdTotal.Leave += new System.EventHandler(this.txtQtdTotal_Leave);
             // 
             // txtLote1
             // 
