@@ -61,35 +61,16 @@
             this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.txtPedido = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gridLotes = new System.Windows.Forms.DataGridView();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtEstoqueAtual = new System.Windows.Forms.TextBox();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.btnAddLote = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtLote6 = new System.Windows.Forms.TextBox();
-            this.txtQtd6 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtLote5 = new System.Windows.Forms.TextBox();
-            this.txtQtd5 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtLote4 = new System.Windows.Forms.TextBox();
-            this.txtQtd4 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtLote3 = new System.Windows.Forms.TextBox();
-            this.txtQtd3 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtLote2 = new System.Windows.Forms.TextBox();
-            this.txtQtd2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtQtdTotal = new System.Windows.Forms.TextBox();
             this.txtLote1 = new System.Windows.Forms.TextBox();
@@ -113,6 +94,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -131,24 +113,25 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.gridDadosCarga);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(12, 352);
+            this.panel1.Location = new System.Drawing.Point(12, 296);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 285);
+            this.panel1.Size = new System.Drawing.Size(744, 341);
             this.panel1.TabIndex = 0;
             // 
             // lbTotalCaixas
             // 
             this.lbTotalCaixas.AutoSize = true;
             this.lbTotalCaixas.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalCaixas.Location = new System.Drawing.Point(466, 265);
+            this.lbTotalCaixas.Location = new System.Drawing.Point(506, 324);
             this.lbTotalCaixas.Name = "lbTotalCaixas";
-            this.lbTotalCaixas.Size = new System.Drawing.Size(0, 13);
+            this.lbTotalCaixas.Size = new System.Drawing.Size(14, 13);
             this.lbTotalCaixas.TabIndex = 106;
+            this.lbTotalCaixas.Text = "0";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(365, 265);
+            this.label12.Location = new System.Drawing.Point(403, 324);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 13);
             this.label12.TabIndex = 105;
@@ -158,33 +141,36 @@
             // 
             this.lbTotalItens.AutoSize = true;
             this.lbTotalItens.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalItens.Location = new System.Drawing.Point(716, 265);
+            this.lbTotalItens.Location = new System.Drawing.Point(706, 324);
             this.lbTotalItens.Name = "lbTotalItens";
-            this.lbTotalItens.Size = new System.Drawing.Size(0, 13);
+            this.lbTotalItens.Size = new System.Drawing.Size(14, 13);
             this.lbTotalItens.TabIndex = 104;
+            this.lbTotalItens.Text = "0";
             // 
             // lbPesoBruto
             // 
             this.lbPesoBruto.AutoSize = true;
             this.lbPesoBruto.ForeColor = System.Drawing.Color.Red;
-            this.lbPesoBruto.Location = new System.Drawing.Point(237, 265);
+            this.lbPesoBruto.Location = new System.Drawing.Point(271, 324);
             this.lbPesoBruto.Name = "lbPesoBruto";
-            this.lbPesoBruto.Size = new System.Drawing.Size(0, 13);
+            this.lbPesoBruto.Size = new System.Drawing.Size(14, 13);
             this.lbPesoBruto.TabIndex = 5;
+            this.lbPesoBruto.Text = "0";
             // 
             // lbPesoLiquido
             // 
             this.lbPesoLiquido.AutoSize = true;
             this.lbPesoLiquido.ForeColor = System.Drawing.Color.Red;
-            this.lbPesoLiquido.Location = new System.Drawing.Point(92, 265);
+            this.lbPesoLiquido.Location = new System.Drawing.Point(94, 324);
             this.lbPesoLiquido.Name = "lbPesoLiquido";
-            this.lbPesoLiquido.Size = new System.Drawing.Size(0, 13);
+            this.lbPesoLiquido.Size = new System.Drawing.Size(14, 13);
             this.lbPesoLiquido.TabIndex = 4;
+            this.lbPesoLiquido.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(621, 265);
+            this.label3.Location = new System.Drawing.Point(611, 324);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 103;
@@ -193,7 +179,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 265);
+            this.label2.Location = new System.Drawing.Point(193, 324);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 101;
@@ -202,7 +188,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 265);
+            this.label1.Location = new System.Drawing.Point(4, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 100;
@@ -220,10 +206,11 @@
             this.dsc_produto,
             this.lote,
             this.qtd_produto});
-            this.gridDadosCarga.Location = new System.Drawing.Point(0, 0);
+            this.gridDadosCarga.Location = new System.Drawing.Point(3, 3);
             this.gridDadosCarga.Name = "gridDadosCarga";
             this.gridDadosCarga.ReadOnly = true;
-            this.gridDadosCarga.Size = new System.Drawing.Size(740, 262);
+            this.gridDadosCarga.RowHeadersVisible = false;
+            this.gridDadosCarga.Size = new System.Drawing.Size(734, 318);
             this.gridDadosCarga.TabIndex = 0;
             this.gridDadosCarga.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDadosCarga_CellDoubleClick);
             // 
@@ -271,14 +258,14 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnAdicionar);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(11, 296);
+            this.panel2.Location = new System.Drawing.Point(762, 296);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(740, 50);
+            this.panel2.Size = new System.Drawing.Size(185, 341);
             this.panel2.TabIndex = 1;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(564, 6);
+            this.btnCancelar.Location = new System.Drawing.Point(37, 203);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(112, 37);
             this.btnCancelar.TabIndex = 4;
@@ -289,7 +276,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(249, 6);
+            this.btnSalvar.Location = new System.Drawing.Point(37, 92);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(112, 37);
             this.btnSalvar.TabIndex = 2;
@@ -300,7 +287,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(409, 6);
+            this.btnEditar.Location = new System.Drawing.Point(37, 150);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(112, 37);
             this.btnEditar.TabIndex = 1;
@@ -311,7 +298,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(85, 6);
+            this.btnAdicionar.Location = new System.Drawing.Point(37, 34);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(112, 37);
             this.btnAdicionar.TabIndex = 17;
@@ -338,7 +325,7 @@
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(740, 278);
+            this.panel3.Size = new System.Drawing.Size(935, 278);
             this.panel3.TabIndex = 2;
             // 
             // label7
@@ -448,6 +435,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.gridLotes);
             this.groupBox2.Controls.Add(this.txtEstoqueAtual);
             this.groupBox2.Controls.Add(this.txtNomeProduto);
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -455,10 +443,42 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Location = new System.Drawing.Point(372, 65);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(359, 206);
+            this.groupBox2.Size = new System.Drawing.Size(556, 206);
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações do produto";
+            // 
+            // gridLotes
+            // 
+            this.gridLotes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gridLotes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Quantidade,
+            this.LOT});
+            this.gridLotes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gridLotes.Location = new System.Drawing.Point(370, 17);
+            this.gridLotes.Name = "gridLotes";
+            this.gridLotes.RowHeadersVisible = false;
+            this.gridLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridLotes.Size = new System.Drawing.Size(183, 186);
+            this.gridLotes.TabIndex = 0;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "qtd_produto";
+            this.Quantidade.HeaderText = "QTD";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 90;
+            // 
+            // LOT
+            // 
+            this.LOT.DataPropertyName = "lote";
+            this.LOT.HeaderText = "LOTE";
+            this.LOT.Name = "LOT";
+            this.LOT.ReadOnly = true;
+            this.LOT.Width = 90;
             // 
             // txtEstoqueAtual
             // 
@@ -484,32 +504,10 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox3.Controls.Add(this.label31);
-            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.btnAddLote);
             this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.txtLote6);
-            this.groupBox3.Controls.Add(this.txtQtd6);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.txtLote5);
-            this.groupBox3.Controls.Add(this.txtQtd5);
-            this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.txtLote4);
-            this.groupBox3.Controls.Add(this.txtQtd4);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.txtLote3);
-            this.groupBox3.Controls.Add(this.txtQtd3);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.txtLote2);
-            this.groupBox3.Controls.Add(this.txtQtd2);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.txtQtdTotal);
             this.groupBox3.Controls.Add(this.txtLote1);
@@ -522,61 +520,31 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informação dos lotes";
             // 
-            // label31
+            // btnAddLote
             // 
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(236, 58);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(33, 15);
-            this.label31.TabIndex = 29;
-            this.label31.Text = "Qtd:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(121, 58);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(33, 15);
-            this.label30.TabIndex = 28;
-            this.label30.Text = "Qtd:";
+            this.btnAddLote.Location = new System.Drawing.Point(151, 79);
+            this.btnAddLote.Name = "btnAddLote";
+            this.btnAddLote.Size = new System.Drawing.Size(117, 23);
+            this.btnAddLote.TabIndex = 30;
+            this.btnAddLote.Text = "Adicionar lote";
+            this.btnAddLote.UseVisualStyleBackColor = true;
+            this.btnAddLote.Click += new System.EventHandler(this.btnAddLote_Click);
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(3, 58);
+            this.label29.Location = new System.Drawing.Point(24, 64);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(33, 15);
             this.label29.TabIndex = 27;
             this.label29.Text = "Qtd:";
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(294, 58);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(39, 15);
-            this.label28.TabIndex = 26;
-            this.label28.Text = "Lote:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(179, 58);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(39, 15);
-            this.label27.TabIndex = 25;
-            this.label27.Text = "Lote:";
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(60, 58);
+            this.label26.Location = new System.Drawing.Point(81, 64);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(39, 15);
             this.label26.TabIndex = 24;
@@ -592,206 +560,11 @@
             this.label25.TabIndex = 23;
             this.label25.Text = "Qtd. Total*:";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(225, 102);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(11, 15);
-            this.label20.TabIndex = 22;
-            this.label20.Text = "/";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(106, 102);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(11, 15);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "/";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(276, 102);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(12, 15);
-            this.label22.TabIndex = 20;
-            this.label22.Text = "-";
-            // 
-            // txtLote6
-            // 
-            this.txtLote6.BackColor = System.Drawing.Color.Silver;
-            this.txtLote6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote6.Location = new System.Drawing.Point(294, 99);
-            this.txtLote6.MaxLength = 6;
-            this.txtLote6.Name = "txtLote6";
-            this.txtLote6.Size = new System.Drawing.Size(40, 20);
-            this.txtLote6.TabIndex = 15;
-            this.txtLote6.Leave += new System.EventHandler(this.txtLote6_Leave);
-            // 
-            // txtQtd6
-            // 
-            this.txtQtd6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtd6.Location = new System.Drawing.Point(238, 99);
-            this.txtQtd6.MaxLength = 4;
-            this.txtQtd6.Name = "txtQtd6";
-            this.txtQtd6.Size = new System.Drawing.Size(32, 20);
-            this.txtQtd6.TabIndex = 14;
-            this.txtQtd6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd1_KeyPress);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(161, 102);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(12, 15);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "-";
-            // 
-            // txtLote5
-            // 
-            this.txtLote5.BackColor = System.Drawing.Color.Silver;
-            this.txtLote5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote5.Location = new System.Drawing.Point(179, 99);
-            this.txtLote5.MaxLength = 6;
-            this.txtLote5.Name = "txtLote5";
-            this.txtLote5.Size = new System.Drawing.Size(40, 20);
-            this.txtLote5.TabIndex = 13;
-            this.txtLote5.Leave += new System.EventHandler(this.txtLote5_Leave);
-            // 
-            // txtQtd5
-            // 
-            this.txtQtd5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtd5.Location = new System.Drawing.Point(123, 99);
-            this.txtQtd5.MaxLength = 4;
-            this.txtQtd5.Name = "txtQtd5";
-            this.txtQtd5.Size = new System.Drawing.Size(32, 20);
-            this.txtQtd5.TabIndex = 12;
-            this.txtQtd5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd1_KeyPress);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(42, 102);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(12, 15);
-            this.label24.TabIndex = 14;
-            this.label24.Text = "-";
-            // 
-            // txtLote4
-            // 
-            this.txtLote4.BackColor = System.Drawing.Color.Silver;
-            this.txtLote4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote4.Location = new System.Drawing.Point(60, 99);
-            this.txtLote4.MaxLength = 6;
-            this.txtLote4.Name = "txtLote4";
-            this.txtLote4.Size = new System.Drawing.Size(40, 20);
-            this.txtLote4.TabIndex = 11;
-            this.txtLote4.Leave += new System.EventHandler(this.txtLote4_Leave);
-            // 
-            // txtQtd4
-            // 
-            this.txtQtd4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtd4.Location = new System.Drawing.Point(4, 99);
-            this.txtQtd4.MaxLength = 4;
-            this.txtQtd4.Name = "txtQtd4";
-            this.txtQtd4.Size = new System.Drawing.Size(32, 20);
-            this.txtQtd4.TabIndex = 10;
-            this.txtQtd4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd1_KeyPress);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(224, 79);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(11, 15);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "/";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(105, 79);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(11, 15);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "/";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(275, 79);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(12, 15);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "-";
-            // 
-            // txtLote3
-            // 
-            this.txtLote3.BackColor = System.Drawing.Color.Silver;
-            this.txtLote3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote3.Location = new System.Drawing.Point(293, 76);
-            this.txtLote3.MaxLength = 6;
-            this.txtLote3.Name = "txtLote3";
-            this.txtLote3.Size = new System.Drawing.Size(40, 20);
-            this.txtLote3.TabIndex = 9;
-            this.txtLote3.Leave += new System.EventHandler(this.txtLote3_Leave);
-            // 
-            // txtQtd3
-            // 
-            this.txtQtd3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtd3.Location = new System.Drawing.Point(237, 76);
-            this.txtQtd3.MaxLength = 4;
-            this.txtQtd3.Name = "txtQtd3";
-            this.txtQtd3.Size = new System.Drawing.Size(32, 20);
-            this.txtQtd3.TabIndex = 8;
-            this.txtQtd3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd1_KeyPress);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(160, 79);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(12, 15);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "-";
-            // 
-            // txtLote2
-            // 
-            this.txtLote2.BackColor = System.Drawing.Color.Silver;
-            this.txtLote2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote2.Location = new System.Drawing.Point(178, 76);
-            this.txtLote2.MaxLength = 6;
-            this.txtLote2.Name = "txtLote2";
-            this.txtLote2.Size = new System.Drawing.Size(40, 20);
-            this.txtLote2.TabIndex = 7;
-            this.txtLote2.Leave += new System.EventHandler(this.txtLote2_Leave);
-            // 
-            // txtQtd2
-            // 
-            this.txtQtd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtd2.Location = new System.Drawing.Point(122, 76);
-            this.txtQtd2.MaxLength = 4;
-            this.txtQtd2.Name = "txtQtd2";
-            this.txtQtd2.Size = new System.Drawing.Size(32, 20);
-            this.txtQtd2.TabIndex = 6;
-            this.txtQtd2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd1_KeyPress);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(41, 79);
+            this.label15.Location = new System.Drawing.Point(62, 85);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(12, 15);
             this.label15.TabIndex = 3;
@@ -812,20 +585,20 @@
             // 
             this.txtLote1.BackColor = System.Drawing.Color.Silver;
             this.txtLote1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote1.Location = new System.Drawing.Point(59, 76);
+            this.txtLote1.Location = new System.Drawing.Point(80, 82);
             this.txtLote1.MaxLength = 6;
             this.txtLote1.Name = "txtLote1";
-            this.txtLote1.Size = new System.Drawing.Size(40, 20);
+            this.txtLote1.Size = new System.Drawing.Size(59, 20);
             this.txtLote1.TabIndex = 5;
             this.txtLote1.Leave += new System.EventHandler(this.txtLote1_Leave);
             // 
             // txtQtd1
             // 
             this.txtQtd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtd1.Location = new System.Drawing.Point(3, 76);
+            this.txtQtd1.Location = new System.Drawing.Point(19, 82);
             this.txtQtd1.MaxLength = 4;
             this.txtQtd1.Name = "txtQtd1";
-            this.txtQtd1.Size = new System.Drawing.Size(32, 20);
+            this.txtQtd1.Size = new System.Drawing.Size(37, 20);
             this.txtQtd1.TabIndex = 4;
             this.txtQtd1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd1_KeyPress);
             // 
@@ -966,7 +739,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 649);
+            this.ClientSize = new System.Drawing.Size(959, 649);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -987,6 +760,7 @@
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1039,36 +813,13 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtLote3;
-        private System.Windows.Forms.TextBox txtQtd3;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtLote2;
-        private System.Windows.Forms.TextBox txtQtd2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtQtdTotal;
         private System.Windows.Forms.TextBox txtLote1;
         private System.Windows.Forms.TextBox txtQtd1;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtLote6;
-        private System.Windows.Forms.TextBox txtQtd6;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtLote5;
-        private System.Windows.Forms.TextBox txtQtd5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtLote4;
-        private System.Windows.Forms.TextBox txtQtd4;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fk_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
@@ -1076,5 +827,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.Label lbTotalCaixas;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnAddLote;
+        private System.Windows.Forms.DataGridView gridLotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOT;
     }
 }

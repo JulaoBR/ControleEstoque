@@ -12,6 +12,7 @@ namespace MODEL
         public string dsc_veiculo { get; set; }
         public double tara { get; set; }
         public double lotacao { get; set; }
+        public string placa { get; set; }
 
     }
 }

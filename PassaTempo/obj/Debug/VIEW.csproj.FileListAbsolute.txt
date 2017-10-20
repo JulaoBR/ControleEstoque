@@ -241,4 +241,9 @@ D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmT
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.Properties.Resources.resources
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\VIEW.csproj.GenerateResource.Cache
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmCadVeilculos.resources
+<<<<<<< HEAD
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmCadVeilculos.resources
+=======
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmPesquisaCaminhao.resources
+>>>>>>> 7311514deb655bdc351054d204d7bc06be219f14
+D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmPesquisaCaminhao.resources

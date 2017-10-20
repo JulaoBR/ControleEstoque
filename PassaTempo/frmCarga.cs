@@ -10,6 +10,7 @@ namespace PassaTempo
     public partial class frmCarga : Form
     {
         private List<ModelLotes> listaLote = new List<ModelLotes>();
+        private List<ModelLotes> listaLoteAux = new List<ModelLotes>();
         private List<ModelRegistro> listaRegistro = new List<ModelRegistro>();
         private Queue<ModelCalculaLotes> filaLotes = new Queue<ModelCalculaLotes>();
         private ModelCarga modeloCarga;
@@ -21,6 +22,7 @@ namespace PassaTempo
         {
             InitializeComponent();
             gridDadosCarga.AutoGenerateColumns = false;
+            gridLotes.AutoGenerateColumns = false;
         }
 
         private void frmCarga_Load(object sender, EventArgs e)
@@ -69,53 +71,26 @@ namespace PassaTempo
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
-        {                    
-            if (!VerificaCamposCodigos()) //VERIFICA SE TODOS OS CAMPOS FOROM PREENCHIDOS
+        {
+            if (!VerificaCamposCodigos())
             {
-                if(Convert.ToInt32(txtQtdTotal.Text) <= Convert.ToInt32(txtEstoqueAtual.Text)) //VERIFICA SE TEM ESTOQUE SUFICIENTE PARA VENDA
-                {
-                    if (VerificaQuantidate()) //VERIFICA SE AS QUANTIDADES DIGITADAS CONFERE
-                    {
-                        if (!VerificaProdLista(Convert.ToInt32(txtCodProduto.Text))) //VERIFICA SE O PRODUTO JA FOI SELECIONADO
-                        {
-                            btnSalvar.Enabled = true;
-                            if ((Convert.ToInt32(txtCodCliente.Text) == 298) && txtNomeComprador.Text == "") //CASO FOR CLIENTE SEM REGISTRO
-                            {
-                                MessageBox.Show("Informe o nome do comprador!!", "Operação Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                txtNomeComprador.Focus();
-                                return;
-                            }
+                PreencheCarga();
+                listaLote = listaLoteAux;
+                PreencheListaRegistro();
+                AtualizaGrid();
+                AtualizaInfoCarga();
+                LimpaCampoProduto();
+                txtCodProduto.Focus();
+                pesoBruto = 0;
+                pesoLiquido = 0;
 
-                            PreencheCarga();
-                            PreencheListaLotes();
-                            PreencheListaRegistro();
-                            AtualizaGrid();
-                            AtualizaInfoCarga();
-                            LimpaCampoProduto();
-                            txtCodProduto.Focus();
-                            pesoBruto = 0;
-                            pesoLiquido = 0;
-                        }
-                        else
-                        {
-                            LimpaCampoProduto();
-                            MessageBox.Show("Este produto ja foi selecionado!", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Verifique as quantidades digitadas!", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Estoque insuficiente!", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                gridLotes.DataSource = null;
+                listaLoteAux.Clear();
             }
             else
             {
-                MessageBox.Show("Preencha todos os campos!", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                MessageBox.Show("Preencha todos os campos para esta operação!","Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }                                                           
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -350,92 +325,6 @@ namespace PassaTempo
             }
            
         }
-
-        private void txtLote2_Leave(object sender, EventArgs e)
-        {
-            if (!VerificaCamposCodigos())
-            {
-                if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd2.Text), txtLote2.Text))
-                {
-                    MessageBox.Show("Lote indisponivel", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtLote2.Clear();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Verifique se todos os campos estão preenchidos corretamente", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtLote1.Clear();
-            }
-        }
-
-        private void txtLote3_Leave(object sender, EventArgs e)
-        {
-            if (!VerificaCamposCodigos())
-            {
-                if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd3.Text), txtLote3.Text))
-                {
-                    MessageBox.Show("Lote indisponivel", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtLote3.Clear();                  
-                }
-            }
-            else
-            {
-                MessageBox.Show("Verifique se todos os campos estão preenchidos corretamente", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtLote1.Clear();
-            }
-        }
-
-        private void txtLote4_Leave(object sender, EventArgs e)
-        {
-            if (!VerificaCamposCodigos())
-            {
-                if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd4.Text), txtLote4.Text))
-                {
-                    MessageBox.Show("Lote indisponivel", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtLote4.Clear();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Verifique se todos os campos estão preenchidos corretamente", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtLote1.Clear();
-            }
-        }
-
-        private void txtLote5_Leave(object sender, EventArgs e)
-        {
-            if (!VerificaCamposCodigos())
-            {
-                if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd5.Text), txtLote5.Text))
-                {
-                    MessageBox.Show("Lote indisponivel", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtLote5.Clear();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Verifique se todos os campos estão preenchidos corretamente", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtLote1.Clear();
-            }
-        }
-
-        private void txtLote6_Leave(object sender, EventArgs e)
-        {
-            if (!VerificaCamposCodigos())
-            {
-                if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd6.Text), txtLote6.Text))
-                {
-                    MessageBox.Show("Lote indisponivel", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtLote6.Clear();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Verifique se todos os campos estão preenchidos corretamente", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtLote1.Clear();
-            }
-        }
-
         //==========================================================
 
         private void PreencheCarga()
@@ -463,69 +352,15 @@ namespace PassaTempo
                 modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
                 modeloLotes.qtd_produto = Convert.ToDouble(txtQtd1.Text);
                 modeloLotes.lote = txtLote1.Text;
-                listaLote.Add(modeloLotes);
+                listaLoteAux.Add(modeloLotes);
             }
+        }
 
-            //CHECA CADA CAMPO SE ESTIVER COM ALGUM VALOR
-            //ELE EXECUTA OS COMANDOS 
-            if (txtQtd2.Text != "" && txtLote2.Text != "")
-            {
-                modeloLotes = new ModelLotes();
-                modeloLotes.Fk_carga = Convert.ToInt32(txtPedido.Text);
-                modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
-                modeloLotes.qtd_produto = Convert.ToDouble(txtQtd2.Text);
-                modeloLotes.lote = txtLote2.Text;
-                listaLote.Add(modeloLotes);
-            }
-
-            //CHECA CADA CAMPO SE ESTIVER COM ALGUM VALOR
-            //ELE EXECUTA OS COMANDOS 
-            if (txtQtd3.Text != "" && txtLote3.Text != "")
-            {
-                modeloLotes = new ModelLotes();
-                modeloLotes.Fk_carga = Convert.ToInt32(txtPedido.Text);
-                modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
-                modeloLotes.qtd_produto = Convert.ToDouble(txtQtd3.Text);
-                modeloLotes.lote = txtLote3.Text;
-                listaLote.Add(modeloLotes);
-            }
-
-            //CHECA CADA CAMPO SE ESTIVER COM ALGUM VALOR
-            //ELE EXECUTA OS COMANDOS 
-            if (txtQtd4.Text != "" && txtLote4.Text != "")
-            {
-                modeloLotes = new ModelLotes();
-                modeloLotes.Fk_carga = Convert.ToInt32(txtPedido.Text);
-                modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
-                modeloLotes.qtd_produto = Convert.ToDouble(txtQtd4.Text);
-                modeloLotes.lote = txtLote4.Text;
-                listaLote.Add(modeloLotes);
-            }
-
-            //CHECA CADA CAMPO SE ESTIVER COM ALGUM VALOR
-            //ELE EXECUTA OS COMANDOS 
-            if (txtQtd5.Text != "" && txtLote5.Text != "")
-            {
-                modeloLotes = new ModelLotes();
-                modeloLotes.Fk_carga = Convert.ToInt32(txtPedido.Text);
-                modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
-                modeloLotes.qtd_produto = Convert.ToDouble(txtQtd5.Text);
-                modeloLotes.lote = txtLote5.Text;
-                listaLote.Add(modeloLotes);
-            }
-
-            //CHECA CADA CAMPO SE ESTIVER COM ALGUM VALOR
-            //ELE EXECUTA OS COMANDOS 
-            if (txtQtd6.Text != "" && txtLote6.Text != "")
-            {
-                modeloLotes = new ModelLotes();
-                modeloLotes.Fk_carga = Convert.ToInt32(txtPedido.Text);
-                modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
-                modeloLotes.qtd_produto = Convert.ToDouble(txtQtd6.Text);
-                modeloLotes.lote = txtLote6.Text;
-                listaLote.Add(modeloLotes);
-            }
-
+        //ATUALIZA GRID DE LOTES DO LADO DOS CAMPOS DO PROUTO
+        private void PrencheGridLote()
+        {
+            gridLotes.DataSource = null;
+            gridLotes.DataSource = listaLoteAux;
         }
 
         private void PreencheListaRegistro()
@@ -642,17 +477,6 @@ namespace PassaTempo
             txtEstoqueAtual.Clear();
             txtQtdTotal.Clear();
             txtQtd1.Clear();
-            txtQtd2.Clear();
-            txtQtd3.Clear();
-            txtQtd4.Clear();
-            txtQtd5.Clear();
-            txtQtd6.Clear();
-            txtLote1.Clear();
-            txtLote2.Clear();
-            txtLote3.Clear();
-            txtLote4.Clear();
-            txtLote5.Clear();
-            txtLote6.Clear();
         }
 
         private void LimpaGrid()
@@ -675,10 +499,10 @@ namespace PassaTempo
             return false;
         }
 
-        //METODO DE VERIFICAR SE OS CAMPOS COD_PEDIDO COD_CLIENTE COD_PRODUTO ESTAO VAZIOS
+        //METODO DE VERIFICAR SE OS CAMPOS COD_PEDIDO COD_CLIENTE ESTAO VAZIOS
         private bool VerificaCamposCodigos()
         {
-            if (txtPedido.Text == string.Empty || txtCodCliente.Text == string.Empty || txtCodProduto.Text == string.Empty || txtQtdTotal.Text == string.Empty )
+            if (txtPedido.Text == string.Empty || txtCodCliente.Text == string.Empty || txtCodProduto.Text == string.Empty || txtQtdTotal.Text == string.Empty) 
             {
                 return true;
             }
@@ -688,6 +512,21 @@ namespace PassaTempo
             }
         }
 
+        //METODO DE VERIFICAR SE OS CAMPOS CODIGO DO PRODUTO E QUATIDADE TOTAL
+        private bool VerificaCamposCodigos2()
+        {
+            if (txtCodProduto.Text == string.Empty || txtQtdTotal.Text == string.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
         //VERIFICA A QUANTIDADE DIGITADA NOS CAMPOS DE LOTE E COMPARA COM A QUANTIDADE TOTAL
         private bool VerificaQuantidate()
         {
@@ -695,17 +534,7 @@ namespace PassaTempo
 
             if (txtQtd1.Text != "")
                 total += Convert.ToDouble(txtQtd1.Text);
-            if (txtQtd2.Text != "")
-                total += Convert.ToDouble(txtQtd2.Text);
-            if (txtQtd3.Text != "")
-                total += Convert.ToDouble(txtQtd3.Text);
-            if (txtQtd4.Text != "")
-                total += Convert.ToDouble(txtQtd4.Text);
-            if (txtQtd5.Text != "")
-                total += Convert.ToDouble(txtQtd5.Text);
-            if (txtQtd6.Text != "")
-                total += Convert.ToDouble(txtQtd6.Text);
-
+            
             if (total == Convert.ToInt32(txtQtdTotal.Text))
             {
                 return true;
@@ -728,6 +557,21 @@ namespace PassaTempo
                 }
             }
             return false;
+        }
+
+        private void btnAddLote_Click(object sender, EventArgs e)
+        {
+            if (VerificaQuantidate())
+            {
+                PreencheListaLotes();
+                PrencheGridLote();
+
+                txtQtd1.Clear();
+                txtLote1.Clear();
+            }else
+            {
+                MessageBox.Show("Preencha todos os campos para esta operação!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }           
         }
 
 
