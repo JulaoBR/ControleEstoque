@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,6 @@
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridProduto = new System.Windows.Forms.DataGridView();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
@@ -260,40 +260,37 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.monthCalendar1);
             this.panel1.Controls.Add(this.gridProduto);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(681, 28);
+            this.panel1.Location = new System.Drawing.Point(721, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 593);
+            this.panel1.Size = new System.Drawing.Size(283, 593);
             this.panel1.TabIndex = 2;
             // 
             // gridProduto
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dsc_produto,
             this.qtd_produto});
-            this.gridProduto.Location = new System.Drawing.Point(3, 4);
+            this.gridProduto.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gridProduto.Location = new System.Drawing.Point(6, 0);
             this.gridProduto.Name = "gridProduto";
             this.gridProduto.ReadOnly = true;
+            this.gridProduto.RowHeadersVisible = false;
             this.gridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridProduto.Size = new System.Drawing.Size(313, 404);
+            this.gridProduto.Size = new System.Drawing.Size(273, 589);
             this.gridProduto.TabIndex = 0;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(43, 418);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
             // 
             // dsc_produto
             // 
@@ -363,7 +360,6 @@
         private System.Windows.Forms.ToolStripMenuItem vEICULOSToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView gridProduto;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
     }

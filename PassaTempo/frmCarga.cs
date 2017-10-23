@@ -500,6 +500,7 @@ namespace PassaTempo
             txtEstoqueAtual.Clear();
             txtQtdTotal.Clear();
             txtQtd1.Clear();
+            txtLote1.Clear();
         }
 
         private void LimpaGrid()
@@ -515,6 +516,21 @@ namespace PassaTempo
             foreach (var item in listaRegistro)
             {
                 if (cd == item.Fk_produto)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //METODO DE VERIFICAR SE O PRODUTO JA ESTA NA LISTA
+        private bool VerificaListaLotes(int cd_produto, string lote)
+        {
+            //RETORNA TRUE OU FALSE< SE O PRODUTO JA ESTIVER NA LISTA DE COMPRA
+            //return lisProduto.Any(l => l.Cd_produto == cd);
+            foreach (var item in listaLoteAux)
+            {
+                if (cd_produto == item.Fk_produto && lote.Equals(item.lote))
                 {
                     return true;
                 }
@@ -589,17 +605,26 @@ namespace PassaTempo
             {
                 if (VerificaQuantidate())
                 {
-                    if ()
+                    if (!VerificaListaLotes(Convert.ToInt32(txtCodProduto.Text), txtLote1.Text))
                     {
-                        PreencheListaLotes();
-                        PrencheGridLote();
+                        if (!VerificaQuantidadeProdutos(Convert.ToInt32(txtCodProduto.Text)))
+                        {
+                            PreencheListaLotes();
+                            PrencheGridLote();
 
-                        txtQtd1.Clear();
-                        txtLote1.Clear();
+                            txtQtd1.Clear();
+                            txtLote1.Clear();
+
+                            txtQtd1.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Verifique as quantidades digitadas!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-
+                        MessageBox.Show("Produto e lote ja selecionados!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                    
                 }
@@ -616,6 +641,30 @@ namespace PassaTempo
         }
 
 
+        //CALCULA QUANTIDADE DE CADA PRODUTO
+        private bool VerificaQuantidadeProdutos(int cod_produto)
+        {
+            double aux = 0;
+
+            //CALCULA A QUANTIDADE DE PRODUTO JA INSERIDO
+            foreach (var item in listaLoteAux)
+            {
+                if (cod_produto == item.Fk_produto)
+                {
+                    aux += item.qtd_produto;
+                }
+            }
+
+            //VERIFICA SE A QUANTIDADE JA INSERIDA É MAIOR QUE VALOR DIGITADO
+            if (Convert.ToDouble(txtQtdTotal.Text) < aux + Convert.ToDouble(txtQtd1.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         //METODO PARA REMOVER ITENS DA LISTA

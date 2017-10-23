@@ -42,10 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridDadosCarga = new System.Windows.Forms.DataGridView();
-            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -91,6 +87,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDadosCarga)).BeginInit();
             this.panel2.SuspendLayout();
@@ -212,45 +212,10 @@
             this.gridDadosCarga.Name = "gridDadosCarga";
             this.gridDadosCarga.ReadOnly = true;
             this.gridDadosCarga.RowHeadersVisible = false;
+            this.gridDadosCarga.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDadosCarga.Size = new System.Drawing.Size(734, 318);
             this.gridDadosCarga.TabIndex = 0;
             this.gridDadosCarga.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDadosCarga_CellDoubleClick);
-            // 
-            // Fk_produto
-            // 
-            this.Fk_produto.DataPropertyName = "Fk_produto";
-            this.Fk_produto.HeaderText = "ID";
-            this.Fk_produto.Name = "Fk_produto";
-            this.Fk_produto.ReadOnly = true;
-            this.Fk_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Fk_produto.Width = 60;
-            // 
-            // dsc_produto
-            // 
-            this.dsc_produto.DataPropertyName = "dsc_produto";
-            this.dsc_produto.HeaderText = "PRODUTO";
-            this.dsc_produto.Name = "dsc_produto";
-            this.dsc_produto.ReadOnly = true;
-            this.dsc_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dsc_produto.Width = 260;
-            // 
-            // lote
-            // 
-            this.lote.DataPropertyName = "lote";
-            this.lote.HeaderText = "LOTES";
-            this.lote.Name = "lote";
-            this.lote.ReadOnly = true;
-            this.lote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.lote.Width = 286;
-            // 
-            // qtd_produto
-            // 
-            this.qtd_produto.DataPropertyName = "qtd_produto";
-            this.qtd_produto.HeaderText = "TOTAL";
-            this.qtd_produto.Name = "qtd_produto";
-            this.qtd_produto.ReadOnly = true;
-            this.qtd_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.qtd_produto.Width = 90;
             // 
             // panel2
             // 
@@ -333,7 +298,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(472, 8);
+            this.label7.Location = new System.Drawing.Point(672, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 15);
             this.label7.TabIndex = 11;
@@ -350,7 +315,7 @@
             // 
             // btnPesquisaProduto
             // 
-            this.btnPesquisaProduto.Location = new System.Drawing.Point(660, 36);
+            this.btnPesquisaProduto.Location = new System.Drawing.Point(581, 35);
             this.btnPesquisaProduto.Name = "btnPesquisaProduto";
             this.btnPesquisaProduto.Size = new System.Drawing.Size(50, 23);
             this.btnPesquisaProduto.TabIndex = 9;
@@ -361,7 +326,7 @@
             // 
             // btnPesquisaCliente
             // 
-            this.btnPesquisaCliente.Location = new System.Drawing.Point(281, 37);
+            this.btnPesquisaCliente.Location = new System.Drawing.Point(213, 36);
             this.btnPesquisaCliente.Name = "btnPesquisaCliente";
             this.btnPesquisaCliente.Size = new System.Drawing.Size(52, 23);
             this.btnPesquisaCliente.TabIndex = 8;
@@ -392,7 +357,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(624, 5);
+            this.dateTimePicker1.Location = new System.Drawing.Point(818, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(107, 24);
             this.dateTimePicker1.TabIndex = 5;
@@ -437,6 +402,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox2.Controls.Add(this.gridLotes);
             this.groupBox2.Controls.Add(this.txtEstoqueAtual);
             this.groupBox2.Controls.Add(this.txtNomeProduto);
@@ -516,7 +482,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox3.BackColor = System.Drawing.Color.Silver;
             this.groupBox3.Controls.Add(this.btnAddLote);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.label26);
@@ -597,7 +563,7 @@
             // 
             // txtLote1
             // 
-            this.txtLote1.BackColor = System.Drawing.Color.Silver;
+            this.txtLote1.BackColor = System.Drawing.Color.White;
             this.txtLote1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote1.Location = new System.Drawing.Point(80, 82);
             this.txtLote1.MaxLength = 6;
@@ -749,6 +715,42 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Fk_produto
+            // 
+            this.Fk_produto.DataPropertyName = "Fk_produto";
+            this.Fk_produto.HeaderText = "ID";
+            this.Fk_produto.Name = "Fk_produto";
+            this.Fk_produto.ReadOnly = true;
+            this.Fk_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Fk_produto.Width = 60;
+            // 
+            // dsc_produto
+            // 
+            this.dsc_produto.DataPropertyName = "dsc_produto";
+            this.dsc_produto.HeaderText = "PRODUTO";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            this.dsc_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dsc_produto.Width = 295;
+            // 
+            // lote
+            // 
+            this.lote.DataPropertyName = "lote";
+            this.lote.HeaderText = "LOTES";
+            this.lote.Name = "lote";
+            this.lote.ReadOnly = true;
+            this.lote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.lote.Width = 286;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.HeaderText = "TOTAL";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.qtd_produto.Width = 90;
+            // 
             // frmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,15 +837,15 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fk_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.Label lbTotalCaixas;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAddLote;
         private System.Windows.Forms.DataGridView gridLotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fk_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
     }
 }
