@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbProdutoFinal = new System.Windows.Forms.RadioButton();
             this.rbMateriaPrima = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +38,8 @@
             this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dscproduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_estoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
@@ -49,6 +51,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.rbMateriaPrima);
             this.panel2.Controls.Add(this.rbProdutoFinal);
@@ -58,6 +62,8 @@
             this.panel2.Controls.SetChildIndex(this.rbProdutoFinal, 0);
             this.panel2.Controls.SetChildIndex(this.rbMateriaPrima, 0);
             this.panel2.Controls.SetChildIndex(this.label1, 0);
+            this.panel2.Controls.SetChildIndex(this.button1, 0);
+            this.panel2.Controls.SetChildIndex(this.button2, 0);
             // 
             // btnCancelar
             // 
@@ -80,7 +86,6 @@
             this.rbProdutoFinal.TabStop = true;
             this.rbProdutoFinal.Text = "Produto Final";
             this.rbProdutoFinal.UseVisualStyleBackColor = true;
-            this.rbProdutoFinal.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // rbMateriaPrima
             // 
@@ -94,7 +99,6 @@
             this.rbMateriaPrima.TabStop = true;
             this.rbMateriaPrima.Text = "Matéria Prima";
             this.rbMateriaPrima.UseVisualStyleBackColor = true;
-            this.rbMateriaPrima.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label1
             // 
@@ -108,16 +112,16 @@
             // 
             // gridProduto
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_produto,
@@ -149,11 +153,31 @@
             // 
             this.qtd_estoque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.qtd_estoque.DataPropertyName = "qtd_estoque";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.qtd_estoque.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.qtd_estoque.DefaultCellStyle = dataGridViewCellStyle9;
             this.qtd_estoque.HeaderText = "ESTOQUE";
             this.qtd_estoque.Name = "qtd_estoque";
             this.qtd_estoque.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(552, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Mostrar itens abaixo do estoque minimo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(552, 75);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Mostrar todos os itens";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmPesquisaEstoque
             // 
@@ -179,5 +203,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dscproduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_estoque;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

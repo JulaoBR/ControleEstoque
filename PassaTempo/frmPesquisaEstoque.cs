@@ -13,6 +13,7 @@ namespace PassaTempo
     public partial class frmPesquisaEstoque : PassaTempo.frmTelaDePesquisa
     {
         private int tipoOperacao = 0;
+        private List<ModelProduto> lista = new List<ModelProduto>();
 
         public frmPesquisaEstoque()
         {
@@ -20,14 +21,14 @@ namespace PassaTempo
             gridProduto.AutoGenerateColumns = false;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            PreencheGrid(ControleEstoqueAtual.BuscaProdutoEstoqueMinimo(lista));
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            PreencheGrid(lista);
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -37,7 +38,6 @@ namespace PassaTempo
 
         private void frmPesquisaEstoque_Load(object sender, EventArgs e)
         {
-
             if (rbProdutoFinal.Checked)
             {
                 tipoOperacao = 1;
@@ -45,9 +45,8 @@ namespace PassaTempo
             {
                 tipoOperacao = 0;
             }
-            var lista = ControleEstoqueAtual.BuscaDados(tipoOperacao, txtPesquisa.Text);
-            PreencheGrid(lista);
-           
+            lista = ControleEstoqueAtual.BuscaDados(tipoOperacao, txtPesquisa.Text);
+            PreencheGrid(lista);          
         }
 
 
@@ -88,6 +87,5 @@ namespace PassaTempo
             gridProduto.DataSource = null;
             gridProduto.Refresh();
         }
-
     }
 }

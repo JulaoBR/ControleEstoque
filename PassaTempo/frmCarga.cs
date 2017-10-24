@@ -86,6 +86,8 @@ namespace PassaTempo
 
                 gridLotes.DataSource = null;
                 listaLoteAux.Clear();
+
+                btnSalvar.Enabled = true;
             }
             else
             {
@@ -309,8 +311,6 @@ namespace PassaTempo
 
         private void txtLote1_Leave(object sender, EventArgs e)
         {
-
-
             if (!VerificaCamposCodigos())
             {
                 if (!VerificaLotesDisponiveis(Convert.ToDouble(txtQtd1.Text), txtLote1.Text))
@@ -322,8 +322,7 @@ namespace PassaTempo
             {
                 MessageBox.Show("Verifique se todos os campos estão preenchidos corretamente", "Operação invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLote1.Clear();
-            }
-           
+            }        
         }
 
         private void txtQtdTotal_Leave(object sender, EventArgs e)
@@ -383,6 +382,7 @@ namespace PassaTempo
         private void PrencheGridLote()
         {
             gridLotes.DataSource = null;
+            gridLotes.Refresh();
             gridLotes.DataSource = listaLoteAux;
         }
 
@@ -587,6 +587,7 @@ namespace PassaTempo
 
         //VERIFICA SE O LOTE ESTA DISPONIVEL OU NAO
         private bool VerificaLotesDisponiveis(double quantidade, string lote)
+
         {
             foreach (var item in filaLotes)
             {
@@ -663,6 +664,42 @@ namespace PassaTempo
             else
             {
                 return false;
+            }
+        }
+
+        private void gridLotes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int codigo = Convert.ToInt32(txtCodProduto.Text);
+
+                //PERGUNTA SE DESEJA CADASTRAR UM NOVO CLIENTE
+                DialogResult d = MessageBox.Show("Deseja remover este ITEM?", "AVISO!!", MessageBoxButtons.YesNo);
+                if (d.ToString() == "Yes")
+                {
+                    RemoverItemListaLotes(codigo);
+                    PrencheGridLote();
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+
+        //METODO PARA REMOVER ITENS DA LISTA DE LOTES
+        private void RemoverItemListaLotes(int codigo)
+        {
+            foreach (var item in listaLoteAux)
+            {
+                if (codigo == item.Fk_produto)
+                {
+                    //REMOVE O PRODUTO SELECIONADO
+                    listaLoteAux.Remove(item);
+                    //ATUALIZA O GRID COM A LISTA SEM O VALOR RETIRADO
+                    PrencheGridLote();
+                    return;
+                }
             }
         }
 

@@ -160,6 +160,21 @@ namespace CONTROL
             return filaAux;
         }
 
-    }
+        public static List<ModelProduto> BuscaProdutoEstoqueMinimo(List<ModelProduto> lista)
+        {
+            List<ModelProduto> listaAux = new List<ModelProduto>();
+
+            foreach (var item in lista)
+            {
+                if (item.qtd_estoque < item.qtd_minimo)
+                {
+                    listaAux.Add(item);
+                } 
+            }
+
+            return listaAux;
+        }
+
+       }
     }
 

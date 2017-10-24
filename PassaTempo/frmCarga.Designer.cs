@@ -42,6 +42,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridDadosCarga = new System.Windows.Forms.DataGridView();
+            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -87,10 +91,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDadosCarga)).BeginInit();
             this.panel2.SuspendLayout();
@@ -216,6 +216,42 @@
             this.gridDadosCarga.Size = new System.Drawing.Size(734, 318);
             this.gridDadosCarga.TabIndex = 0;
             this.gridDadosCarga.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDadosCarga_CellDoubleClick);
+            // 
+            // Fk_produto
+            // 
+            this.Fk_produto.DataPropertyName = "Fk_produto";
+            this.Fk_produto.HeaderText = "ID";
+            this.Fk_produto.Name = "Fk_produto";
+            this.Fk_produto.ReadOnly = true;
+            this.Fk_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Fk_produto.Width = 60;
+            // 
+            // dsc_produto
+            // 
+            this.dsc_produto.DataPropertyName = "dsc_produto";
+            this.dsc_produto.HeaderText = "PRODUTO";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            this.dsc_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dsc_produto.Width = 295;
+            // 
+            // lote
+            // 
+            this.lote.DataPropertyName = "lote";
+            this.lote.HeaderText = "LOTES";
+            this.lote.Name = "lote";
+            this.lote.ReadOnly = true;
+            this.lote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.lote.Width = 286;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.HeaderText = "TOTAL";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.qtd_produto.Width = 90;
             // 
             // panel2
             // 
@@ -442,6 +478,7 @@
             this.gridLotes.Size = new System.Drawing.Size(183, 186);
             this.gridLotes.TabIndex = 0;
             this.gridLotes.TabStop = false;
+            this.gridLotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellDoubleClick);
             // 
             // Quantidade
             // 
@@ -714,42 +751,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // Fk_produto
-            // 
-            this.Fk_produto.DataPropertyName = "Fk_produto";
-            this.Fk_produto.HeaderText = "ID";
-            this.Fk_produto.Name = "Fk_produto";
-            this.Fk_produto.ReadOnly = true;
-            this.Fk_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Fk_produto.Width = 60;
-            // 
-            // dsc_produto
-            // 
-            this.dsc_produto.DataPropertyName = "dsc_produto";
-            this.dsc_produto.HeaderText = "PRODUTO";
-            this.dsc_produto.Name = "dsc_produto";
-            this.dsc_produto.ReadOnly = true;
-            this.dsc_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dsc_produto.Width = 295;
-            // 
-            // lote
-            // 
-            this.lote.DataPropertyName = "lote";
-            this.lote.HeaderText = "LOTES";
-            this.lote.Name = "lote";
-            this.lote.ReadOnly = true;
-            this.lote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.lote.Width = 286;
-            // 
-            // qtd_produto
-            // 
-            this.qtd_produto.DataPropertyName = "qtd_produto";
-            this.qtd_produto.HeaderText = "TOTAL";
-            this.qtd_produto.Name = "qtd_produto";
-            this.qtd_produto.ReadOnly = true;
-            this.qtd_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.qtd_produto.Width = 90;
             // 
             // frmCarga
             // 
