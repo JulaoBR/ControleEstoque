@@ -61,6 +61,7 @@
             this.gridTelaPesquisa.Location = new System.Drawing.Point(4, 4);
             this.gridTelaPesquisa.Name = "gridTelaPesquisa";
             this.gridTelaPesquisa.ReadOnly = true;
+            this.gridTelaPesquisa.RowHeadersVisible = false;
             this.gridTelaPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridTelaPesquisa.Size = new System.Drawing.Size(909, 452);
             this.gridTelaPesquisa.TabIndex = 0;

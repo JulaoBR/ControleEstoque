@@ -1,5 +1,6 @@
 ﻿using DAO;
 using MODEL;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CONTROL
@@ -30,6 +31,24 @@ namespace CONTROL
                 }
             }          
             dao = null;
+        }
+
+
+        public void Alterar(ModelVeiculos modelo)
+        {
+
+            DAOVeiculos dao = new DAOVeiculos(cx);
+            if (dao.Alterar(modelo))
+            {
+                MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            dao = null;
+        }
+
+        public DataTable BuscaVeiculos(string valor)
+        {
+            DAOVeiculos dao = new DAOVeiculos(cx);
+            return dao.LocalizaPorString(valor);
         }
     }
 }

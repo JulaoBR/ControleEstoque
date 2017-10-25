@@ -52,6 +52,7 @@
             this.gridCidade.Location = new System.Drawing.Point(4, 4);
             this.gridCidade.Name = "gridCidade";
             this.gridCidade.ReadOnly = true;
+            this.gridCidade.RowHeadersVisible = false;
             this.gridCidade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCidade.Size = new System.Drawing.Size(909, 452);
             this.gridCidade.TabIndex = 0;

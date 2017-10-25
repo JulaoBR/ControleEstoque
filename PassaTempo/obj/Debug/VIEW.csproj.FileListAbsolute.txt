@@ -42,3 +42,4 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\VIEW.c
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\VIEW.csprojResolveAssemblyReference.cache
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmTelaConfiguracao.resources

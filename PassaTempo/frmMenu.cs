@@ -127,6 +127,11 @@ namespace PassaTempo
             frmVeiculos.ShowDialog();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmMenu_Load( sender, e);
+        }
+
         private void frmMenu_Load(object sender, EventArgs e)
         {
             var lista = ControleEstoqueAtual.BuscaDados(1, "");
@@ -161,6 +166,10 @@ namespace PassaTempo
             }
         }
 
-
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTelaConfiguracao config = new frmTelaConfiguracao();
+            config.ShowDialog();
+        }
     }
 }

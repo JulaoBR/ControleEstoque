@@ -192,6 +192,7 @@
             this.gridEntrada.Location = new System.Drawing.Point(3, 3);
             this.gridEntrada.Name = "gridEntrada";
             this.gridEntrada.ReadOnly = true;
+            this.gridEntrada.RowHeadersVisible = false;
             this.gridEntrada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridEntrada.Size = new System.Drawing.Size(910, 442);
             this.gridEntrada.TabIndex = 0;

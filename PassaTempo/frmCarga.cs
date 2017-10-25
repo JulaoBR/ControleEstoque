@@ -72,6 +72,7 @@ namespace PassaTempo
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+
             if (!VerificaCamposCodigos())
             {
                 PreencheCarga();
@@ -88,6 +89,7 @@ namespace PassaTempo
                 listaLoteAux.Clear();
 
                 btnSalvar.Enabled = true;
+
             }
             else
             {

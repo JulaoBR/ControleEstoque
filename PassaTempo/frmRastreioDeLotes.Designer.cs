@@ -190,6 +190,7 @@
             this.gridRastreioLotes.Margin = new System.Windows.Forms.Padding(2);
             this.gridRastreioLotes.Name = "gridRastreioLotes";
             this.gridRastreioLotes.ReadOnly = true;
+            this.gridRastreioLotes.RowHeadersVisible = false;
             this.gridRastreioLotes.RowTemplate.Height = 24;
             this.gridRastreioLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRastreioLotes.Size = new System.Drawing.Size(909, 421);

@@ -203,6 +203,12 @@
     <Compile Include="frmRotasEntregas.Designer.cs">
       <DependentUpon>frmRotasEntregas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTelaConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTelaConfiguracao.Designer.cs">
+      <DependentUpon>frmTelaConfiguracao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTelaDePesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRotasEntregas.resx">
       <DependentUpon>frmRotasEntregas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTelaConfiguracao.resx">
+      <DependentUpon>frmTelaConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTelaDePesquisa.resx">
       <DependentUpon>frmTelaDePesquisa.cs</DependentUpon>

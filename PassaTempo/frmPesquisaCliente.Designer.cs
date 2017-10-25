@@ -65,6 +65,7 @@
             this.gridCliente.Location = new System.Drawing.Point(4, 4);
             this.gridCliente.Name = "gridCliente";
             this.gridCliente.ReadOnly = true;
+            this.gridCliente.RowHeadersVisible = false;
             this.gridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCliente.Size = new System.Drawing.Size(909, 452);
             this.gridCliente.TabIndex = 0;

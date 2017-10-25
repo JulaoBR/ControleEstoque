@@ -73,6 +73,7 @@
             this.gridProduto.Location = new System.Drawing.Point(3, 4);
             this.gridProduto.Name = "gridProduto";
             this.gridProduto.ReadOnly = true;
+            this.gridProduto.RowHeadersVisible = false;
             this.gridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridProduto.Size = new System.Drawing.Size(910, 452);
             this.gridProduto.TabIndex = 0;

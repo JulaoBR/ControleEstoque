@@ -140,6 +140,7 @@
             this.gridSaidaCarga.Location = new System.Drawing.Point(4, 4);
             this.gridSaidaCarga.Name = "gridSaidaCarga";
             this.gridSaidaCarga.ReadOnly = true;
+            this.gridSaidaCarga.RowHeadersVisible = false;
             this.gridSaidaCarga.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridSaidaCarga.Size = new System.Drawing.Size(909, 436);
             this.gridSaidaCarga.TabIndex = 0;
