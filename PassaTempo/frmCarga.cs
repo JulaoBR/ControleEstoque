@@ -589,7 +589,6 @@ namespace PassaTempo
 
         //VERIFICA SE O LOTE ESTA DISPONIVEL OU NAO
         private bool VerificaLotesDisponiveis(double quantidade, string lote)
-
         {
             foreach (var item in filaLotes)
             {

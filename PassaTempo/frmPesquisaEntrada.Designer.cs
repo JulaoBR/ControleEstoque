@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbAjuste = new System.Windows.Forms.RadioButton();
+            this.rbAjuste = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.btnLimparPesquisa = new System.Windows.Forms.Button();
             this.gridEntrada = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkSaidas = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,10 +85,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkSaidas);
             this.groupBox1.Controls.Add(this.rbAjuste);
             this.groupBox1.Location = new System.Drawing.Point(496, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(125, 66);
+            this.groupBox1.Size = new System.Drawing.Size(159, 87);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opções ";
@@ -95,15 +97,13 @@
             // rbAjuste
             // 
             this.rbAjuste.AutoSize = true;
-            this.rbAjuste.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rbAjuste.Location = new System.Drawing.Point(18, 22);
+            this.rbAjuste.Location = new System.Drawing.Point(15, 20);
             this.rbAjuste.Name = "rbAjuste";
-            this.rbAjuste.Size = new System.Drawing.Size(85, 19);
-            this.rbAjuste.TabIndex = 3;
-            this.rbAjuste.TabStop = true;
-            this.rbAjuste.Text = "AJUSTES";
+            this.rbAjuste.Size = new System.Drawing.Size(125, 19);
+            this.rbAjuste.TabIndex = 11;
+            this.rbAjuste.Text = "Mostrar ajustes";
             this.rbAjuste.UseVisualStyleBackColor = true;
-            this.rbAjuste.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.rbAjuste.CheckedChanged += new System.EventHandler(this.rbAjuste_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -208,6 +208,17 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Digite o nome do produto:";
             // 
+            // checkSaidas
+            // 
+            this.checkSaidas.AutoSize = true;
+            this.checkSaidas.Location = new System.Drawing.Point(15, 47);
+            this.checkSaidas.Name = "checkSaidas";
+            this.checkSaidas.Size = new System.Drawing.Size(121, 19);
+            this.checkSaidas.TabIndex = 12;
+            this.checkSaidas.Text = "Mostrar saidas";
+            this.checkSaidas.UseVisualStyleBackColor = true;
+            this.checkSaidas.CheckedChanged += new System.EventHandler(this.checkSaidas_CheckedChanged);
+            // 
             // frmPesquisaEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,7 +242,6 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbAjuste;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnLimparPesquisa;
@@ -241,5 +251,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox rbAjuste;
+        private System.Windows.Forms.CheckBox checkSaidas;
     }
 }

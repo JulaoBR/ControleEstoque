@@ -60,7 +60,6 @@
             this.rbMateriaPrima = new System.Windows.Forms.RadioButton();
             this.rbProdutoFinal = new System.Windows.Forms.RadioButton();
             this.txtCodProduto = new System.Windows.Forms.TextBox();
-            this.txtCodRegistro = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +69,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.txtCodRegistro);
             this.panel1.Controls.Add(this.txtDataFabricacao);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
@@ -430,15 +428,6 @@
             this.txtCodProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
             // 
-            // txtCodRegistro
-            // 
-            this.txtCodRegistro.Enabled = false;
-            this.txtCodRegistro.Location = new System.Drawing.Point(196, 29);
-            this.txtCodRegistro.Name = "txtCodRegistro";
-            this.txtCodRegistro.Size = new System.Drawing.Size(46, 21);
-            this.txtCodRegistro.TabIndex = 26;
-            this.txtCodRegistro.Visible = false;
-            // 
             // frmMovimentacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +489,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtDataFabricacao;
-        private System.Windows.Forms.TextBox txtCodRegistro;
     }
 }

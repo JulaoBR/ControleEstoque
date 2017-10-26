@@ -9,6 +9,8 @@ namespace PassaTempo
     {
 
         public int codigo = 0;
+        private int ajuste = 0;
+        private int saida = 0;
 
         public frmPesquisaEntrada()
         {
@@ -28,6 +30,31 @@ namespace PassaTempo
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rbAjuste_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbAjuste.Checked)
+            {
+                ajuste = 1;
+            }
+            else
+            {
+                ajuste = 0;
+            }
+            
+        }
+
+        private void checkSaidas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkSaidas.Checked)
+            {
+                saida = 1;
+            }
+            else
+            {
+                saida = 0;
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -53,13 +80,13 @@ namespace PassaTempo
         {
             ControleRegistro registro = new ControleRegistro();
 
-            PreencheGrid(registro.BuscaString(txtPesquisa.Text, txtPesquisaData.Text, txtLote.Text));
+            PreencheGrid(registro.BuscaString(txtPesquisa.Text, txtPesquisaData.Text, txtLote.Text, ajuste, saida));
         }
 
         private void LimpaGrid()
         {
             gridEntrada.DataSource = null;
-            gridEntrada.Refresh();
+            gridEntrada.Refresh();            
         }
 
         private void PreencheGrid(DataTable tb)
@@ -90,5 +117,7 @@ namespace PassaTempo
             txtPesquisaData.Clear();
 
         }
+
+
     }
 }

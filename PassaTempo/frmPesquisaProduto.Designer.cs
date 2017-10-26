@@ -85,7 +85,7 @@
             this.groupBox1.Controls.Add(this.rbProdutoFinal);
             this.groupBox1.Location = new System.Drawing.Point(4, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 67);
+            this.groupBox1.Size = new System.Drawing.Size(368, 67);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selecione:";

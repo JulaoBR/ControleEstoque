@@ -12,7 +12,8 @@ namespace PassaTempo
         //1 = proudto final
         //0 = materia prima
         private int opcao = 1;
-        private int editar = 0;
+        private int editar = 0; //CODIGO PARA SABER SE VAI SALVAR UM NOVO OU EDITAR
+        private int codigo = 0; // CODIGO DO PRODUTO QUE SERA ALTERADO
         private int prazoValidade = 0;
         private ModelRegistro modelo;
         private int tipoProduto;
@@ -79,8 +80,7 @@ namespace PassaTempo
 
             if (frmPesquisa.codigo != 0)
             {
-                PreencheCampos(control.BuscaInt(frmPesquisa.codigo));
-                txtCodRegistro.Visible = true;
+                PreencheCampos(control.BuscaInt(frmPesquisa.codigo));               
                 
             }
             else
@@ -98,6 +98,9 @@ namespace PassaTempo
                 SalvaRegistro();
                 rbSaida.Checked = false;
                 rbEntrada.Checked = false;
+
+                editar = 0;
+                codigo = 0;
             }
             else
             {
@@ -225,10 +228,11 @@ namespace PassaTempo
                 modelo.data_operacao = Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd 00:00:00");
                 modelo.tipo_produto = tipoProduto;
                 modelo.marcacao = 0;
+                modelo.observacao = txtObservacao.Text;
 
                 if(editar == 1)
                 {
-                    modelo.Id_registro = Convert.ToInt32(txtCodRegistro.Text);
+                    modelo.Id_registro = codigo;
                 }
                 else
                 {
@@ -249,7 +253,7 @@ namespace PassaTempo
         //VERIFICA OS CAMPOS PARA PREENCHER O MODELO DO REGISTRO
         private bool VerificaCampos()
         {
-            if(txtCodProduto.Text == string.Empty || txtQuantidade.Text == string.Empty || txtDataFabricacao.Text == string.Empty || txtLote.Text == string.Empty)
+            if(txtCodProduto.Text == string.Empty || txtQuantidade.Text == string.Empty)
             {
                 return true;
             }
@@ -303,7 +307,7 @@ namespace PassaTempo
 
         private void PreencheCampos(DataTable tb)
         {
-            txtCodRegistro.Text = tb.Rows[0]["ID REGIS"].ToString();
+            codigo = Convert.ToInt32(tb.Rows[0]["ID REGIS"].ToString()); //CODIGO DA CHAVE PRIMARIA PARA ALTERAR O PRODUTO
             txtCodProduto.Text = tb.Rows[0]["ID PRO"].ToString();
             txtNomeProduto.Text = tb.Rows[0]["PRODUTO"].ToString();
             txtQuantidade.Text = tb.Rows[0]["QUANTIDADE"].ToString();

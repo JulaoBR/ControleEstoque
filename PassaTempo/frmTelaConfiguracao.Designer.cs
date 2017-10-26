@@ -31,11 +31,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbMateriaPrima = new System.Windows.Forms.RadioButton();
-            this.rbProdutoFinal = new System.Windows.Forms.RadioButton();
             this.checkListaProdutos = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBotoesAtalho = new System.Windows.Forms.CheckBox();
+            this.rbProdutoFinal = new System.Windows.Forms.CheckBox();
+            this.rbMateriaPrima = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,30 +77,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de produtos";
             // 
-            // rbMateriaPrima
-            // 
-            this.rbMateriaPrima.AutoSize = true;
-            this.rbMateriaPrima.Enabled = false;
-            this.rbMateriaPrima.Location = new System.Drawing.Point(73, 86);
-            this.rbMateriaPrima.Name = "rbMateriaPrima";
-            this.rbMateriaPrima.Size = new System.Drawing.Size(122, 20);
-            this.rbMateriaPrima.TabIndex = 3;
-            this.rbMateriaPrima.TabStop = true;
-            this.rbMateriaPrima.Text = "Matéria Prima";
-            this.rbMateriaPrima.UseVisualStyleBackColor = true;
-            // 
-            // rbProdutoFinal
-            // 
-            this.rbProdutoFinal.AutoSize = true;
-            this.rbProdutoFinal.Enabled = false;
-            this.rbProdutoFinal.Location = new System.Drawing.Point(73, 59);
-            this.rbProdutoFinal.Name = "rbProdutoFinal";
-            this.rbProdutoFinal.Size = new System.Drawing.Size(118, 20);
-            this.rbProdutoFinal.TabIndex = 2;
-            this.rbProdutoFinal.TabStop = true;
-            this.rbProdutoFinal.Text = "Produto Final";
-            this.rbProdutoFinal.UseVisualStyleBackColor = true;
-            // 
             // checkListaProdutos
             // 
             this.checkListaProdutos.AutoSize = true;
@@ -132,6 +108,28 @@
             this.checkBotoesAtalho.Text = "Mostrar botões de atalho";
             this.checkBotoesAtalho.UseVisualStyleBackColor = true;
             // 
+            // rbProdutoFinal
+            // 
+            this.rbProdutoFinal.AutoSize = true;
+            this.rbProdutoFinal.Enabled = false;
+            this.rbProdutoFinal.Location = new System.Drawing.Point(76, 58);
+            this.rbProdutoFinal.Name = "rbProdutoFinal";
+            this.rbProdutoFinal.Size = new System.Drawing.Size(119, 20);
+            this.rbProdutoFinal.TabIndex = 4;
+            this.rbProdutoFinal.Text = "Produto Final";
+            this.rbProdutoFinal.UseVisualStyleBackColor = true;
+            // 
+            // rbMateriaPrima
+            // 
+            this.rbMateriaPrima.AutoSize = true;
+            this.rbMateriaPrima.Enabled = false;
+            this.rbMateriaPrima.Location = new System.Drawing.Point(76, 84);
+            this.rbMateriaPrima.Name = "rbMateriaPrima";
+            this.rbMateriaPrima.Size = new System.Drawing.Size(123, 20);
+            this.rbMateriaPrima.TabIndex = 5;
+            this.rbMateriaPrima.Text = "Matéria Prima";
+            this.rbMateriaPrima.UseVisualStyleBackColor = true;
+            // 
             // frmTelaConfiguracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,10 +156,10 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbMateriaPrima;
-        private System.Windows.Forms.RadioButton rbProdutoFinal;
         private System.Windows.Forms.CheckBox checkListaProdutos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBotoesAtalho;
+        private System.Windows.Forms.CheckBox rbMateriaPrima;
+        private System.Windows.Forms.CheckBox rbProdutoFinal;
     }
 }

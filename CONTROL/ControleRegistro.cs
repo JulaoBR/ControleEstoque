@@ -34,6 +34,8 @@ namespace CONTROL
                 modelo.tipo_produto = item.tipo_produto;
                 modelo.Fk_carga = item.Fk_carga;
                 modelo.marcacao = item.marcacao;
+                modelo.observacao = item.observacao;
+                modelo.ajuste = item.ajuste;
 
                 if (!dao.Inserir(modelo))
                 {
@@ -86,18 +88,18 @@ namespace CONTROL
             return false;
         }
 
-        public DataTable BuscaString(string produto, string data, string lote)
+        public DataTable BuscaString(string produto, string data, string lote, int ajuste, int saida)
         {
             DAORegistro dao = new DAORegistro(cx);
             try
             {
                 if (data == string.Empty)
                 {
-                    return dao.LocalizaPorString(produto, data, lote);
+                    return dao.LocalizaPorString(produto, data, lote, ajuste, saida);
                 }
                 else
                 {
-                    return dao.LocalizaPorString(produto, Convert.ToDateTime(data).ToString("yyyy-MM-dd 00:00:00"), lote);
+                    return dao.LocalizaPorString(produto, Convert.ToDateTime(data).ToString("yyyy-MM-dd 00:00:00"), lote, ajuste, saida);
                 }
             }
             catch
