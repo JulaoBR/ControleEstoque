@@ -76,7 +76,11 @@ namespace PassaTempo
             if (!VerificaCamposCodigos())
             {
                 PreencheCarga();
-                listaLote = listaLoteAux;
+
+                foreach (var item in listaLoteAux)
+                {
+                    listaLote.Add(item);
+                }
                 PreencheListaRegistro();
                 AtualizaGrid();
                 AtualizaInfoCarga();

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,24 +51,22 @@
             this.rOTASDEENTREGAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cALCULAPESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONFIGURAÇÕESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.gridProduto = new System.Windows.Forms.DataGridView();
             this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.rELATÓRIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -212,7 +210,8 @@
             this.fERRAMENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cALCULADORADEDATAToolStripMenuItem,
             this.rOTASDEENTREGAToolStripMenuItem,
-            this.cALCULAPESOToolStripMenuItem});
+            this.cALCULAPESOToolStripMenuItem,
+            this.rELATÓRIOSToolStripMenuItem});
             this.fERRAMENTASToolStripMenuItem.Name = "fERRAMENTASToolStripMenuItem";
             this.fERRAMENTASToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.fERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS";
@@ -246,6 +245,13 @@
             this.cONFIGURAÇÕESToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.cONFIGURAÇÕESToolStripMenuItem.Text = "CONFIGURAÇÕES";
             // 
+            // cToolStripMenuItem
+            // 
+            this.cToolStripMenuItem.Name = "cToolStripMenuItem";
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.cToolStripMenuItem.Text = "CONFIGURAR";
+            this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
+            // 
             // sAIRToolStripMenuItem
             // 
             this.sAIRToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -269,39 +275,29 @@
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.gridProduto);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(721, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 593);
-            this.panel1.TabIndex = 2;
-            // 
             // gridProduto
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dsc_produto,
             this.qtd_produto});
             this.gridProduto.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gridProduto.Location = new System.Drawing.Point(6, 0);
+            this.gridProduto.Location = new System.Drawing.Point(731, 28);
             this.gridProduto.Name = "gridProduto";
             this.gridProduto.ReadOnly = true;
             this.gridProduto.RowHeadersVisible = false;
             this.gridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridProduto.Size = new System.Drawing.Size(273, 589);
+            this.gridProduto.Size = new System.Drawing.Size(273, 593);
             this.gridProduto.TabIndex = 0;
             // 
             // dsc_produto
@@ -325,57 +321,28 @@
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 28);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(152, 593);
             this.panel2.TabIndex = 3;
             // 
-            // button1
+            // button7
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 83);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 83);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 166);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 83);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 249);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 83);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.Location = new System.Drawing.Point(0, 545);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(148, 44);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Atualizar Tabela";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
@@ -384,36 +351,60 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(148, 83);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
+            this.button5.Text = "CALCULA PESO CARGA";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // button4
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 415);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(148, 83);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 249);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(148, 83);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "CALCULADORA DE DATAS";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button7
+            // button3
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.Location = new System.Drawing.Point(0, 566);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Atualizar Tabela";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 166);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(148, 83);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "RASTREIO DE LOTES";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // cToolStripMenuItem
+            // button2
             // 
-            this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
-            this.cToolStripMenuItem.Text = "CONFIGURAR";
-            this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 83);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "MOVIMENTAÇÃO";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 83);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "CARGAS";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // rELATÓRIOSToolStripMenuItem
+            // 
+            this.rELATÓRIOSToolStripMenuItem.Name = "rELATÓRIOSToolStripMenuItem";
+            this.rELATÓRIOSToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
+            this.rELATÓRIOSToolStripMenuItem.Text = "RELATÓRIOS";
+            this.rELATÓRIOSToolStripMenuItem.Click += new System.EventHandler(this.rELATÓRIOSToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -421,8 +412,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 643);
             this.ControlBox = false;
+            this.Controls.Add(this.gridProduto);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -433,7 +424,6 @@
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -467,19 +457,18 @@
         private System.Windows.Forms.ToolStripMenuItem rOTASDEENTREGAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cALCULAPESOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vEICULOSToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView gridProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rELATÓRIOSToolStripMenuItem;
     }
 }
 

@@ -197,6 +197,12 @@
     <Compile Include="frmRastreioDeLotes.Designer.cs">
       <DependentUpon>frmRastreioDeLotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorios.Designer.cs">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRotasEntregas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRastreioDeLotes.resx">
       <DependentUpon>frmRastreioDeLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorios.resx">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRotasEntregas.resx">
       <DependentUpon>frmRotasEntregas.cs</DependentUpon>

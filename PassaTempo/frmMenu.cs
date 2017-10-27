@@ -171,5 +171,36 @@ namespace PassaTempo
             frmTelaConfiguracao config = new frmTelaConfiguracao();
             config.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            cALCULADORADEDATAToolStripMenuItem_Click(sender, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cARGASToolStripMenuItem_Click(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            eNTRADASAIDAToolStripMenuItem_Click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            rASTREAMENTODELOTEToolStripMenuItem_Click(sender, e);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            cALCULAPESOToolStripMenuItem_Click(sender, e);
+        }
+
+        private void rELATÓRIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorios relatorios = new frmRelatorios();
+            relatorios.ShowDialog();
+        }
     }
 }

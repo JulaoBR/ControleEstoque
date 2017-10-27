@@ -86,6 +86,7 @@ namespace PassaTempo
             else
             {
                 LimpaCampoProduto();
+                editar = 0;
 
             }
         }
@@ -190,6 +191,10 @@ namespace PassaTempo
         {
             rbProdutoFinal.Checked = true;
             btnExcluir.Enabled = false;
+            rbAjuste.Checked = false;
+            rbEntrada.Checked = false;
+            rbSaida.Checked = false;
+            editar = 0;
         }
 
         private void PreencheCamposProduto(DataTable tb)
