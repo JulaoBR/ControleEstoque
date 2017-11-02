@@ -138,8 +138,8 @@ namespace CONTROL
 
             Queue<ModelCalculaLotes> filaAux = new Queue<ModelCalculaLotes>();
 
-            filaLotes = lote.LocalizarLotes(cod_produto);
-            filaRegistros = registro.LocalizarRegistro(cod_produto);
+            filaLotes = lote.LocalizarLotes(cod_produto);               //SAIDAS DOS PRODUTOS
+            filaRegistros = registro.LocalizarRegistro(cod_produto);    //ENTRADAS DOS PRODUTOS
 
             foreach (var item in filaRegistros)
             {

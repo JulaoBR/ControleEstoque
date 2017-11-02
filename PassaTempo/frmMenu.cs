@@ -145,6 +145,7 @@ namespace PassaTempo
         {
             gridProduto.DataSource = null;
             gridProduto.DataSource = lista;
+            gridProduto.ClearSelection();
             ColorirCelulaEstoque(lista);
         }
 

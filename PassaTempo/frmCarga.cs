@@ -3,6 +3,7 @@ using MODEL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PassaTempo
@@ -23,6 +24,7 @@ namespace PassaTempo
             InitializeComponent();
             gridDadosCarga.AutoGenerateColumns = false;
             gridLotes.AutoGenerateColumns = false;
+            gridLotesDisponiveis.AutoGenerateColumns = false;
         }
 
         private void frmCarga_Load(object sender, EventArgs e)
@@ -89,7 +91,9 @@ namespace PassaTempo
                 pesoBruto = 0;
                 pesoLiquido = 0;
 
+                //LIMPA GRIDS E LISTA
                 gridLotes.DataSource = null;
+                gridLotesDisponiveis.DataSource = null;
                 listaLoteAux.Clear();
 
                 btnSalvar.Enabled = true;
@@ -285,6 +289,8 @@ namespace PassaTempo
                 {
                     PreencheCamposProduto(produto.BuscaInt(Convert.ToInt32(txtCodProduto.Text)));
                     filaLotes = controle.CalculaLotes(Convert.ToInt32(txtCodProduto.Text));
+
+                    PreencheListaLotesDisponiveis();
                 }
                 
             }
@@ -293,6 +299,14 @@ namespace PassaTempo
                 LimpaCampoProduto();
             }
         }
+
+        private void PreencheListaLotesDisponiveis()
+        {
+            gridLotesDisponiveis.DataSource = null;
+            gridLotesDisponiveis.DataSource = filaLotes.ToList();
+            gridLotesDisponiveis.ClearSelection();
+        }
+
 
         private void txtPedido_Leave(object sender, EventArgs e)
         {
@@ -348,6 +362,19 @@ namespace PassaTempo
             
         }
 
+        //CONTROLA EXIBICÂO DA TABELA DE LOTES DISPONIVEIS
+        private void checkExibirListaLotes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkExibirListaLotes.Checked == true)
+            {
+                panelListaDeLotes.Visible = true;
+            }
+            else
+            {
+                panelListaDeLotes.Visible = false;
+            }
+        }
+            
 
         //==========================================================
 
@@ -512,6 +539,8 @@ namespace PassaTempo
         private void LimpaGrid()
         {
             gridDadosCarga.DataSource = null;
+            gridLotesDisponiveis.DataSource = null;
+            gridLotes.DataSource = null;          
         }
 
         //METODO DE VERIFICAR SE O PRODUTO JA ESTA NA LISTA
@@ -707,7 +736,6 @@ namespace PassaTempo
                 }
             }
         }
-
 
         //METODO PARA REMOVER ITENS DA LISTA
         private void RemoverItemListaRegistro(int codigo)
