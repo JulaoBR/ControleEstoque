@@ -28,3 +28,9 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\MODEL.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\PdfSharp.Charting.dll
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\PdfSharp.dll
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\PdfSharp.xml
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\PdfSharp.Charting.xml
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\de\PdfSharp.Charting.resources.dll

@@ -737,6 +737,12 @@ namespace PassaTempo
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ControlePDF pdf = new ControlePDF();
+            pdf.InicializaPdf();
+        }
+
         //METODO PARA REMOVER ITENS DA LISTA
         private void RemoverItemListaRegistro(int codigo)
         {
