@@ -90,9 +90,3 @@ D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.Prop
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\VIEW.csproj.GenerateResource.Cache
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.exe
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PdfSharp.Charting.dll
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PdfSharp.dll
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PdfSharp.xml
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PdfSharp.Charting.xml
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\de\PdfSharp.resources.dll
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\de\PdfSharp.Charting.resources.dll

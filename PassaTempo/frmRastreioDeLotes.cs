@@ -1,12 +1,17 @@
 ﻿using CONTROL;
+using MODEL;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace PassaTempo
 {
     public partial class frmRastreioDeLotes : PassaTempo.frmTelaDePesquisa
-    {       
+    {
+
+        private List<String> lista = new List<String>();
 
         public frmRastreioDeLotes()
         {
@@ -15,7 +20,14 @@ namespace PassaTempo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
+            var _with1 = objPrintPreview;
+            _with1.Document = pd;
+            _with1.WindowState = FormWindowState.Maximized;
+            _with1.PrintPreviewControl.Zoom = 1;
+            _with1.ShowDialog();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -87,6 +99,9 @@ namespace PassaTempo
         private void PreencheGrid(DataTable tb)
         {
             gridRastreioLotes.DataSource = tb;
+
+            //ADICIONA O DATATABLE NA VARIAVEL GLOBAL
+            lista = tb;
         }
 
         private void LimpaCampos()
@@ -99,6 +114,10 @@ namespace PassaTempo
             LimpaGrid();
         }
 
-
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            RelatorioSaidaLotes re = new RelatorioSaidaLotes(sender,e);
+            re.Relatorio(lista);
+        }
     }
 }

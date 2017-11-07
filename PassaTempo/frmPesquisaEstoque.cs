@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
 
@@ -86,6 +87,25 @@ namespace PassaTempo
             rbProdutoFinal.Checked = true;
             gridProduto.DataSource = null;
             gridProduto.Refresh();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
+            var _with1 = objPrintPreview;
+            _with1.Document = pd;
+            _with1.WindowState = FormWindowState.Maximized;
+            _with1.PrintPreviewControl.Zoom = 1;
+            _with1.ShowDialog();
+        }
+
+        //EVENTO PARA IMPRESSÂO DOS DADOS
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            RelatorioEstoque re = new RelatorioEstoque(sender, e);
+            re.Relatorio(lista);
         }
     }
 }
