@@ -52,6 +52,8 @@
     <Compile Include="ModelProduto.cs" />
     <Compile Include="ModelRegistro.cs" />
     <Compile Include="ModelRelatorio.cs" />
+    <Compile Include="ModelRelatorioCargaDetalhada.cs" />
+    <Compile Include="ModelRelatorioLotes.cs" />
     <Compile Include="ModelUsuario.cs" />
     <Compile Include="ModelVeiculos.cs" />
     <Compile Include="Program.cs" />

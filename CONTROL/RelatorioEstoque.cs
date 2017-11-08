@@ -48,7 +48,7 @@ namespace CONTROL
 
             //Define efeitos das fontes.
             FonteNegrito = new Font("Arial", 9, FontStyle.Bold);
-            FonteTitulo = new Font("Arial", 15, FontStyle.Bold);
+            FonteTitulo = new Font("Arial", 18, FontStyle.Bold);
             FonteSubTitulo = new Font("Arial", 12, FontStyle.Bold);
             FonteRodape = new Font("Arial", 9, FontStyle.Bold);
             FonteNormal = new Font("Arial", 9);
@@ -60,9 +60,11 @@ namespace CONTROL
             rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 160, MargemDir, 160);
 
             //nome da empresa
-            rinout.e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 270, 70, new StringFormat());
+            rinout.e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 40, 80, new StringFormat());
 
-            rinout.e.Graphics.DrawString(" Relatório de ESTOQUE", FonteSubTitulo, Brushes.Black, MargemEsq + 235, 105, new StringFormat());
+            rinout.e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
+
+            rinout.e.Graphics.DrawString(" RELATÓRIO DE ESTOQUE", FonteSubTitulo, Brushes.Black, MargemEsq + 225, 109, new StringFormat());
 
             Image image = Image.FromFile("FOTO.jpg");
             Point pp = new Point(100, 68);
@@ -121,7 +123,7 @@ namespace CONTROL
                 rinout.e.HasMorePages = false;
 
             //Rodape - pega data e hora do sistema
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, MargemInfer, MargemDir, MargemInfer);           
+            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, MargemInfer, MargemDir, MargemInfer); rinout.e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemEsq, MargemInfer, new StringFormat());
             LinhaAtual += Convert.ToInt32(FonteNormal.GetHeight(rinout.e.Graphics));
             LinhaAtual += 1;
             rinout.e.Graphics.DrawString("ProEstoque", FonteRodape, Brushes.Black, MargemDir - 360, MargemInfer, new StringFormat());

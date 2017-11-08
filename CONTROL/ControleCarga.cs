@@ -55,10 +55,31 @@ namespace CONTROL
             return null;
         }
 
-        public DataTable BuscaCargaDetalhada(int valor)
+        public ModelRelatorioCargaDetalhada BuscaCargaDetalhada(int valor)
         {
-            DAOCarga dao = new DAOCarga(cx);
-            return dao.LocalizarCargaDetalhada(valor);
+            try
+            {
+                DAOCarga dao = new DAOCarga(cx);
+                ModelRelatorioCargaDetalhada carga = new ModelRelatorioCargaDetalhada();
+                var dt = dao.LocalizarCargaDetalhada(valor);
+
+                carga.cod_carga = valor;
+                carga.cod_cliente = Convert.ToInt32(dt.Rows[0]["Fk_cliente"].ToString());
+                carga.dsc_cliente = dt.Rows[0]["nome_cliente"].ToString();
+                carga.endereco = dt.Rows[0]["endereco"].ToString();
+                carga.nome_cidade = dt.Rows[0]["nome_cidade"].ToString();
+                carga.nome_estado = dt.Rows[0]["nome_estado"].ToString();
+                carga.cep = dt.Rows[0]["cep"].ToString();
+                carga.comprador = dt.Rows[0]["nome_comprador"].ToString();
+                carga.carregamento = dt.Rows[0]["data_carregamento"].ToString();
+
+                return carga;
+            }
+            catch
+            {
+                return null;
+            }
+           
         }
 
         //METODO EXCALAR PARA VERIFICAR SE JA TEM CADASTRO 

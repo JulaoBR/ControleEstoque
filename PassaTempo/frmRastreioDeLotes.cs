@@ -11,7 +11,7 @@ namespace PassaTempo
     public partial class frmRastreioDeLotes : PassaTempo.frmTelaDePesquisa
     {
 
-        private List<String> lista = new List<String>();
+        private List<ModelRelatorioLotes> lista = new List<ModelRelatorioLotes>();
 
         public frmRastreioDeLotes()
         {
@@ -101,7 +101,19 @@ namespace PassaTempo
             gridRastreioLotes.DataSource = tb;
 
             //ADICIONA O DATATABLE NA VARIAVEL GLOBAL
-            lista = tb;
+            foreach (DataRow item in tb.Rows)
+            {
+                ModelRelatorioLotes model = new ModelRelatorioLotes();
+
+                model.Id_carga = Convert.ToInt32(item[0].ToString());
+                model.dsc_cliente = item[1].ToString();
+                model.dsc_produto = item[2].ToString();
+                model.quantidade = Convert.ToDouble(item[3].ToString());
+                model.lote = item[4].ToString();
+                model.carregamento = item[5].ToString();
+
+                lista.Add(model);
+            }
         }
 
         private void LimpaCampos()

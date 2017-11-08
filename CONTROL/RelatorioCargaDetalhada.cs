@@ -3,27 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CONTROL
 {
-    public class RelatorioSaidaLotes
+    public class RelatorioCargaDetalhada
     {
-
         string RelatorioTitulo = "";
         int paginaAtual = 1;
 
         ModelRelatorio rinout = new ModelRelatorio();
 
-        public RelatorioSaidaLotes(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        public RelatorioCargaDetalhada(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             rinout.sender = sender;
             rinout.e = e;
         }
 
         //METODO QUE CONSTRÓI O RELATÓRIO A SER GERADO
-        public void Relatorio(List<ModelRelatorioLotes> Lista)
+        public void Relatorio(List<ModelRegistro> Lista, ModelRelatorioCargaDetalhada model)
         {
             //Variaveis de Linhas.
             float LinhasPorPagina = 0;
@@ -58,35 +55,58 @@ namespace CONTROL
             LinhaAtual = 0;
 
             rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 60, MargemDir, 60);
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 160, MargemDir, 160);
+
 
             //CABEÇALHO DO DOCUMENTO=================================================================
             //nome da empresa
-                rinout.e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 40, 80, new StringFormat());
-                rinout.e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
+            rinout.e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 40, 80, new StringFormat());
+            rinout.e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
+          
+            Image image = Image.FromFile("FOTO.jpg");
+            Point pp = new Point(100, 68);
+            //imagem/logo se caso quiser colocar um logo
+            rinout.e.Graphics.DrawImage(image, pp);
 
-                rinout.e.Graphics.DrawString("RASTREAMENTO DE LOTES", FonteSubTitulo, Brushes.Black, MargemEsq + 215, 109, new StringFormat());
-
-                Image image = Image.FromFile("FOTO.jpg");
-                Point pp = new Point(100, 68);
-                //imagem/logo se caso quiser colocar um logo
-                rinout.e.Graphics.DrawImage(image, pp);
-                rinout.e.Graphics.DrawString(RelatorioTitulo, FonteSubTitulo, Brushes.Black, MargemEsq + 70, 110, new StringFormat());
             //CABEÇALHO DO DOCUMENTO=================================================================
-
             //linha de separação
             rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 130, MargemDir, 130);
 
-            //campos a serem impressos: cabeçalho
-            rinout.e.Graphics.DrawString("CARGA", FonteNegrito, Brushes.Black, MargemEsq, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("CLIENTE", FonteNegrito, Brushes.Black, MargemEsq + 60, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("PRODUTO", FonteNegrito, Brushes.Black, MargemEsq + 300, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("QTD", FonteNegrito, Brushes.Black, MargemEsq + 460, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("LOTE", FonteNegrito, Brushes.Black, MargemEsq + 520, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("DATA SAIDA", FonteNegrito, Brushes.Black, MargemEsq + 570, 170, new StringFormat());
+            //CABEÇALHO DO PEDIDO====================================================================
+            rinout.e.Graphics.DrawString("PEDIDO: ", FonteNegrito, Brushes.Black, MargemEsq , 140, new StringFormat());
+            rinout.e.Graphics.DrawString(Convert.ToString(model.cod_carga), FonteNormal, Brushes.Black, MargemEsq + 100, 140, new StringFormat());
+
+            DateTime data = Convert.ToDateTime(model.carregamento);
+            rinout.e.Graphics.DrawString("DATA CARREGAMENTO: ", FonteNegrito, Brushes.Black, MargemEsq + 420, 140, new StringFormat());
+            rinout.e.Graphics.DrawString(data.ToString("dd/MM/yyyy"), FonteNormal, Brushes.Black, MargemEsq + 580, 140, new StringFormat());
+
+            rinout.e.Graphics.DrawString("CLIENTE: ", FonteNegrito, Brushes.Black, MargemEsq, 160, new StringFormat());
+            rinout.e.Graphics.DrawString(model.dsc_cliente, FonteNormal, Brushes.Black, MargemEsq + 100, 160, new StringFormat());
+            rinout.e.Graphics.DrawString("ENDEREÇO: ", FonteNegrito, Brushes.Black, MargemEsq, 180, new StringFormat());
+            rinout.e.Graphics.DrawString(model.endereco, FonteNormal, Brushes.Black, MargemEsq + 100, 180, new StringFormat());
+            rinout.e.Graphics.DrawString("CIDADE: ", FonteNegrito, Brushes.Black, MargemEsq, 200, new StringFormat());
+            rinout.e.Graphics.DrawString(model.nome_cidade, FonteNormal, Brushes.Black, MargemEsq + 100, 200, new StringFormat());
+            rinout.e.Graphics.DrawString("ESTADO: ", FonteNegrito, Brushes.Black, MargemEsq, 220, new StringFormat());
+            rinout.e.Graphics.DrawString(model.nome_estado, FonteNormal, Brushes.Black, MargemEsq + 100, 220, new StringFormat());
+            rinout.e.Graphics.DrawString("CEP: " , FonteNegrito , Brushes.Black, MargemEsq + 380, 220, new StringFormat());
+            rinout.e.Graphics.DrawString(model.cep, FonteNormal, Brushes.Black, MargemEsq + 420, 220, new StringFormat());
+            rinout.e.Graphics.DrawString("COMPRADOR: ", FonteNegrito, Brushes.Black, MargemEsq, 240, new StringFormat());
+            rinout.e.Graphics.DrawString(model.comprador, FonteNormal, Brushes.Black, MargemEsq + 240, 140, new StringFormat());
+
+            //CABEÇALHO DO PEDIDO====================================================================
+
 
             //linha de separação
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 190, MargemDir, 190);
+            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 270, MargemDir, 270);
+
+            //campos a serem impressos: cabeçalho
+            rinout.e.Graphics.DrawString("ID", FonteNegrito, Brushes.Black, MargemEsq, 280, new StringFormat());
+            rinout.e.Graphics.DrawString("PRODUTO", FonteNegrito, Brushes.Black, MargemEsq + 90, 280, new StringFormat());
+            rinout.e.Graphics.DrawString("LOTES", FonteNegrito, Brushes.Black, MargemEsq + 320, 280, new StringFormat());
+            rinout.e.Graphics.DrawString("QTD TOTAL", FonteNegrito, Brushes.Black, MargemEsq + 570, 280, new StringFormat());
+
+            //linha de separação
+            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 300, MargemDir, 300);
+
 
             //define quantas linhas por pagina
             LinhasPorPagina = Convert.ToInt32(rinout.e.MarginBounds.Height / FonteNormal.GetHeight(rinout.e.Graphics));
@@ -98,28 +118,20 @@ namespace CONTROL
             //Aqui sao lidos os dados (deixei pré-feito pra quando estivermos com o banco ja pronto)
             while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
             {
-
-                PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
-
                 //obtem os valores do datareader
-                int cod = Convert.ToInt32(Lista[i].Id_carga.ToString());
-                var cliente = Lista[i].dsc_cliente.ToString();
+                int cod = Convert.ToInt32(Lista[i].Fk_produto.ToString());
                 var produto = Lista[i].dsc_produto.ToString();
-                var quantidade = Lista[i].quantidade.ToString();
+                var quantidade = Lista[i].qtd_produto.ToString();
                 var lote = Lista[i].lote.ToString();
-                DateTime carregamento = Convert.ToDateTime(Lista[i].carregamento.ToString());
 
                 //inicia a impressao
                 PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
 
                 //imprime os dados relativo ao codigo , nome do produto e preço do produto
                 rinout.e.Graphics.DrawString(cod.ToString(), FonteNormal, Brushes.Black, MargemEsq, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(cliente.ToString(), FonteNormal, Brushes.Black, MargemEsq + 60, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 300, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 460, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(lote.ToString(), FonteNormal, Brushes.Black, MargemEsq + 520, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(carregamento.ToString("dd/MM/yyy"), FonteNormal, Brushes.Black, MargemEsq + 570, PosicaoDaLinha, new StringFormat());
-
+                rinout.e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 90, PosicaoDaLinha, new StringFormat());
+                rinout.e.Graphics.DrawString(lote.ToString(), FonteNormal, Brushes.Black, MargemEsq + 320, PosicaoDaLinha, new StringFormat());
+                rinout.e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 570, PosicaoDaLinha, new StringFormat());
 
                 LinhaAtual += 1;
                 TotalRegistro -= 1;
