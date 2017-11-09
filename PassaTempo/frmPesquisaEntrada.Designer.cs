@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisaEntrada));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkSaidas = new System.Windows.Forms.CheckBox();
             this.rbAjuste = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,7 +44,9 @@
             this.btnLimparPesquisa = new System.Windows.Forms.Button();
             this.gridEntrada = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkSaidas = new System.Windows.Forms.CheckBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,6 +97,17 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opções ";
+            // 
+            // checkSaidas
+            // 
+            this.checkSaidas.AutoSize = true;
+            this.checkSaidas.Location = new System.Drawing.Point(15, 47);
+            this.checkSaidas.Name = "checkSaidas";
+            this.checkSaidas.Size = new System.Drawing.Size(121, 19);
+            this.checkSaidas.TabIndex = 12;
+            this.checkSaidas.Text = "Mostrar saidas";
+            this.checkSaidas.UseVisualStyleBackColor = true;
+            this.checkSaidas.CheckedChanged += new System.EventHandler(this.checkSaidas_CheckedChanged);
             // 
             // rbAjuste
             // 
@@ -177,17 +192,17 @@
             // 
             // gridEntrada
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gridEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridEntrada.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEntrada.Location = new System.Drawing.Point(3, 3);
             this.gridEntrada.Name = "gridEntrada";
@@ -208,16 +223,23 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Digite o nome do produto:";
             // 
-            // checkSaidas
+            // printPreviewDialog1
             // 
-            this.checkSaidas.AutoSize = true;
-            this.checkSaidas.Location = new System.Drawing.Point(15, 47);
-            this.checkSaidas.Name = "checkSaidas";
-            this.checkSaidas.Size = new System.Drawing.Size(121, 19);
-            this.checkSaidas.TabIndex = 12;
-            this.checkSaidas.Text = "Mostrar saidas";
-            this.checkSaidas.UseVisualStyleBackColor = true;
-            this.checkSaidas.CheckedChanged += new System.EventHandler(this.checkSaidas_CheckedChanged);
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // frmPesquisaEntrada
             // 
@@ -253,5 +275,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox rbAjuste;
         private System.Windows.Forms.CheckBox checkSaidas;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

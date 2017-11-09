@@ -8,7 +8,6 @@ namespace CONTROL
 {
     public class RelatorioCargaDetalhada
     {
-        string RelatorioTitulo = "";
         int paginaAtual = 1;
 
         ModelRelatorio rinout = new ModelRelatorio();
@@ -70,7 +69,7 @@ namespace CONTROL
             //CABEÇALHO DO DOCUMENTO=================================================================
             //linha de separação
             rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 130, MargemDir, 130);
-
+            
             //CABEÇALHO DO PEDIDO====================================================================
             rinout.e.Graphics.DrawString("PEDIDO: ", FonteNegrito, Brushes.Black, MargemEsq , 140, new StringFormat());
             rinout.e.Graphics.DrawString(Convert.ToString(model.cod_carga), FonteNormal, Brushes.Black, MargemEsq + 100, 140, new StringFormat());
@@ -90,7 +89,7 @@ namespace CONTROL
             rinout.e.Graphics.DrawString("CEP: " , FonteNegrito , Brushes.Black, MargemEsq + 380, 220, new StringFormat());
             rinout.e.Graphics.DrawString(model.cep, FonteNormal, Brushes.Black, MargemEsq + 420, 220, new StringFormat());
             rinout.e.Graphics.DrawString("COMPRADOR: ", FonteNegrito, Brushes.Black, MargemEsq, 240, new StringFormat());
-            rinout.e.Graphics.DrawString(model.comprador, FonteNormal, Brushes.Black, MargemEsq + 240, 140, new StringFormat());
+            rinout.e.Graphics.DrawString(model.comprador, FonteNormal, Brushes.Black, MargemEsq + 100, 240, new StringFormat());
 
             //CABEÇALHO DO PEDIDO====================================================================
 
@@ -125,18 +124,33 @@ namespace CONTROL
                 var lote = Lista[i].lote.ToString();
 
                 //inicia a impressao
-                PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
+                PosicaoDaLinha = 310 + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
 
                 //imprime os dados relativo ao codigo , nome do produto e preço do produto
                 rinout.e.Graphics.DrawString(cod.ToString(), FonteNormal, Brushes.Black, MargemEsq, PosicaoDaLinha, new StringFormat());
                 rinout.e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 90, PosicaoDaLinha, new StringFormat());
                 rinout.e.Graphics.DrawString(lote.ToString(), FonteNormal, Brushes.Black, MargemEsq + 320, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 570, PosicaoDaLinha, new StringFormat());
+                rinout.e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 590, PosicaoDaLinha, new StringFormat());
 
                 LinhaAtual += 1;
                 TotalRegistro -= 1;
                 i += 1;
             }
+
+            //linha de separação
+            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, PosicaoDaLinha + 20, MargemDir, PosicaoDaLinha + 20);
+
+            rinout.e.Graphics.DrawString("Peso Liquido: ", FonteNegrito, Brushes.Black, MargemEsq, PosicaoDaLinha + 50, new StringFormat());
+            rinout.e.Graphics.DrawString(Convert.ToString(model.pesoLiquido), FonteNormal, Brushes.Black, MargemEsq + 90, PosicaoDaLinha + 50, new StringFormat());
+
+            rinout.e.Graphics.DrawString("Peso Bruto: ", FonteNegrito, Brushes.Black, MargemEsq + 200 , PosicaoDaLinha + 50, new StringFormat());
+            rinout.e.Graphics.DrawString(Convert.ToString(model.pesoBruto), FonteNormal, Brushes.Black, MargemEsq + 280, PosicaoDaLinha + 50, new StringFormat());
+
+            rinout.e.Graphics.DrawString("Total Caixas: ", FonteNegrito, Brushes.Black, MargemEsq + 370, PosicaoDaLinha + 50, new StringFormat());
+            rinout.e.Graphics.DrawString(Convert.ToString(model.totalCaixa), FonteNormal, Brushes.Black, MargemEsq + 460, PosicaoDaLinha + 50, new StringFormat());
+
+            rinout.e.Graphics.DrawString("Total itens: ", FonteNegrito, Brushes.Black, MargemEsq + 530, PosicaoDaLinha + 50, new StringFormat());
+            rinout.e.Graphics.DrawString(Convert.ToString(Lista.Count), FonteNormal, Brushes.Black, MargemEsq + 600, PosicaoDaLinha + 50, new StringFormat());
 
             //verifica se continua imprimindo
             if (TotalRegistro > 0)

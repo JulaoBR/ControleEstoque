@@ -10,8 +10,6 @@ namespace CONTROL
 {
     public class RelatorioSaidaLotes
     {
-
-        string RelatorioTitulo = "";
         int paginaAtual = 1;
 
         ModelRelatorio rinout = new ModelRelatorio();
@@ -71,7 +69,6 @@ namespace CONTROL
                 Point pp = new Point(100, 68);
                 //imagem/logo se caso quiser colocar um logo
                 rinout.e.Graphics.DrawImage(image, pp);
-                rinout.e.Graphics.DrawString(RelatorioTitulo, FonteSubTitulo, Brushes.Black, MargemEsq + 70, 110, new StringFormat());
             //CABEÇALHO DO DOCUMENTO=================================================================
 
             //linha de separação
@@ -98,9 +95,6 @@ namespace CONTROL
             //Aqui sao lidos os dados (deixei pré-feito pra quando estivermos com o banco ja pronto)
             while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
             {
-
-                PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
-
                 //obtem os valores do datareader
                 int cod = Convert.ToInt32(Lista[i].Id_carga.ToString());
                 var cliente = Lista[i].dsc_cliente.ToString();

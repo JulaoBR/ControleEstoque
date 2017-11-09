@@ -1,6 +1,9 @@
 ﻿using CONTROL;
+using MODEL;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace PassaTempo
@@ -11,6 +14,7 @@ namespace PassaTempo
         public int codigo = 0;
         private int ajuste = 0;
         private int saida = 0;
+        private List<ModelRegistro> lista = new List<ModelRegistro>();
 
         public frmPesquisaEntrada()
         {
@@ -29,7 +33,14 @@ namespace PassaTempo
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
+            var _with1 = objPrintPreview;
+            _with1.Document = pd;
+            _with1.WindowState = FormWindowState.Maximized;
+            _with1.PrintPreviewControl.Zoom = 1;
+            _with1.ShowDialog();
         }
 
         private void rbAjuste_CheckedChanged(object sender, EventArgs e)
@@ -59,6 +70,7 @@ namespace PassaTempo
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            lista.Clear();
             BuscaDados();
         }
 
@@ -91,7 +103,23 @@ namespace PassaTempo
 
         private void PreencheGrid(DataTable tb)
         {            
-            gridEntrada.DataSource = tb;                      
+            gridEntrada.DataSource = tb;
+
+            //ADICIONA O DADOS DO DATATABLE NA LISTA PARA IMPRESSÂO
+            foreach (DataRow item in tb.Rows)
+            {
+                ModelRegistro model = new ModelRegistro();
+
+                model.dsc_produto = item[1].ToString();
+                model.lote = item[2].ToString();
+                model.qtd_produto = Convert.ToDouble(item[3].ToString());
+                model.data_fabricacao = item[4].ToString();
+                model.data_vencimento = item[5].ToString();
+                model.data_operacao = item[6].ToString();
+                model.observacao = item[7].ToString();
+
+                lista.Add(model);
+            }                      
         }
 
         private void gridEntrada_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -115,9 +143,12 @@ namespace PassaTempo
             txtLote.Clear();
             txtPesquisa.Clear();
             txtPesquisaData.Clear();
-
         }
 
-
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            RelatorioEntrada re = new RelatorioEntrada(sender, e);
+            re.Relatorio(lista, txtPesquisaData.Text, txtLote.Text, txtPesquisa.Text);
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaDetalhada));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTotaCaixas = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCarga)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -98,7 +98,7 @@
             // 
             this.lbTotaCaixas.AutoSize = true;
             this.lbTotaCaixas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotaCaixas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbTotaCaixas.ForeColor = System.Drawing.Color.Red;
             this.lbTotaCaixas.Location = new System.Drawing.Point(459, 513);
             this.lbTotaCaixas.Name = "lbTotaCaixas";
             this.lbTotaCaixas.Size = new System.Drawing.Size(16, 16);
@@ -141,7 +141,7 @@
             // 
             this.lbTotalItens.AutoSize = true;
             this.lbTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalItens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbTotalItens.ForeColor = System.Drawing.Color.Red;
             this.lbTotalItens.Location = new System.Drawing.Point(658, 513);
             this.lbTotalItens.Name = "lbTotalItens";
             this.lbTotalItens.Size = new System.Drawing.Size(16, 16);
@@ -202,17 +202,17 @@
             // 
             // gridCarga
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridCarga.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridCarga.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridCarga.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCarga.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCarga.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridCarga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCarga.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fk_produto,
@@ -283,6 +283,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Cliente";
+            // 
+            // txtCep
+            // 
+            this.txtCep.BackColor = System.Drawing.Color.Silver;
+            this.txtCep.Location = new System.Drawing.Point(468, 142);
+            this.txtCep.Name = "txtCep";
+            this.txtCep.ReadOnly = true;
+            this.txtCep.Size = new System.Drawing.Size(244, 22);
+            this.txtCep.TabIndex = 102;
+            this.txtCep.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(420, 145);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 16);
+            this.label14.TabIndex = 101;
+            this.label14.Text = "CEP:";
             // 
             // label8
             // 
@@ -408,7 +427,7 @@
             // 
             // txtDataCarregamento
             // 
-            this.txtDataCarregamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtDataCarregamento.BackColor = System.Drawing.Color.Silver;
             this.txtDataCarregamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataCarregamento.Location = new System.Drawing.Point(557, 21);
             this.txtDataCarregamento.Name = "txtDataCarregamento";
@@ -420,7 +439,7 @@
             // 
             // txtCodCliente
             // 
-            this.txtCodCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtCodCliente.BackColor = System.Drawing.Color.Silver;
             this.txtCodCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodCliente.Location = new System.Drawing.Point(278, 21);
             this.txtCodCliente.Name = "txtCodCliente";
@@ -459,25 +478,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(420, 145);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 16);
-            this.label14.TabIndex = 101;
-            this.label14.Text = "CEP:";
-            // 
-            // txtCep
-            // 
-            this.txtCep.BackColor = System.Drawing.Color.Silver;
-            this.txtCep.Location = new System.Drawing.Point(468, 142);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.ReadOnly = true;
-            this.txtCep.Size = new System.Drawing.Size(244, 22);
-            this.txtCep.TabIndex = 102;
-            this.txtCep.TabStop = false;
             // 
             // frmCargaDetalhada
             // 

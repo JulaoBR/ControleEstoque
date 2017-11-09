@@ -32,6 +32,7 @@ namespace PassaTempo
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            lista.Clear();
             BuscaDados();
         }
 
