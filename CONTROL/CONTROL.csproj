@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfiguracaoImpressao.cs" />
     <Compile Include="ControleCarga.cs" />
     <Compile Include="ControleCidadeEstado.cs" />
     <Compile Include="ControleCliente.cs" />
@@ -55,6 +56,9 @@
     <Compile Include="ControleRegistro.cs" />
     <Compile Include="ControleUsuario.cs" />
     <Compile Include="ControleVeiculos.cs" />
+    <Compile Include="ImprimirDocumento.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelatorioCargaDetalhada.cs" />

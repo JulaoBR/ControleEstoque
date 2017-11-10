@@ -1,7 +1,7 @@
 ﻿
 namespace MODEL
 {
-    public class ModelCarga
+    public class ModelCarga : ModelCliente
     {
         public ModelCarga()
         {

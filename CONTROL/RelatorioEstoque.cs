@@ -91,9 +91,6 @@ namespace CONTROL
             //Aqui sao lidos os dados (deixei pré-feito pra quando estivermos com o banco ja pronto)
             while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
             {
-
-                PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
-
                 //obtem os valores do datareader
                 int cod = Convert.ToInt32(Lista[i].Id_produto.ToString());
                 var produto = Lista[i].DscProduto.ToString();

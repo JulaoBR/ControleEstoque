@@ -51,7 +51,9 @@
     <Compile Include="ModelLotes.cs" />
     <Compile Include="ModelProduto.cs" />
     <Compile Include="ModelRegistro.cs" />
-    <Compile Include="ModelRelatorio.cs" />
+    <Compile Include="ModelRelatorio.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ModelRelatorioCargaDetalhada.cs" />
     <Compile Include="ModelRelatorioLotes.cs" />
     <Compile Include="ModelUsuario.cs" />
