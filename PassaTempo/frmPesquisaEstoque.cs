@@ -2,11 +2,8 @@
 using MODEL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PassaTempo
@@ -91,8 +88,9 @@ namespace PassaTempo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            PrintDocument pd = new ImprimirDocumento(lista);
+            pd.PrintPage += this.printDocument1_PrintPage;
+
             PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
             var _with1 = objPrintPreview;
             _with1.Document = pd;
@@ -104,8 +102,8 @@ namespace PassaTempo
         //EVENTO PARA IMPRESSÂO DOS DADOS
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            RelatorioEstoque re = new RelatorioEstoque(sender, e);
-            re.Relatorio(lista);
+            RelatorioEstoque re = new RelatorioEstoque(sender, e);                      
+            re.Relatorio();
         }
     }
 }

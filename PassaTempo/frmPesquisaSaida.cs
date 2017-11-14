@@ -42,6 +42,7 @@ namespace PassaTempo
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            //lista.Clear();
             frmPesquisaSaida_Load(sender, e);
         }
 
@@ -171,121 +172,21 @@ namespace PassaTempo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PrintDocument doc = new ImprimirDocumento(lista);
-            doc.PrintPage += this.printDocument1_PrintPage;
+            PrintDocument pd = new ImprimirDocumento2(lista);
+            pd.PrintPage += this.printDocument1_PrintPage;
 
-            PrintDialog dialogo = new PrintDialog();
-            dialogo.Document = doc;
-
-            //  Se o usuário clicar em OK , imprime o documento
-            if (dialogo.ShowDialog() == DialogResult.OK)
-            {
-                
-                    PrintPreviewDialog ppdlg = new PrintPreviewDialog();
-                    ppdlg.Document = doc;
-                    ppdlg.ShowDialog();
-                
-                
-                    doc.Print();
-                
-            }
+            PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
+            var _with1 = objPrintPreview;
+            _with1.Document = pd;
+            _with1.WindowState = FormWindowState.Maximized;
+            _with1.PrintPreviewControl.Zoom = 1;
+            _with1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Recupera o documento que enviou este evento.
-            ImprimirDocumento doc = (ImprimirDocumento)sender;
-
-            // Define a fonte e determina a altura da linha
-            using (Font fonte = new Font("Verdana", 10))
-            {
-                float alturaLinha = fonte.GetHeight(e.Graphics);
-
-                // Cria as variáveis para tratar a posição na página
-                float MargemEsq = e.MarginBounds.Left;
-                float MargemSuper = e.MarginBounds.Top;
-                float MargemDir = e.MarginBounds.Right;
-                float MargemInfer = e.MarginBounds.Bottom;
-                float PosicaoDaLinha = 0;
-                float LinhaAtual = 0;
-                int i = 0;
-
-                Pen CanetaDaImpressora = new Pen(Color.Black, 1);
-                Pen CanetaDaImpressora2 = new Pen(Color.Black, 1);
-
-                //Variaveis de Fontes.
-                Font FonteNegrito = default(Font);
-                Font FonteTitulo = default(Font);
-                Font FonteSubTitulo = default(Font);
-                Font FonteRodape = default(Font);
-                Font FonteNormal = default(Font);
-
-                //Define efeitos das fontes.
-                FonteNegrito = new Font("Arial", 9, FontStyle.Bold);
-                FonteTitulo = new Font("Arial", 18, FontStyle.Bold);
-                FonteSubTitulo = new Font("Arial", 12, FontStyle.Bold);
-                FonteRodape = new Font("Arial", 9, FontStyle.Bold);
-                FonteNormal = new Font("Arial", 9);
-
-                // Incrementa o contador de página para refletir 
-                // a página que esta sendo impressa
-                doc.NumeroPagina += 1;
-
-
-                e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 60, MargemDir, 60);
-                e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 160, MargemDir, 160);
-
-                //nome da empresa
-                e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 40, 80, new StringFormat());
-
-                e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
-
-                e.Graphics.DrawString(" RELATÓRIO DE ESTOQUE", FonteSubTitulo, Brushes.Black, MargemEsq + 225, 109, new StringFormat());
-
-                Image image = Image.FromFile("FOTO.jpg");
-                Point pp = new Point(100, 68);
-                //imagem/logo se caso quiser colocar um logo
-                e.Graphics.DrawImage(image, pp);
-
-                //linha de separação
-                e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 130, MargemDir, 130);
-
-
-
-                // Imprime toda a informação que cabe na página
-                // O laço termina quando a próxima linha 
-                // iria passar a borda da margem ou quando não 
-                // houve mais linhas a imprimir
-                while ((MargemSuper + LinhaAtual) < e.MarginBounds.Bottom &&
-                  doc.Offset <= doc.Texto.Count)
-                {
-                    PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(e.Graphics));
-
-
-                    e.Graphics.DrawString(doc.Texto[i].nome_cliente, FonteNormal,
-                     Brushes.Black, MargemEsq + 150, PosicaoDaLinha, new StringFormat());
-
-                     // move para a proxima linha
-                     doc.Offset += 1;
-
-                     // Move uma linha para baixo (proxima linha)
-                     MargemSuper += alturaLinha;
-
-                    i++;
-                }
-
-                if (doc.Offset < doc.Texto.Count)
-                {
-                    // Havendo ainda pelo menos mais uma página.
-                    // Sinaliza o evento para disparar novamente
-                    e.HasMorePages = true;
-                }
-                else
-                {
-                    // A impressão terminou
-                    doc.Offset = 0;
-                }
-            }
+            RelatorioSaidaCargas re = new RelatorioSaidaCargas(sender, e);
+            re.Relatorio();
         }
     }
 }

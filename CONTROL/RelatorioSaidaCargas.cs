@@ -1,5 +1,4 @@
-﻿using MODEL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -9,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace CONTROL
 {
-    public class RelatorioEstoque 
+    public class RelatorioSaidaCargas 
     {
+
         public object sender;
         public System.Drawing.Printing.PrintPageEventArgs e;
 
 
-        public RelatorioEstoque(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        public RelatorioSaidaCargas(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             this.sender = sender;
             this.e = e;
@@ -25,7 +25,7 @@ namespace CONTROL
         public void Relatorio()
         {
             // Recupera o documento que enviou este evento.
-            ImprimirDocumento doc = (ImprimirDocumento)sender;
+            ImprimirDocumento2 doc = (ImprimirDocumento2)sender;
 
             //Variaveis de Linhas.
             float LinhasPorPagina = 0;
@@ -71,7 +71,7 @@ namespace CONTROL
 
             e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
 
-            e.Graphics.DrawString(" RELATÓRIO DE ESTOQUE", FonteSubTitulo, Brushes.Black, MargemEsq + 225, 109, new StringFormat());
+            e.Graphics.DrawString(" RELATÓRIO DE CARGAS", FonteSubTitulo, Brushes.Black, MargemEsq + 225, 109, new StringFormat());
 
             Image image = Image.FromFile("FOTO.jpg");
             Point pp = new Point(100, 68);
@@ -82,33 +82,33 @@ namespace CONTROL
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 130, MargemDir, 130);
 
             //campos a serem impressos: cabeçalho
-            e.Graphics.DrawString("CÓDIGO", FonteNegrito, Brushes.Black, MargemEsq, 170, new StringFormat());
-            e.Graphics.DrawString("PRODUTO", FonteNegrito, Brushes.Black, MargemEsq + 150, 170, new StringFormat());
-            e.Graphics.DrawString("QUANTIDADE", FonteNegrito, Brushes.Black, MargemEsq + 550, 170, new StringFormat());
+            e.Graphics.DrawString("CARGA", FonteNegrito, Brushes.Black, MargemEsq, 170, new StringFormat());
+            e.Graphics.DrawString("CLIENTE", FonteNegrito, Brushes.Black, MargemEsq + 150, 170, new StringFormat());
+            e.Graphics.DrawString("CARREGAMENTO", FonteNegrito, Brushes.Black, MargemEsq + 550, 170, new StringFormat());
 
             //linha de separação
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 190, MargemDir, 190);
 
             //define quantas linhas por pagina
-            LinhasPorPagina = 30;
+            LinhasPorPagina = Convert.ToInt32(e.MarginBounds.Height / FonteNormal.GetHeight(e.Graphics));
 
             StringFormat alinhaDireita = new StringFormat();
             alinhaDireita.Alignment = StringAlignment.Far;
-          
-            while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
+
+            while (doc.Offset < doc.Texto.Count)
             {
                 //obtem os valores do datareader
-                int cod = Convert.ToInt32(doc.Texto[doc.Offset].Id_produto.ToString());
-                var produto = doc.Texto[doc.Offset].DscProduto.ToString();
-                var quantidade = doc.Texto[doc.Offset].qtd_estoque.ToString();
+                int cod = Convert.ToInt32(doc.Texto[doc.Offset].Id_carga.ToString());
+                var cliente = doc.Texto[doc.Offset].nome_cliente.ToString();
+                var carregamento = doc.Texto[doc.Offset].data_carregamento.ToString();
 
                 //inicia a impressao
                 PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(e.Graphics));
 
                 //imprime os dados relativo ao codigo , nome do produto e preço do produto
                 e.Graphics.DrawString(cod.ToString(), FonteNormal, Brushes.Black, MargemEsq, PosicaoDaLinha, new StringFormat());
-                e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 150, PosicaoDaLinha, new StringFormat());
-                e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 580, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(cliente.ToString(), FonteNormal, Brushes.Black, MargemEsq + 150, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(carregamento.ToString(), FonteNormal, Brushes.Black, MargemEsq + 580, PosicaoDaLinha, new StringFormat());
 
 
                 LinhaAtual += 1;
@@ -118,10 +118,10 @@ namespace CONTROL
             }
 
             //verifica se continua imprimindo
-            if (TotalRegistro > 0)
+            if (doc.Offset < doc.Texto.Count)
                 e.HasMorePages = true;
             else
-                e.HasMorePages = false;
+                doc.Offset = 0;
 
             //Rodape - pega data e hora do sistema
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, MargemInfer, MargemDir, MargemInfer);

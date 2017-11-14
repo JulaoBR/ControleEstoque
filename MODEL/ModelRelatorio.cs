@@ -12,6 +12,6 @@ namespace MODEL
     {
         public object sender;
         public System.Drawing.Printing.PrintPageEventArgs e;
-       
+
     }
 }

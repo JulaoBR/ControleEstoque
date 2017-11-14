@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Drawing.Printing;
 
-
 namespace CONTROL
 {
-    public class ImprimirDocumento : PrintDocument
+    public class ImprimirDocumento2 : PrintDocument
     {
-        private List<ModelProduto> texto = new List<ModelProduto>();
+        private List<ModelCarga> texto = new List<ModelCarga>();
         private int numeroPagina;
         private int offset;
 
-        public ImprimirDocumento(List<ModelProduto> _texto)
+        public ImprimirDocumento2(List<ModelCarga> _texto)
         {
             this.Texto = _texto;
         }
 
-        public List<ModelProduto> Texto
+
+        public List<ModelCarga> Texto
         {
             get { return texto; }
             set { texto = value; }
