@@ -1,11 +1,5 @@
-﻿using MODEL;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CONTROL
 {
@@ -25,13 +19,12 @@ namespace CONTROL
         public void Relatorio()
         {
             // Recupera o documento que enviou este evento.
-            ImprimirDocumento doc = (ImprimirDocumento)sender;
+            ImprimirDocumentoEstoque doc = (ImprimirDocumentoEstoque)sender;
 
             //Variaveis de Linhas.
             float LinhasPorPagina = 0;
             float PosicaoDaLinha = 0;
             int LinhaAtual = 0;
-            int TotalRegistro = doc.Texto.Count;
 
             //Variaveis de Margens.
             float MargemEsq = e.MarginBounds.Left;
@@ -90,12 +83,13 @@ namespace CONTROL
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 190, MargemDir, 190);
 
             //define quantas linhas por pagina
-            LinhasPorPagina = 30;
+            //define quantas linhas por pagina
+            LinhasPorPagina = Convert.ToInt32(e.MarginBounds.Height / FonteNormal.GetHeight(e.Graphics) - 9);
 
             StringFormat alinhaDireita = new StringFormat();
             alinhaDireita.Alignment = StringAlignment.Far;
           
-            while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
+            while (LinhaAtual < LinhasPorPagina && doc.Offset < doc.Texto.Count)
             {
                 //obtem os valores do datareader
                 int cod = Convert.ToInt32(doc.Texto[doc.Offset].Id_produto.ToString());
@@ -110,18 +104,16 @@ namespace CONTROL
                 e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 150, PosicaoDaLinha, new StringFormat());
                 e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 580, PosicaoDaLinha, new StringFormat());
 
-
                 LinhaAtual += 1;
-                TotalRegistro -= 1;
                 // move para a proxima linha
                 doc.Offset += 1;
             }
 
             //verifica se continua imprimindo
-            if (TotalRegistro > 0)
+            if (doc.Offset < doc.Texto.Count)
                 e.HasMorePages = true;
             else
-                e.HasMorePages = false;
+                doc.Offset = 0;
 
             //Rodape - pega data e hora do sistema
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, MargemInfer, MargemDir, MargemInfer);

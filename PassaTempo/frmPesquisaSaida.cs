@@ -3,7 +3,6 @@ using MODEL;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
@@ -42,7 +41,7 @@ namespace PassaTempo
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            //lista.Clear();
+            lista.Clear();
             frmPesquisaSaida_Load(sender, e);
         }
 
@@ -172,7 +171,7 @@ namespace PassaTempo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new ImprimirDocumento2(lista);
+            PrintDocument pd = new ImprimirDocumentoSaidaCargas(lista);
             pd.PrintPage += this.printDocument1_PrintPage;
 
             PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();

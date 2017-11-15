@@ -4,13 +4,13 @@ using System.Drawing.Printing;
 
 namespace CONTROL
 {
-    public class ImprimirDocumento2 : PrintDocument
+    public class ImprimirDocumentoSaidaCargas : PrintDocument
     {
         private List<ModelCarga> texto = new List<ModelCarga>();
         private int numeroPagina;
         private int offset;
 
-        public ImprimirDocumento2(List<ModelCarga> _texto)
+        public ImprimirDocumentoSaidaCargas(List<ModelCarga> _texto)
         {
             this.Texto = _texto;
         }

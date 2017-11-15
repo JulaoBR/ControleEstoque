@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CONTROL
 {
@@ -25,13 +20,12 @@ namespace CONTROL
         public void Relatorio()
         {
             // Recupera o documento que enviou este evento.
-            ImprimirDocumento2 doc = (ImprimirDocumento2)sender;
+            ImprimirDocumentoSaidaCargas doc = (ImprimirDocumentoSaidaCargas)sender;
 
             //Variaveis de Linhas.
             float LinhasPorPagina = 0;
             float PosicaoDaLinha = 0;
             int LinhaAtual = 0;
-            int TotalRegistro = doc.Texto.Count;
 
             //Variaveis de Margens.
             float MargemEsq = e.MarginBounds.Left;
@@ -83,36 +77,38 @@ namespace CONTROL
 
             //campos a serem impressos: cabeçalho
             e.Graphics.DrawString("CARGA", FonteNegrito, Brushes.Black, MargemEsq, 170, new StringFormat());
-            e.Graphics.DrawString("CLIENTE", FonteNegrito, Brushes.Black, MargemEsq + 150, 170, new StringFormat());
-            e.Graphics.DrawString("CARREGAMENTO", FonteNegrito, Brushes.Black, MargemEsq + 550, 170, new StringFormat());
+            e.Graphics.DrawString("CLIENTE", FonteNegrito, Brushes.Black, MargemEsq + 70, 170, new StringFormat());
+            e.Graphics.DrawString("ENDEREÇO", FonteNegrito, Brushes.Black, MargemEsq + 300, 170, new StringFormat());
+            e.Graphics.DrawString("CARREGAMENTO", FonteNegrito, Brushes.Black, MargemEsq + 540, 170, new StringFormat());
 
             //linha de separação
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 190, MargemDir, 190);
 
             //define quantas linhas por pagina
-            LinhasPorPagina = Convert.ToInt32(e.MarginBounds.Height / FonteNormal.GetHeight(e.Graphics));
+            LinhasPorPagina = Convert.ToInt32(e.MarginBounds.Height / FonteNormal.GetHeight(e.Graphics) - 9);
 
             StringFormat alinhaDireita = new StringFormat();
             alinhaDireita.Alignment = StringAlignment.Far;
 
-            while (doc.Offset < doc.Texto.Count)
+            while (LinhaAtual < LinhasPorPagina && doc.Offset < doc.Texto.Count)
             {
                 //obtem os valores do datareader
                 int cod = Convert.ToInt32(doc.Texto[doc.Offset].Id_carga.ToString());
                 var cliente = doc.Texto[doc.Offset].nome_cliente.ToString();
-                var carregamento = doc.Texto[doc.Offset].data_carregamento.ToString();
+                var endereco = doc.Texto[doc.Offset].endereco.ToString();
+                DateTime carregamento = Convert.ToDateTime(doc.Texto[doc.Offset].data_carregamento.ToString());
 
                 //inicia a impressao
                 PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(e.Graphics));
 
                 //imprime os dados relativo ao codigo , nome do produto e preço do produto
                 e.Graphics.DrawString(cod.ToString(), FonteNormal, Brushes.Black, MargemEsq, PosicaoDaLinha, new StringFormat());
-                e.Graphics.DrawString(cliente.ToString(), FonteNormal, Brushes.Black, MargemEsq + 150, PosicaoDaLinha, new StringFormat());
-                e.Graphics.DrawString(carregamento.ToString(), FonteNormal, Brushes.Black, MargemEsq + 580, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(cliente.ToString(), FonteNormal, Brushes.Black, MargemEsq + 70, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(endereco.ToString(), FonteNormal, Brushes.Black, MargemEsq + 300, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(carregamento.ToString("dd/MM/yyyy"), FonteNormal, Brushes.Black, MargemEsq + 560, PosicaoDaLinha, new StringFormat());
 
 
                 LinhaAtual += 1;
-                TotalRegistro -= 1;
                 // move para a proxima linha
                 doc.Offset += 1;
             }

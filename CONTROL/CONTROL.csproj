@@ -56,10 +56,13 @@
     <Compile Include="ControleRegistro.cs" />
     <Compile Include="ControleUsuario.cs" />
     <Compile Include="ControleVeiculos.cs" />
-    <Compile Include="ImprimirDocumento.cs">
+    <Compile Include="ImprimirDocumentoEntrada.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ImprimirDocumento2.cs">
+    <Compile Include="ImprimirDocumentoEstoque.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImprimirDocumentoSaidaCargas.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />

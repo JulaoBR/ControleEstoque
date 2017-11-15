@@ -88,7 +88,7 @@ namespace PassaTempo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new ImprimirDocumento(lista);
+            PrintDocument pd = new ImprimirDocumentoEstoque(lista);
             pd.PrintPage += this.printDocument1_PrintPage;
 
             PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();

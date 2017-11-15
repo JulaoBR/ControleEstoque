@@ -33,9 +33,10 @@ namespace PassaTempo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            PrintDocument pd = new ImprimirDocumentoEntrada(lista);
+            pd.PrintPage += this.printDocument1_PrintPage;
             PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
+
             var _with1 = objPrintPreview;
             _with1.Document = pd;
             _with1.WindowState = FormWindowState.Maximized;
@@ -148,7 +149,7 @@ namespace PassaTempo
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             RelatorioEntrada re = new RelatorioEntrada(sender, e);
-            re.Relatorio(lista, txtPesquisaData.Text, txtLote.Text, txtPesquisa.Text);
+            re.Relatorio(txtPesquisaData.Text, txtLote.Text, txtPesquisa.Text);
         }
     }
 }
