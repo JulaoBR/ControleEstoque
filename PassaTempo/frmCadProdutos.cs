@@ -37,7 +37,7 @@ namespace PassaTempo
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            controle = 0;
+            LimpaCampo();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -50,9 +50,9 @@ namespace PassaTempo
             if (VerificaCampos())
             {
                 PreencheModelo();
-                LimpaCampo();
                 this.inicioBotoes();
                 SalvarModelo();
+                LimpaCampo();
             }
             else
             {
@@ -63,12 +63,24 @@ namespace PassaTempo
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //Comando que questiona ao usuário se relamente deseja sair do programa
-            DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
-               "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (txtCodigoProduto.Text != string.Empty)
             {
+                    //Comando que questiona ao usuário se relamente deseja sair do programa
+                DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
+                   "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                
+                        ControleProduto control = new ControleProduto();
+                        control.Excluir(Convert.ToInt32(txtCodigoProduto.Text));
 
+                        LimpaCampo();
+                        this.inicioBotoes();                            
+                }
+
+            }else
+            {
+                MessageBox.Show("Selecione um item que deseja excluir!", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

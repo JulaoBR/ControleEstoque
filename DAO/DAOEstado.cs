@@ -49,7 +49,7 @@ namespace DAO
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 cmd.CommandText = "UPDATE estado SET nome_estado=@nome WHERE Id_estado = @Id_estado;";
-                cmd.Parameters.AddWithValue("@nome", modelo.nome_cidade);
+                cmd.Parameters.AddWithValue("@nome", modelo.nome_estado);
                 cmd.Parameters.AddWithValue("@Id_estado", modelo.Id_estado);
 
                 conexao.Conectar();

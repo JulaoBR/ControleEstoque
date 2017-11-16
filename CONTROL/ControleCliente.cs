@@ -30,9 +30,33 @@ namespace CONTROL
         {
             if (dao.Alterar(modelo))
             {
+                MessageBox.Show("Atualização realizada com sucesso!", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;
+        }
+
+        public void Excluir(int codigo)
+        {
+            try
+            {
+                DAOCliente control = new DAOCliente(cx);
+                if (control.Excluir(codigo))
+                {
+                    MessageBox.Show("Item excluido", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public DataTable BuscaString(string valor)

@@ -31,9 +31,26 @@ namespace CONTROL
             DAOUsuario dao = new DAOUsuario(cx);
             if (dao.Alterar(modelo))
             {
+                MessageBox.Show("Atualização realizada com sucesso!", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;     
+        }
+
+        public void Excluir(int codigo)
+        {
+            DAOUsuario dao = new DAOUsuario(cx);
+            if (dao.Excluir(codigo))
+            {
+                MessageBox.Show("Item excluido", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public DataTable BuscaUsuario(string valor)

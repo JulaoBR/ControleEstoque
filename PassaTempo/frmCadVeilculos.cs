@@ -7,6 +7,8 @@ namespace PassaTempo
 {
     public partial class frmCadVeilculos : PassaTempo.frmCadastro
     {
+        private int controle = 0;
+
         public frmCadVeilculos()
         {
             InitializeComponent();
@@ -14,6 +16,7 @@ namespace PassaTempo
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            this.inicioBotoes();
             PreencheModel();
             LimpaCampo();
         }
@@ -21,6 +24,7 @@ namespace PassaTempo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpaCampo();
+            this.inicioBotoes();
         }
 
         private void btnLista_Click(object sender, EventArgs e)
@@ -83,7 +87,14 @@ namespace PassaTempo
                 model.lotacao = Convert.ToDouble(txtLotacao.Text);
                 model.placa = txtPlaca.Text;
 
-                veiculo.Inserir(model);
+                if (controle == 0)
+                {
+                    veiculo.Inserir(model);
+                }else if(controle == 1)
+                {
+                    veiculo.Alterar(model);
+                }
+                
             }
             catch
             {
@@ -99,8 +110,40 @@ namespace PassaTempo
             txtPlaca.Clear();
             txtTara.Clear();
             txtLotacao.Clear();
+
+            controle = 0;
         }
 
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            LimpaCampo();
+        }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            controle = 1;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigoVeiculo.Text != string.Empty)
+            {
+                //Comando que questiona ao usuário se relamente deseja sair do programa
+                DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
+                   "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ControleVeiculos control = new ControleVeiculos();
+                    control.Excluir(Convert.ToInt32(txtCodigoVeiculo.Text));
+
+                    LimpaCampo();
+                    this.inicioBotoes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item que deseja excluir!", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

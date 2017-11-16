@@ -1,11 +1,6 @@
 ﻿using DAO;
 using MODEL;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CONTROL
@@ -22,9 +17,13 @@ namespace CONTROL
         {
 
             DAOProduto dao = new DAOProduto(cx);
-            if (!dao.Inserir(modelo))
+            if (dao.Inserir(modelo))
             {
-                MessageBox.Show("Erro na inserção do novo usuario", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Produto cadastrado com sucesso!", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na inserção do novo produto", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;
         }
@@ -35,9 +34,26 @@ namespace CONTROL
             DAOProduto dao = new DAOProduto(cx);
             if (dao.Alterar(modelo))
             {
-                MessageBox.Show("Erro na atualização do usuario", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Atualização realizada com sucesso!", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na atualização do produto", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;
+        }
+
+        public void Excluir(int  codigo)
+        {
+            DAOProduto dao = new DAOProduto(cx);
+            if (dao.Excluir(codigo))
+            {
+                MessageBox.Show("Item excluido", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public DataTable BuscaString(string valor, int tipoProduto)

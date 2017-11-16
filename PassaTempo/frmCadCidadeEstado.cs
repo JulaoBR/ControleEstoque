@@ -56,18 +56,53 @@ namespace PassaTempo
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //Comando que questiona ao usuário se relamente deseja sair do programa
-            DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
-               "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (VerificaCampo2())
+            {
+                //Comando que questiona ao usuário se relamente deseja sair do programa
+                DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
+                   "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ControleCidadeEstado control = new ControleCidadeEstado();
+
+                    if (txtCodigoCidade.Text != string.Empty)
+                    {
+                        control.ExcluirCidade(Convert.ToInt32(txtCodigoCidade.Text));
+                    }else if (txtCodEstado.Text != string.Empty)
+                    {
+                        control.ExcluirEstado(Convert.ToInt32(txtCodEstado.Text));
+                    }
+                }
+            }
+            else
             {
 
             }
+            
+        }
+
+        private bool VerificaCampo2()
+        {
+            if (rbCidade.Checked)
+            {
+               if(txtCodigoCidade.Text != string.Empty)
+                {
+                    return true;
+                }
+            }
+            if (rbEstado.Checked)
+            {
+                if (txtCodEstado.Text != string.Empty)
+                {
+                    return true;
+                }
+            }              
+            return false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            controle = 0;
+            LimpaCampo();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -80,9 +115,9 @@ namespace PassaTempo
             if (VerificaCampo())
             {
                 PreencheModelo();
-                LimpaCampo();
                 this.inicioBotoes();
                 SalvaModelo();
+                LimpaCampo();
             }
             else
             {
@@ -199,7 +234,7 @@ namespace PassaTempo
             {
                 txtCodigoCidade.Text = tb.Rows[0]["Id_cidade"].ToString();
                 txtNomeCidade.Text = tb.Rows[0]["nome_cidade"].ToString();
-                //cbEstado.Text =
+                cbEstado.Text = tb.Rows[0]["nome_estado"].ToString();
                 txtCep.Text = tb.Rows[0]["cep"].ToString();
             }else if (rbEstado.Checked)
             {

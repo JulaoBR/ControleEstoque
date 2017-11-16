@@ -45,6 +45,21 @@ namespace CONTROL
             dao = null;
         }
 
+        public void Excluir(int codigo)
+        {
+            DAOVeiculos dao = new DAOVeiculos(cx);
+
+            if (dao.Excluir(codigo))
+            {
+                MessageBox.Show("Item excluido", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public DataTable BuscaVeiculos(string valor)
         {
             DAOVeiculos dao = new DAOVeiculos(cx);

@@ -38,6 +38,10 @@ namespace CONTROL
         {
             if (dao.Alterar(modelo))
             {
+                MessageBox.Show("Atualização realizada com sucesso!", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;
@@ -47,9 +51,39 @@ namespace CONTROL
         {
             if (dao2.Alterar(modelo))
             {
-                MessageBox.Show("Erro na atualização do usuario", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Atualização realizada com sucesso!", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;
+        }
+
+        public void ExcluirCidade(int codigo)
+        {
+            DAOCidade dao = new DAOCidade(cx);
+            if (dao.Excluir(codigo))
+            {
+                MessageBox.Show("Item excluido", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ExcluirEstado(int codigo)
+        {
+            DAOEstado dao = new DAOEstado(cx);
+            if (dao.Excluir(codigo))
+            {
+                MessageBox.Show("Item excluido", "Operação Realizada!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na exclusão", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public DataTable BuscaCidade(string valor)

@@ -100,7 +100,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM cidade WHERE nome_cidade LIKE '%" +
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_cidade, A.Fk_estado, B.nome_estado, A.nome_cidade, A.cep FROM cidade AS A INNER JOIN estado AS B WHERE A.Fk_estado = B.Id_estado AND nome_cidade LIKE '%" +
                 valor + "%'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
@@ -117,7 +117,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM cidade WHERE Id_cidade = '" + Id + "'", conexao.StringConexao))
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_cidade, A.Fk_estado, B.nome_estado, A.nome_cidade, A.cep FROM cidade AS A INNER JOIN estado AS B WHERE A.Fk_estado = B.Id_estado AND Id_cidade = '" + Id + "'", conexao.StringConexao))
                 {
                     da.Fill(tb);
                     conexao.Desconectar();

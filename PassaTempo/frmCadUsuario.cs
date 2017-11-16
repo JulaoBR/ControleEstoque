@@ -53,8 +53,9 @@ namespace PassaTempo
             if (VerificaCampos())
             {
                 PreencheModelo();
-                LimpaCampo();
                 SalvarModelo();
+                LimpaCampo();
+                this.inicioBotoes();
             }
             else
             {
@@ -65,13 +66,23 @@ namespace PassaTempo
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //Comando que questiona ao usuário se relamente deseja sair do programa
-            DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
-               "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
+            if(txtCodigoUsuario.Text != string.Empty){
+                //Comando que questiona ao usuário se relamente deseja sair do programa
+                DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
+                   "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ControleUsuario control = new ControleUsuario();
+                    control.Excluir(Convert.ToInt32(txtCodigoUsuario.Text));
 
+                    LimpaCampo();
+                    this.inicioBotoes();
+                }
             }
+            else
+            {
+                MessageBox.Show("Selecione um item que deseja excluir!", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }          
         }
 
         private void btnLista_Click(object sender, EventArgs e)
