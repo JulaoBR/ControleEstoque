@@ -20,8 +20,8 @@ namespace PassaTempo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            PrintDocument pd = new ImprimirDocumentoRastreioLotes(lista);
+            pd.PrintPage += this.printDocument1_PrintPage;
             PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
             var _with1 = objPrintPreview;
             _with1.Document = pd;
@@ -130,7 +130,7 @@ namespace PassaTempo
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             RelatorioSaidaLotes re = new RelatorioSaidaLotes(sender,e);
-            re.Relatorio(lista);
+            re.Relatorio(txtLote.Text);
         }
     }
 }

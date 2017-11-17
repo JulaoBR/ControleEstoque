@@ -10,30 +10,30 @@ namespace CONTROL
 {
     public class RelatorioSaidaLotes
     {
-        int paginaAtual = 1;
-
-        ModelRelatorio rinout = new ModelRelatorio();
+        public object sender;
+        public System.Drawing.Printing.PrintPageEventArgs e;
 
         public RelatorioSaidaLotes(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            rinout.sender = sender;
-            rinout.e = e;
+            this.sender = sender;
+            this.e = e;
         }
 
         //METODO QUE CONSTRÓI O RELATÓRIO A SER GERADO
-        public void Relatorio(List<ModelRelatorioLotes> Lista)
+        public void Relatorio(string lotePesquisado)
         {
+            ImprimirDocumentoRastreioLotes doc = (ImprimirDocumentoRastreioLotes)sender;
+
             //Variaveis de Linhas.
             float LinhasPorPagina = 0;
             float PosicaoDaLinha = 0;
             int LinhaAtual = 0;
-            int TotalRegistro = Lista.Count();
 
             //Variaveis de Margens.
-            float MargemEsq = rinout.e.MarginBounds.Left;
-            float MargemSuper = rinout.e.MarginBounds.Top + 100;
-            float MargemDir = rinout.e.MarginBounds.Right;
-            float MargemInfer = rinout.e.MarginBounds.Bottom;
+            float MargemEsq = e.MarginBounds.Left;
+            float MargemSuper = e.MarginBounds.Top + 100;
+            float MargemDir = e.MarginBounds.Right;
+            float MargemInfer = e.MarginBounds.Bottom;
 
             Pen CanetaDaImpressora = new Pen(Color.Black, 1);
             Pen CanetaDaImpressora2 = new Pen(Color.Black, 1);
@@ -52,92 +52,95 @@ namespace CONTROL
             FonteRodape = new Font("Arial", 9, FontStyle.Bold);
             FonteNormal = new Font("Arial", 9);
 
+            // Incrementa o contador de página para refletir 
+            // a página que esta sendo impressa
+            doc.NumeroPagina += 1;
+
             //Define o valor para linha atual e da impressao
             LinhaAtual = 0;
 
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 60, MargemDir, 60);
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 160, MargemDir, 160);
+            e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 60, MargemDir, 60);
 
             //CABEÇALHO DO DOCUMENTO=================================================================
             //nome da empresa
-                rinout.e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 40, 80, new StringFormat());
-                rinout.e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
+                e.Graphics.DrawString("Massas Lott", FonteTitulo, Brushes.Black, MargemEsq + 40, 80, new StringFormat());
+                e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemDir - 120, 70, new StringFormat());
 
-                rinout.e.Graphics.DrawString("RASTREAMENTO DE LOTES", FonteSubTitulo, Brushes.Black, MargemEsq + 215, 109, new StringFormat());
+                e.Graphics.DrawString("RASTREAMENTO DE LOTES", FonteSubTitulo, Brushes.Black, MargemEsq + 215, 109, new StringFormat());
 
                 Image image = Image.FromFile("FOTO.jpg");
                 Point pp = new Point(100, 68);
                 //imagem/logo se caso quiser colocar um logo
-                rinout.e.Graphics.DrawImage(image, pp);
+                e.Graphics.DrawImage(image, pp);
             //CABEÇALHO DO DOCUMENTO=================================================================
 
             //linha de separação
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 130, MargemDir, 130);
+            e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 130, MargemDir, 130);
 
+            e.Graphics.DrawString("LOTE PESQUISADO: " + lotePesquisado, FonteNegrito, Brushes.Black, MargemEsq, 140, new StringFormat());
+
+
+            e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 160, MargemDir, 160);
             //campos a serem impressos: cabeçalho
-            rinout.e.Graphics.DrawString("CARGA", FonteNegrito, Brushes.Black, MargemEsq, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("CLIENTE", FonteNegrito, Brushes.Black, MargemEsq + 60, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("PRODUTO", FonteNegrito, Brushes.Black, MargemEsq + 300, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("QTD", FonteNegrito, Brushes.Black, MargemEsq + 460, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("LOTE", FonteNegrito, Brushes.Black, MargemEsq + 520, 170, new StringFormat());
-            rinout.e.Graphics.DrawString("DATA SAIDA", FonteNegrito, Brushes.Black, MargemEsq + 570, 170, new StringFormat());
+            e.Graphics.DrawString("CARGA", FonteNegrito, Brushes.Black, MargemEsq, 170, new StringFormat());
+            e.Graphics.DrawString("CLIENTE", FonteNegrito, Brushes.Black, MargemEsq + 60, 170, new StringFormat());
+            e.Graphics.DrawString("PRODUTO", FonteNegrito, Brushes.Black, MargemEsq + 300, 170, new StringFormat());
+            e.Graphics.DrawString("QTD", FonteNegrito, Brushes.Black, MargemEsq + 495, 170, new StringFormat());
+            e.Graphics.DrawString("LOTE", FonteNegrito, Brushes.Black, MargemEsq + 540, 170, new StringFormat());
+            e.Graphics.DrawString("SAIDA", FonteNegrito, Brushes.Black, MargemEsq + 595, 170, new StringFormat());
 
             //linha de separação
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 190, MargemDir, 190);
+            e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 190, MargemDir, 190);
 
             //define quantas linhas por pagina
-            LinhasPorPagina = Convert.ToInt32(rinout.e.MarginBounds.Height / FonteNormal.GetHeight(rinout.e.Graphics));
+            LinhasPorPagina = Convert.ToInt32(e.MarginBounds.Height / FonteNormal.GetHeight(e.Graphics) - 9);
 
             StringFormat alinhaDireita = new StringFormat();
             alinhaDireita.Alignment = StringAlignment.Far;
-            int i = 0;
 
             //Aqui sao lidos os dados (deixei pré-feito pra quando estivermos com o banco ja pronto)
-            while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
+            while (LinhaAtual < LinhasPorPagina && doc.Offset < doc.Texto.Count)
             {
                 //obtem os valores do datareader
-                int cod = Convert.ToInt32(Lista[i].Id_carga.ToString());
-                var cliente = Lista[i].dsc_cliente.ToString();
-                var produto = Lista[i].dsc_produto.ToString();
-                var quantidade = Lista[i].quantidade.ToString();
-                var lote = Lista[i].lote.ToString();
-                DateTime carregamento = Convert.ToDateTime(Lista[i].carregamento.ToString());
+                int cod = Convert.ToInt32(doc.Texto[doc.Offset].Id_carga.ToString());
+                var cliente = doc.Texto[doc.Offset].dsc_cliente.ToString();
+                var produto = doc.Texto[doc.Offset].dsc_produto.ToString();
+                var quantidade = doc.Texto[doc.Offset].quantidade.ToString();
+                var lote = doc.Texto[doc.Offset].lote.ToString();
+                DateTime carregamento = Convert.ToDateTime(doc.Texto[doc.Offset].carregamento.ToString());
 
                 //inicia a impressao
-                PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(rinout.e.Graphics));
+                PosicaoDaLinha = MargemSuper + (LinhaAtual * FonteNormal.GetHeight(e.Graphics));
 
                 //imprime os dados relativo ao codigo , nome do produto e preço do produto
-                rinout.e.Graphics.DrawString(cod.ToString(), FonteNormal, Brushes.Black, MargemEsq, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(cliente.ToString(), FonteNormal, Brushes.Black, MargemEsq + 60, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 300, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 460, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(lote.ToString(), FonteNormal, Brushes.Black, MargemEsq + 520, PosicaoDaLinha, new StringFormat());
-                rinout.e.Graphics.DrawString(carregamento.ToString("dd/MM/yyy"), FonteNormal, Brushes.Black, MargemEsq + 570, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(cod.ToString(), FonteNormal, Brushes.Black, MargemEsq, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(cliente.ToString(), FonteNormal, Brushes.Black, MargemEsq + 60, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(produto.ToString(), FonteNormal, Brushes.Black, MargemEsq + 300, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(quantidade.ToString(), FonteNormal, Brushes.Black, MargemEsq + 495, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(lote.ToString(), FonteNormal, Brushes.Black, MargemEsq + 540, PosicaoDaLinha, new StringFormat());
+                e.Graphics.DrawString(carregamento.ToString("dd/MM/yyy"), FonteNormal, Brushes.Black, MargemEsq + 580, PosicaoDaLinha, new StringFormat());
 
 
                 LinhaAtual += 1;
-                TotalRegistro -= 1;
-                i += 1;
+                // move para a proxima linha
+                doc.Offset += 1;
+
             }
 
             //verifica se continua imprimindo
-            if (TotalRegistro > 0)
-                rinout.e.HasMorePages = true;
+            if (doc.Offset < doc.Texto.Count)
+                e.HasMorePages = true;
             else
-                rinout.e.HasMorePages = false;
+                doc.Offset = 0;
 
             //Rodape - pega data e hora do sistema
-            rinout.e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, MargemInfer, MargemDir, MargemInfer);
-            rinout.e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemEsq, MargemInfer, new StringFormat());
-            LinhaAtual += Convert.ToInt32(FonteNormal.GetHeight(rinout.e.Graphics));
+            e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, MargemInfer, MargemDir, MargemInfer);
+            e.Graphics.DrawString(System.DateTime.Now.ToString(), FonteRodape, Brushes.Black, MargemEsq, MargemInfer, new StringFormat());
+            LinhaAtual += Convert.ToInt32(FonteNormal.GetHeight(e.Graphics));
             LinhaAtual += 1;
-            rinout.e.Graphics.DrawString("ProEstoque", FonteRodape, Brushes.Black, MargemDir - 360, MargemInfer, new StringFormat());
-            rinout.e.Graphics.DrawString("Pagina : " + paginaAtual, FonteRodape, Brushes.Black, MargemDir - 50, MargemInfer, new StringFormat());
-
-            //Incrementa o numero da pagina
-            paginaAtual += 1;
-
-
+            e.Graphics.DrawString("ProEstoque", FonteRodape, Brushes.Black, MargemDir - 360, MargemInfer, new StringFormat());
+            e.Graphics.DrawString("Pagina : " + doc.NumeroPagina, FonteRodape, Brushes.Black, MargemDir - 50, MargemInfer, new StringFormat());
+        
             //-------------------------------------------------------------------------------------------------------------------------
             /// <summary>
             /// finaliza a impressão
