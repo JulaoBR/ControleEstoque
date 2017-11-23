@@ -2,6 +2,7 @@
 using MODEL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace PassaTempo
@@ -18,6 +19,7 @@ namespace PassaTempo
             InitializeComponent();
             gridProdutos.AutoGenerateColumns = false;
             txtCodigoProduto.Focus();
+            CarregaComboEstado();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -260,5 +262,23 @@ namespace PassaTempo
             pesoTotal = 0;
         }
 
+        private void CarregaComboEstado()
+        {
+            ControleVeiculos control = new ControleVeiculos();
+
+            cbNomeCaminhao.DataSource = control.BuscaVeiculos("");
+            cbNomeCaminhao.DisplayMember = "NOME";
+            cbNomeCaminhao.ValueMember = "ID";
+            cbNomeCaminhao.SelectedIndex = -1;          
+        }
+
+
+        private void PreencheCampos(DataTable tb)
+        {
+            txtTara.Text = tb.Rows[0]["TARA"].ToString();
+            txtLotacao.Text = tb.Rows[0]["LOTAÇÃO"].ToString();
+            txtPesoBruto.Text = Convert.ToString(Convert.ToDouble(tb.Rows[0]["TARA"].ToString()) * Convert.ToDouble(tb.Rows[0]["LOTAÇÃO"].ToString()));
+            txtPlaca.Text = tb.Rows[0]["PLACA"].ToString();
+        }
     }
 }

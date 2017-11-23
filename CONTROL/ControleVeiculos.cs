@@ -65,5 +65,11 @@ namespace CONTROL
             DAOVeiculos dao = new DAOVeiculos(cx);
             return dao.LocalizaPorString(valor);
         }
+
+        public DataTable BuscaVeiculos(int valor)
+        {
+            DAOVeiculos dao = new DAOVeiculos(cx);
+            return dao.LocalizaPorInt(valor);
+        }
     }
 }

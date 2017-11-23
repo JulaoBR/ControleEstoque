@@ -54,11 +54,16 @@ namespace PassaTempo
         {
             frmPesquisaProduto frmPesquisa = new frmPesquisaProduto(1);
             ControleProduto control = new ControleProduto();
+            ControleEstoqueAtual controle = new ControleEstoqueAtual();
             frmPesquisa.ShowDialog();
 
             if (frmPesquisa.codigo != 0)
             {
                 PreencheCamposProduto(control.BuscaInt(frmPesquisa.codigo));
+                filaLotes = controle.CalculaLotes(Convert.ToInt32(txtCodProduto.Text));
+
+                PreencheListaLotesDisponiveis();
+                txtQtd1.Focus();
             }
             else
             {

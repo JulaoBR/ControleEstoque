@@ -114,5 +114,21 @@ namespace DAO
             }
 
         }
+
+        public DataTable LocalizaPorInt(int valor) //BUSCA COM STRING
+        {
+            DataTable tb = new DataTable();
+            try
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_veiculo 'ID', dsc_veiculo 'NOME', tara 'TARA', lotacao 'LOTAÇÃO', placa 'PLACA' FROM veiculos WHERE Id_veiculo = '"+valor+"' ", conexao.StringConexao);
+                da.Fill(tb);
+                return tb;
+            }
+            catch
+            {
+                return tb;
+            }
+
+        }
     }
 }

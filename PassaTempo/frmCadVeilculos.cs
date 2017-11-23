@@ -1,6 +1,7 @@
 ﻿using CONTROL;
 using MODEL;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace PassaTempo
@@ -30,7 +31,18 @@ namespace PassaTempo
         private void btnLista_Click(object sender, EventArgs e)
         {
             frmPesquisaCaminhao caminhao = new frmPesquisaCaminhao();
+            ControleVeiculos control = new ControleVeiculos();
+
             caminhao.ShowDialog();
+
+            if (caminhao.codigo != 0)
+            {
+                PreencheCampos(control.BuscaVeiculos(caminhao.codigo));
+            }
+            else
+            {
+                LimpaCampo();
+            }
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,6 +86,16 @@ namespace PassaTempo
             {
                 txtPesoBruto.Clear();
             }
+        }
+
+        private void PreencheCampos(DataTable tb)
+        {
+            txtCodigoVeiculo.Text = tb.Rows[0]["ID"].ToString();
+            txtNomeCaminhao.Text = tb.Rows[0]["NOME"].ToString();
+            txtTara.Text = tb.Rows[0]["TARA"].ToString();
+            txtLotacao.Text = tb.Rows[0]["LOTAÇÃO"].ToString();
+            txtPesoBruto.Text = Convert.ToString(Convert.ToDouble(tb.Rows[0]["TARA"].ToString()) * Convert.ToDouble(tb.Rows[0]["LOTAÇÃO"].ToString()));
+            txtPlaca.Text = tb.Rows[0]["PLACA"].ToString();
         }
 
         private void PreencheModel()

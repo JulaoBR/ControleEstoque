@@ -132,7 +132,7 @@ namespace CONTROL
             }   //RETORNA UM PRODUTO COM SEU ESTOQUE ATUAL
 
         public Queue<ModelCalculaLotes> CalculaLotes(int cod_produto)
-        {
+         {
             DAOLotes lote = new DAOLotes(cx);
             DAORegistro registro = new DAORegistro(cx);
 
@@ -153,6 +153,7 @@ namespace CONTROL
 
                 if (item.total < item.quantidade)
                 {
+                    item.restante = item.quantidade - item.total;
                     filaAux.Enqueue(item);
                 }
             }
