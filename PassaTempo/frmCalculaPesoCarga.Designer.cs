@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculaPesoCarga));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.txtCodigoProduto = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTolerancia = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -83,13 +85,13 @@
             this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.txtTotalCaixas = new System.Windows.Forms.TextBox();
             this.txtTotalCargas = new System.Windows.Forms.TextBox();
-            this.txtPlaca = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.panelCaminhao = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProdutos)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panelCaminhao.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -264,6 +266,25 @@
             this.panel4.Size = new System.Drawing.Size(419, 215);
             this.panel4.TabIndex = 9;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(224, 163);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Placa:";
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Location = new System.Drawing.Point(227, 179);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.ReadOnly = true;
+            this.txtPlaca.Size = new System.Drawing.Size(180, 22);
+            this.txtPlaca.TabIndex = 13;
+            this.txtPlaca.TabStop = false;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -359,6 +380,7 @@
             this.cbNomeCaminhao.Size = new System.Drawing.Size(396, 24);
             this.cbNomeCaminhao.TabIndex = 0;
             this.cbNomeCaminhao.TabStop = false;
+            this.cbNomeCaminhao.SelectedIndexChanged += new System.EventHandler(this.cbNomeCaminhao_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -518,23 +540,23 @@
             // 
             // gridProdutos
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_produto,
             this.nome_produto,
             this.qtd_produto,
             this.peso});
-            this.gridProdutos.Location = new System.Drawing.Point(3, 4);
+            this.gridProdutos.Location = new System.Drawing.Point(8, -2);
             this.gridProdutos.Name = "gridProdutos";
             this.gridProdutos.ReadOnly = true;
             this.gridProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -580,14 +602,7 @@
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.txtPesoTotal);
-            this.panel3.Controls.Add(this.txtTotalCaixas);
-            this.panel3.Controls.Add(this.txtTotalCargas);
+            this.panel3.Controls.Add(this.panelCaminhao);
             this.panel3.Location = new System.Drawing.Point(496, 254);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(419, 258);
@@ -597,7 +612,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(375, 85);
+            this.label20.Location = new System.Drawing.Point(245, 72);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(26, 13);
             this.label20.TabIndex = 8;
@@ -607,7 +622,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(374, 139);
+            this.label19.Location = new System.Drawing.Point(245, 116);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(34, 13);
             this.label19.TabIndex = 7;
@@ -617,7 +632,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(131, 36);
+            this.label11.Location = new System.Drawing.Point(3, 39);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 13);
             this.label11.TabIndex = 6;
@@ -627,7 +642,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(131, 85);
+            this.label10.Location = new System.Drawing.Point(3, 72);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 5;
@@ -637,7 +652,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(131, 139);
+            this.label9.Location = new System.Drawing.Point(3, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 4;
@@ -646,7 +661,7 @@
             // txtPesoTotal
             // 
             this.txtPesoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoTotal.Location = new System.Drawing.Point(227, 131);
+            this.txtPesoTotal.Location = new System.Drawing.Point(99, 108);
             this.txtPesoTotal.Name = "txtPesoTotal";
             this.txtPesoTotal.ReadOnly = true;
             this.txtPesoTotal.Size = new System.Drawing.Size(141, 26);
@@ -657,7 +672,7 @@
             // txtTotalCaixas
             // 
             this.txtTotalCaixas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCaixas.Location = new System.Drawing.Point(227, 77);
+            this.txtTotalCaixas.Location = new System.Drawing.Point(99, 64);
             this.txtTotalCaixas.Name = "txtTotalCaixas";
             this.txtTotalCaixas.ReadOnly = true;
             this.txtTotalCaixas.Size = new System.Drawing.Size(141, 26);
@@ -668,7 +683,7 @@
             // txtTotalCargas
             // 
             this.txtTotalCargas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCargas.Location = new System.Drawing.Point(227, 28);
+            this.txtTotalCargas.Location = new System.Drawing.Point(99, 31);
             this.txtTotalCargas.Name = "txtTotalCargas";
             this.txtTotalCargas.ReadOnly = true;
             this.txtTotalCargas.Size = new System.Drawing.Size(141, 26);
@@ -676,24 +691,22 @@
             this.txtTotalCargas.TabStop = false;
             this.txtTotalCargas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtPlaca
+            // panelCaminhao
             // 
-            this.txtPlaca.Location = new System.Drawing.Point(227, 179);
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.ReadOnly = true;
-            this.txtPlaca.Size = new System.Drawing.Size(180, 22);
-            this.txtPlaca.TabIndex = 13;
-            this.txtPlaca.TabStop = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(224, 163);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 13);
-            this.label21.TabIndex = 14;
-            this.label21.Text = "Placa:";
+            this.panelCaminhao.BackColor = System.Drawing.Color.White;
+            this.panelCaminhao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCaminhao.Controls.Add(this.label20);
+            this.panelCaminhao.Controls.Add(this.label19);
+            this.panelCaminhao.Controls.Add(this.label11);
+            this.panelCaminhao.Controls.Add(this.label10);
+            this.panelCaminhao.Controls.Add(this.label9);
+            this.panelCaminhao.Controls.Add(this.txtPesoTotal);
+            this.panelCaminhao.Controls.Add(this.txtTotalCaixas);
+            this.panelCaminhao.Controls.Add(this.txtTotalCargas);
+            this.panelCaminhao.Location = new System.Drawing.Point(121, 4);
+            this.panelCaminhao.Name = "panelCaminhao";
+            this.panelCaminhao.Size = new System.Drawing.Size(280, 166);
+            this.panelCaminhao.TabIndex = 0;
             // 
             // frmCalculaPesoCarga
             // 
@@ -712,6 +725,7 @@
             this.Name = "frmCalculaPesoCarga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CALCULAR PESO DAS CARGAS";
+            this.Load += new System.EventHandler(this.frmCalculaPesoCarga_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCalculaPesoCarga_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -721,7 +735,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProdutos)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelCaminhao.ResumeLayout(false);
+            this.panelCaminhao.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -782,5 +797,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.Panel panelCaminhao;
     }
 }

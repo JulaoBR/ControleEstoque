@@ -18,7 +18,11 @@ namespace PassaTempo
         {
             InitializeComponent();
             gridProdutos.AutoGenerateColumns = false;
-            txtCodigoProduto.Focus();
+            txtCodigoProduto.Focus();          
+        }
+
+        private void frmCalculaPesoCarga_Load(object sender, EventArgs e)
+        {
             CarregaComboEstado();
         }
 
@@ -104,17 +108,29 @@ namespace PassaTempo
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            AddCargasCaminhao();
-            PreencheCaminhao();
+            if(cbNomeCaminhao.Text != string.Empty)
+            {
+                AddCargasCaminhao();
+                PreencheCaminhao();
 
-            lbPesoBruto.Text = "0";
-            lbTotalCaixa.Text = "0";
-            lbTotalItens.Text = "0";
-            lbPesoLiquido.Text = "0";
-            lista.Clear();
-            PreencheGrid();
+                lbPesoBruto.Text = "0";
+                lbTotalCaixa.Text = "0";
+                lbTotalItens.Text = "0";
+                lbPesoLiquido.Text = "0";
+                lista.Clear();
+                PreencheGrid();
 
-            txtCodigoProduto.Focus();         
+                verificaPeso();
+
+                txtCodigoProduto.Focus();
+            }
+            else
+            {
+                
+                MessageBox.Show("Selecione um caminhão/produto para continuar a operação...", "Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+                     
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -127,6 +143,8 @@ namespace PassaTempo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LimpaCaminhao();
+            panelCaminhao.BackColor = System.Drawing.Color.White;
             LimpaCampoCaminhao();
         }
 
@@ -219,6 +237,15 @@ namespace PassaTempo
             txtCodigoProduto.Focus();
         }
 
+        private void LimpaCaminhao()
+        {
+            txtLotacao.Clear();
+            txtTara.Clear();
+            txtPesoBrutoTotal.Clear();
+            txtPlaca.Clear();
+            txtTolerancia.Clear();
+        }
+
 
         //METODO PARA REMOVER ITENS DA LISTA
         private void RemoverItemListaRegistro(int codigo)
@@ -273,12 +300,45 @@ namespace PassaTempo
         }
 
 
-        private void PreencheCampos(DataTable tb)
+        private void PreencheCampos()
         {
-            txtTara.Text = tb.Rows[0]["TARA"].ToString();
-            txtLotacao.Text = tb.Rows[0]["LOTAÇÃO"].ToString();
-            txtPesoBruto.Text = Convert.ToString(Convert.ToDouble(tb.Rows[0]["TARA"].ToString()) * Convert.ToDouble(tb.Rows[0]["LOTAÇÃO"].ToString()));
-            txtPlaca.Text = tb.Rows[0]["PLACA"].ToString();
+            ControleVeiculos control = new ControleVeiculos();
+            if (cbNomeCaminhao.ValueMember != string.Empty)
+            {
+                DataTable tb = control.BuscaVeiculos(Convert.ToInt32(cbNomeCaminhao.SelectedValue));
+
+                txtTara.Text = tb.Rows[0]["TARA"].ToString();
+                txtLotacao.Text = tb.Rows[0]["LOTAÇÃO"].ToString();
+                txtPesoBrutoTotal.Text = Convert.ToString(Convert.ToDouble(tb.Rows[0]["TARA"].ToString()) + Convert.ToDouble(tb.Rows[0]["LOTAÇÃO"].ToString()));
+                txtPlaca.Text = tb.Rows[0]["PLACA"].ToString();
+            }
+            
+        }
+
+        private void cbNomeCaminhao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LimpaCaminhao();            
+            PreencheCampos();
+        }
+
+        private void verificaPeso()
+        {
+            try
+            {
+                if (Convert.ToDouble(txtPesoBrutoTotal.Text) < Convert.ToDouble(txtPesoTotal.Text))
+                {
+                    panelCaminhao.BackColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    panelCaminhao.BackColor = System.Drawing.Color.White;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Selecione um caminhão para continuar a operação...","Operação Invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
     }
 }
