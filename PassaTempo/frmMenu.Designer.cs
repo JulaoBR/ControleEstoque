@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +65,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.rELATÓRIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tOTALENTRADASAIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
             this.panel2.SuspendLayout();
@@ -172,7 +172,8 @@
             this.eSTOQUEToolStripMenuItem,
             this.sAIDASToolStripMenuItem,
             this.eNTRADASToolStripMenuItem,
-            this.rASTREAMENTODELOTEToolStripMenuItem});
+            this.rASTREAMENTODELOTEToolStripMenuItem,
+            this.tOTALENTRADASAIDAToolStripMenuItem});
             this.vISUALIZAÇÃOToolStripMenuItem.Name = "vISUALIZAÇÃOToolStripMenuItem";
             this.vISUALIZAÇÃOToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.vISUALIZAÇÃOToolStripMenuItem.Text = "VISUALIZAÇÃO";
@@ -210,8 +211,7 @@
             this.fERRAMENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cALCULADORADEDATAToolStripMenuItem,
             this.rOTASDEENTREGAToolStripMenuItem,
-            this.cALCULAPESOToolStripMenuItem,
-            this.rELATÓRIOSToolStripMenuItem});
+            this.cALCULAPESOToolStripMenuItem});
             this.fERRAMENTASToolStripMenuItem.Name = "fERRAMENTASToolStripMenuItem";
             this.fERRAMENTASToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.fERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS";
@@ -277,16 +277,16 @@
             // 
             // gridProduto
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dsc_produto,
@@ -399,12 +399,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // rELATÓRIOSToolStripMenuItem
+            // tOTALENTRADASAIDAToolStripMenuItem
             // 
-            this.rELATÓRIOSToolStripMenuItem.Name = "rELATÓRIOSToolStripMenuItem";
-            this.rELATÓRIOSToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
-            this.rELATÓRIOSToolStripMenuItem.Text = "RELATÓRIOS";
-            this.rELATÓRIOSToolStripMenuItem.Click += new System.EventHandler(this.rELATÓRIOSToolStripMenuItem_Click);
+            this.tOTALENTRADASAIDAToolStripMenuItem.Name = "tOTALENTRADASAIDAToolStripMenuItem";
+            this.tOTALENTRADASAIDAToolStripMenuItem.Size = new System.Drawing.Size(262, 24);
+            this.tOTALENTRADASAIDAToolStripMenuItem.Text = "TOTAL ENTRADA/SAIDA";
+            this.tOTALENTRADASAIDAToolStripMenuItem.Click += new System.EventHandler(this.tOTALENTRADASAIDAToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -468,7 +468,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rELATÓRIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tOTALENTRADASAIDAToolStripMenuItem;
     }
 }
 

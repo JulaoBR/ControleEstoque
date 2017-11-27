@@ -76,6 +76,7 @@
     <Compile Include="DAOLotes.cs" />
     <Compile Include="DAOProduto.cs" />
     <Compile Include="DAORegistro.cs" />
+    <Compile Include="DAOTotal.cs" />
     <Compile Include="DAOUsuario.cs" />
     <Compile Include="DAOVeiculos.cs" />
     <Compile Include="Program.cs" />

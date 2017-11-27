@@ -54,6 +54,7 @@
     <Compile Include="ControleLotes.cs" />
     <Compile Include="ControleProduto.cs" />
     <Compile Include="ControleRegistro.cs" />
+    <Compile Include="ControleTotal.cs" />
     <Compile Include="ControleUsuario.cs" />
     <Compile Include="ControleVeiculos.cs" />
     <Compile Include="ImprimirDocumentoEntrada.cs">

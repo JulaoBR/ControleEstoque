@@ -198,10 +198,10 @@ namespace PassaTempo
             cALCULAPESOToolStripMenuItem_Click(sender, e);
         }
 
-        private void rELATÓRIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tOTALENTRADASAIDAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRelatorios relatorios = new frmRelatorios();
-            relatorios.ShowDialog();
+            frmPesquisaTotal frmTotal = new frmPesquisaTotal();
+            frmTotal.ShowDialog();
         }
     }
 }

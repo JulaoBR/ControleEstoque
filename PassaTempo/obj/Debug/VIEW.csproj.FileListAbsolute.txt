@@ -43,7 +43,6 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaT
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\VIEW.csprojResolveAssemblyReference.cache
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmTelaConfiguracao.resources
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmRelatorios.resources
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.exe.config
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.exe
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.pdb
@@ -90,3 +89,4 @@ D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.Prop
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\VIEW.csproj.GenerateResource.Cache
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.exe
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmPesquisaTotal.resources

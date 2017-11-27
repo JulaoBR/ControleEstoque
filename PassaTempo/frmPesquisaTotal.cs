@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PassaTempo
 {
-    public partial class frmRelatorios : Form
+    public partial class frmPesquisaTotal : PassaTempo.frmTelaDePesquisa
     {
-        public frmRelatorios()
+        public frmPesquisaTotal()
         {
             InitializeComponent();
         }
