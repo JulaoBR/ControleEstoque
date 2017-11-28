@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridTotal = new System.Windows.Forms.DataGridView();
             this.btmImprimir = new System.Windows.Forms.Button();
             this.date01 = new System.Windows.Forms.DateTimePicker();
@@ -40,6 +41,9 @@
             this.rbProdutoFinal = new System.Windows.Forms.RadioButton();
             this.rbMateriaPrima = new System.Windows.Forms.RadioButton();
             this.date02 = new System.Windows.Forms.DateTimePicker();
+            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTotal)).BeginInit();
@@ -68,9 +72,18 @@
             // 
             // gridTotal
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridTotal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTotal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_produto,
+            this.dsc_produto,
+            this.qtd_produto});
             this.gridTotal.Location = new System.Drawing.Point(4, 4);
             this.gridTotal.Name = "gridTotal";
+            this.gridTotal.ReadOnly = true;
+            this.gridTotal.RowHeadersVisible = false;
+            this.gridTotal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridTotal.Size = new System.Drawing.Size(909, 452);
             this.gridTotal.TabIndex = 0;
             // 
@@ -187,6 +200,33 @@
             this.date02.Size = new System.Drawing.Size(200, 21);
             this.date02.TabIndex = 5;
             // 
+            // Id_produto
+            // 
+            this.Id_produto.DataPropertyName = "Fk_produto";
+            this.Id_produto.FillWeight = 121.8274F;
+            this.Id_produto.HeaderText = "ID";
+            this.Id_produto.Name = "Id_produto";
+            this.Id_produto.ReadOnly = true;
+            this.Id_produto.Width = 80;
+            // 
+            // dsc_produto
+            // 
+            this.dsc_produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dsc_produto.DataPropertyName = "dsc_produto";
+            this.dsc_produto.FillWeight = 89.0863F;
+            this.dsc_produto.HeaderText = "PRODUTO";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.FillWeight = 89.0863F;
+            this.qtd_produto.HeaderText = "QUANTIDADE";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Width = 269;
+            // 
             // frmPesquisaTotal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -196,6 +236,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmPesquisaTotal";
             this.Text = "ENTRADA/SAIDA";
+            this.Load += new System.EventHandler(this.frmPesquisaTotal_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -224,5 +265,8 @@
         private System.Windows.Forms.DateTimePicker date02;
         private System.Windows.Forms.DateTimePicker date01;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
     }
 }

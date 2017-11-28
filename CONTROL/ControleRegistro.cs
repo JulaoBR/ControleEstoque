@@ -139,7 +139,8 @@ namespace CONTROL
                 model.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
                 model.pesoLiquido += Convert.ToDouble(string.Format("{0:N}", Convert.ToDouble(item["peso_liquido"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString())));
                 model.pesoBruto += Convert.ToDouble(string.Format("{0:N}", Convert.ToDouble(item["peso_bruto"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString())));
-                                 
+                model.tipo_operacao = Convert.ToInt32(item["tipo_operacao"].ToString());
+
                 lista.Add(model);
             }
 

@@ -195,7 +195,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Fk_produto, B.dsc_produto, B.peso_liquido, B.peso_bruto, A.lote, A.qtd_produto FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND A.Fk_carga = '" + id + "'", conexao.StringConexao);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Fk_produto, B.dsc_produto, B.peso_liquido, B.peso_bruto, A.lote, A.qtd_produto A.tipo_operacao FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND A.Fk_carga = '" + id + "'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
             }
