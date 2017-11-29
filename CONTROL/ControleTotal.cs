@@ -25,7 +25,7 @@ namespace CONTROL
             ModelRegistro modelRegistro;
             ControleProduto controlProduto = new ControleProduto();
 
-            var dt = controlProduto.BuscaString("", tipo);
+            var dt = controlProduto.BuscaString(produto, tipo);
 
             foreach (DataRow item in dt.Rows)
             {

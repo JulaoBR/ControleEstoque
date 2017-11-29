@@ -157,6 +157,23 @@ namespace DAO
 
         }
 
+        public DataTable Localiza2Lotes(string produto, string data, string lote, string lote2, int ajuste, int saida) //BUSCA COM STRING
+        {
+            DataTable tb = new DataTable();
+            try
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_registro 'ID', B.dsc_produto 'PRODUTO', A.lote 'LOTE', A.qtd_produto 'QUANTIDADE', A.data_fabricacao 'FABRICAÇÃO', A.data_vencimento 'VENCIMENTO', A.data_operacao 'PRODUÇÃO', A.observacao 'OBSERVAÇÃO' FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND B.dsc_produto LIKE '%" +
+                produto + "%' AND A.data_operacao LIKE '%" + data + "%' AND A.lote BETWEEN '" + lote + "' AND '"+lote2+"' AND A.ajuste LIKE '%" + ajuste + "%' AND A.tipo_operacao LIKE '%" + saida + "%' ", conexao.StringConexao);
+                da.Fill(tb);
+                return tb;
+            }
+            catch
+            {
+                return tb;
+            }
+
+        }
+
         public DataTable LocalizaPorInt(int valor) //BUSCA COM STRING
         {
             DataTable tb = new DataTable();
@@ -195,7 +212,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Fk_produto, B.dsc_produto, B.peso_liquido, B.peso_bruto, A.lote, A.qtd_produto A.tipo_operacao FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND A.Fk_carga = '" + id + "'", conexao.StringConexao);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Fk_produto, B.dsc_produto, B.peso_liquido, B.peso_bruto, A.lote, A.qtd_produto FROM registro AS A JOIN produto AS B WHERE A.Fk_produto = B.Id_produto AND A.Fk_carga = '" + id + "'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
             }

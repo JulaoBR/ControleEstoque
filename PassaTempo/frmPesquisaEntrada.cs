@@ -93,7 +93,7 @@ namespace PassaTempo
         {
             ControleRegistro registro = new ControleRegistro();
 
-            PreencheGrid(registro.BuscaString(txtPesquisa.Text, txtPesquisaData.Text, txtLote.Text, ajuste, saida));
+            PreencheGrid(registro.BuscaString(txtPesquisa.Text, txtPesquisaData.Text, txtLote.Text, txtLote2.Text, ajuste, saida));
         }
 
         private void LimpaGrid()
@@ -150,6 +150,21 @@ namespace PassaTempo
         {
             RelatorioEntrada re = new RelatorioEntrada(sender, e);
             re.Relatorio(txtPesquisaData.Text, txtLote.Text, txtPesquisa.Text);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtLote2.Enabled = true;
+                txtPesquisaData.Enabled = false;
+            }
+            else
+            {
+                txtLote2.Enabled = false;
+                txtLote2.Clear();
+                txtPesquisaData.Enabled = true;
+            }
         }
     }
 }

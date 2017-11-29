@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisaTotal));
             this.gridTotal = new System.Windows.Forms.DataGridView();
+            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btmImprimir = new System.Windows.Forms.Button();
             this.date01 = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -41,9 +45,9 @@
             this.rbProdutoFinal = new System.Windows.Forms.RadioButton();
             this.rbMateriaPrima = new System.Windows.Forms.RadioButton();
             this.date02 = new System.Windows.Forms.DateTimePicker();
-            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTotal)).BeginInit();
@@ -51,6 +55,10 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -66,14 +74,18 @@
             this.panel2.Controls.SetChildIndex(this.btmImprimir, 0);
             this.panel2.Controls.SetChildIndex(this.panel3, 0);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gridTotal);
             // 
             // gridTotal
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gridTotal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridTotal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTotal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_produto,
@@ -87,6 +99,33 @@
             this.gridTotal.Size = new System.Drawing.Size(909, 452);
             this.gridTotal.TabIndex = 0;
             // 
+            // Id_produto
+            // 
+            this.Id_produto.DataPropertyName = "Fk_produto";
+            this.Id_produto.FillWeight = 121.8274F;
+            this.Id_produto.HeaderText = "ID";
+            this.Id_produto.Name = "Id_produto";
+            this.Id_produto.ReadOnly = true;
+            this.Id_produto.Width = 80;
+            // 
+            // dsc_produto
+            // 
+            this.dsc_produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dsc_produto.DataPropertyName = "dsc_produto";
+            this.dsc_produto.FillWeight = 89.0863F;
+            this.dsc_produto.HeaderText = "PRODUTO";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.FillWeight = 89.0863F;
+            this.qtd_produto.HeaderText = "QUANTIDADE";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Width = 269;
+            // 
             // btmImprimir
             // 
             this.btmImprimir.Location = new System.Drawing.Point(833, 3);
@@ -95,6 +134,7 @@
             this.btmImprimir.TabIndex = 3;
             this.btmImprimir.Text = "Imprimir";
             this.btmImprimir.UseVisualStyleBackColor = true;
+            this.btmImprimir.Click += new System.EventHandler(this.btmImprimir_Click);
             // 
             // date01
             // 
@@ -147,6 +187,7 @@
             this.rbEntrada.TabStop = true;
             this.rbEntrada.Text = "Entrada";
             this.rbEntrada.UseVisualStyleBackColor = true;
+            this.rbEntrada.CheckedChanged += new System.EventHandler(this.rbEntrada_CheckedChanged);
             // 
             // rbSaida
             // 
@@ -159,6 +200,7 @@
             this.rbSaida.TabStop = true;
             this.rbSaida.Text = "Saida";
             this.rbSaida.UseVisualStyleBackColor = true;
+            this.rbSaida.CheckedChanged += new System.EventHandler(this.rbSaida_CheckedChanged);
             // 
             // panel4
             // 
@@ -180,6 +222,7 @@
             this.rbProdutoFinal.TabStop = true;
             this.rbProdutoFinal.Text = "P. Final";
             this.rbProdutoFinal.UseVisualStyleBackColor = true;
+            this.rbProdutoFinal.CheckedChanged += new System.EventHandler(this.rbProdutoFinal_CheckedChanged);
             // 
             // rbMateriaPrima
             // 
@@ -191,6 +234,7 @@
             this.rbMateriaPrima.TabStop = true;
             this.rbMateriaPrima.Text = "M. prima";
             this.rbMateriaPrima.UseVisualStyleBackColor = true;
+            this.rbMateriaPrima.CheckedChanged += new System.EventHandler(this.rbMateriaPrima_CheckedChanged);
             // 
             // date02
             // 
@@ -200,32 +244,23 @@
             this.date02.Size = new System.Drawing.Size(200, 21);
             this.date02.TabIndex = 5;
             // 
-            // Id_produto
+            // printDocument1
             // 
-            this.Id_produto.DataPropertyName = "Fk_produto";
-            this.Id_produto.FillWeight = 121.8274F;
-            this.Id_produto.HeaderText = "ID";
-            this.Id_produto.Name = "Id_produto";
-            this.Id_produto.ReadOnly = true;
-            this.Id_produto.Width = 80;
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // dsc_produto
+            // printPreviewDialog1
             // 
-            this.dsc_produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dsc_produto.DataPropertyName = "dsc_produto";
-            this.dsc_produto.FillWeight = 89.0863F;
-            this.dsc_produto.HeaderText = "PRODUTO";
-            this.dsc_produto.Name = "dsc_produto";
-            this.dsc_produto.ReadOnly = true;
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // qtd_produto
+            // printDialog1
             // 
-            this.qtd_produto.DataPropertyName = "qtd_produto";
-            this.qtd_produto.FillWeight = 89.0863F;
-            this.qtd_produto.HeaderText = "QUANTIDADE";
-            this.qtd_produto.Name = "qtd_produto";
-            this.qtd_produto.ReadOnly = true;
-            this.qtd_produto.Width = 269;
+            this.printDialog1.UseEXDialog = true;
             // 
             // frmPesquisaTotal
             // 
@@ -268,5 +303,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

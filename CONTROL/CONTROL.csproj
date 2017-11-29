@@ -76,6 +76,7 @@
     <Compile Include="RelatorioEstoque.cs" />
     <Compile Include="RelatorioSaidaCargas.cs" />
     <Compile Include="RelatorioSaidaLotes.cs" />
+    <Compile Include="RelatorioTotal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

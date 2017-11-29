@@ -88,14 +88,17 @@ namespace CONTROL
             return false;
         }
 
-        public DataTable BuscaString(string produto, string data, string lote, int ajuste, int saida)
+        public DataTable BuscaString(string produto, string data, string lote, string lote2, int ajuste, int saida)
         {
             DAORegistro dao = new DAORegistro(cx);
             try
             {
-                if (data == string.Empty)
+                if (data == string.Empty && lote2 == string.Empty)
                 {
                     return dao.LocalizaPorString(produto, data, lote, ajuste, saida);
+                }
+                else if(lote2 != string.Empty){
+                    return dao.Localiza2Lotes(produto, data, lote, lote2, ajuste, saida);
                 }
                 else
                 {
@@ -139,7 +142,6 @@ namespace CONTROL
                 model.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
                 model.pesoLiquido += Convert.ToDouble(string.Format("{0:N}", Convert.ToDouble(item["peso_liquido"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString())));
                 model.pesoBruto += Convert.ToDouble(string.Format("{0:N}", Convert.ToDouble(item["peso_bruto"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString())));
-                model.tipo_operacao = Convert.ToInt32(item["tipo_operacao"].ToString());
 
                 lista.Add(model);
             }
