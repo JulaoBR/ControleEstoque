@@ -116,35 +116,43 @@ namespace PassaTempo
             ControleLotes lotes = new ControleLotes();
             ControleCarga carga = new ControleCarga();
 
-            if (carga.Inserir(modeloCarga))
+            DialogResult d = MessageBox.Show("Deseja salvar esta carga " + txtPedido.Text + "?", "AVISO!!", MessageBoxButtons.YesNo);
+            if (d.ToString() == "Yes")
             {
-                if (registro.Inserir(listaRegistro))
+                if (carga.Inserir(modeloCarga))
                 {
-                    if (lotes.Inserir(listaLote))
+                    if (registro.Inserir(listaRegistro))
                     {
-                        LimpaCampoCliente();
-                        LimpaCampoProduto();
-                        inicioBotoes();
-                        LimpaGrid();
-                        txtPedido.Focus();
+                        if (lotes.Inserir(listaLote))
+                        {
+                            LimpaCampoCliente();
+                            LimpaCampoProduto();
+                            inicioBotoes();
+                            LimpaGrid();
+                            txtPedido.Focus();
+                        }
+                        else
+                        {
+                            registro.Excluir(Convert.ToInt32(modeloCarga.Id_carga));
+                            carga.Excluir(Convert.ToInt32(modeloCarga.Id_carga));
+                            MessageBox.Show("Erro ao salvar os dados desta carga!!", "Operação Invalida - 3!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        registro.Excluir(Convert.ToInt32(modeloCarga.Id_carga));
-                        carga.Excluir(Convert.ToInt32(modeloCarga.Id_carga));                    
-                        MessageBox.Show("Erro ao salvar os dados desta carga!!", "Operação Invalida - 3!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        carga.Excluir(Convert.ToInt32(modeloCarga.Id_carga));
+                        MessageBox.Show("Erro ao salvar os dados desta carga!!", "Operação Invalida - 2!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    carga.Excluir(Convert.ToInt32(modeloCarga.Id_carga));
-                    MessageBox.Show("Erro ao salvar os dados desta carga!!", "Operação Invalida - 2!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Erro ao salvar os dados desta carga!!", "Operação Invalida - 1!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Erro ao salvar os dados desta carga!!", "Operação Invalida - 1!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }          
+                return;
+            }         
         }       
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -168,8 +176,7 @@ namespace PassaTempo
             if (e.RowIndex >= 0)
             {
                 int codigo = Convert.ToInt32(gridDadosCarga.Rows[e.RowIndex].Cells[0].Value);              
-
-                //PERGUNTA SE DESEJA CADASTRAR UM NOVO CLIENTE
+                
                 DialogResult d = MessageBox.Show("Deseja remover este ITEM?", "AVISO!!", MessageBoxButtons.YesNo);
                 if (d.ToString() == "Yes")
                 {
@@ -431,8 +438,8 @@ namespace PassaTempo
             ModelRegistro modeloRegistro = new ModelRegistro();
 
             modeloRegistro.Fk_carga = Convert.ToInt32(txtPedido.Text);
-            modeloRegistro.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
-            modeloRegistro.dsc_produto = txtNomeProduto.Text;
+            modeloRegistro.Id_produto = Convert.ToInt32(txtCodProduto.Text);
+            modeloRegistro.Dsc_produto = txtNomeProduto.Text;
             modeloRegistro.qtd_produto = Convert.ToDouble(txtQtdTotal.Text);
             modeloRegistro.data_operacao = Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd 00:00:00");
             modeloRegistro.tipo_operacao = 1;
@@ -442,7 +449,7 @@ namespace PassaTempo
             //ADICONA OS LOTES DO PEDIDO PARA EXIBIR NO GRID
             foreach (var item in listaLote)
             {
-                if (modeloRegistro.Fk_produto == item.Fk_produto)
+                if (modeloRegistro.Id_produto == item.Fk_produto)
                 {
                     modeloRegistro.lote += item.qtd_produto + "-" + item.lote + "/ ";
                 }
@@ -457,6 +464,7 @@ namespace PassaTempo
             gridDadosCarga.DataSource = null;
             gridDadosCarga.DataSource = listaRegistro;
             gridDadosCarga.Refresh();
+            gridDadosCarga.ClearSelection();
         }
 
         //ATUALIZA OS PESOS E QUANTIDADES DOS ITENS DA CARGA
@@ -555,7 +563,7 @@ namespace PassaTempo
             //return lisProduto.Any(l => l.Cd_produto == cd);
             foreach (var item in listaRegistro)
             {
-                if (cd == item.Fk_produto)
+                if (cd == item.Id_produto)
                 {
                     return true;
                 }
@@ -747,7 +755,7 @@ namespace PassaTempo
         {
             foreach (var item in listaRegistro)
             {
-                if (codigo == item.Fk_produto)
+                if (codigo == item.Id_produto)
                 {
                     //REMOVE O PRODUTO SELECIONADO
                     listaRegistro.Remove(item);

@@ -101,8 +101,8 @@ namespace CONTROL
             while (LinhaAtual < LinhasPorPagina && doc.Offset < doc.Texto.Count)
             {
                 //obtem os valores do datareader
-                int cod = Convert.ToInt32(doc.Texto[doc.Offset].Fk_produto.ToString());
-                var produto = doc.Texto[doc.Offset].dsc_produto.ToString();
+                int cod = Convert.ToInt32(doc.Texto[doc.Offset].Id_produto.ToString());
+                var produto = doc.Texto[doc.Offset].Dsc_produto.ToString();
                 var quantidade = doc.Texto[doc.Offset].qtd_produto.ToString();
 
                 //inicia a impressao

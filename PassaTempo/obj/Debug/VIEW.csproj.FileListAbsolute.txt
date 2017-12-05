@@ -90,3 +90,4 @@ D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\VIEW.csproj.Gen
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.exe
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmPesquisaTotal.resources
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmPesquisaQuantidadeLotes.resources

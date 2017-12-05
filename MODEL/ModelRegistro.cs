@@ -15,8 +15,8 @@ namespace MODEL
 
         public int Id_registro { get; set; }
         public int Fk_carga { get; set; }
-        public int Fk_produto { get; set; }
-        public string dsc_produto { get; set; }
+        public int Id_produto { get; set; }
+        public string Dsc_produto { get; set; }
         public string lote { get; set; }
         public double qtd_produto { get; set; }
         public string data_fabricacao { get; set; }

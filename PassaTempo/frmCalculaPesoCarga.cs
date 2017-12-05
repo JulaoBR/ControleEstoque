@@ -210,8 +210,8 @@ namespace PassaTempo
             ModelRegistro model = new ModelRegistro();
             try
             {
-                model.Fk_produto = Convert.ToInt32(txtCodigoProduto.Text);
-                model.dsc_produto = txtNomeProduto.Text;
+                model.Id_produto = Convert.ToInt32(txtCodigoProduto.Text);
+                model.Dsc_produto = txtNomeProduto.Text;
                 model.qtd_produto = Convert.ToDouble(txtQuantidade.Text);
                 model.pesoBruto = Convert.ToDouble(string.Format("{0:N}", Convert.ToDouble(txtPesoBruto.Text) * Convert.ToDouble(txtQuantidade.Text)));
                 model.pesoLiquido = Convert.ToDouble(string.Format("{0:N}", (Convert.ToDouble(txtLiquido.Text) * Convert.ToDouble(txtQuantidade.Text))));
@@ -252,7 +252,7 @@ namespace PassaTempo
         {
             foreach (var item in lista)
             {
-                if (codigo == item.Fk_produto)
+                if (codigo == item.Id_produto)
                 {
                     //REMOVE O PRODUTO SELECIONADO
                     lista.Remove(item);

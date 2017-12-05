@@ -55,7 +55,7 @@ namespace CONTROL
                     foreach (DataRow item in estoque.Rows)
                     {
                         registro = new ModelRegistro();
-                        registro.Fk_produto = Convert.ToInt32(item["Fk_produto"].ToString());
+                        registro.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
                         registro.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
                         registro.tipo_operacao = int.Parse(item["tipo_operacao"].ToString());
 
@@ -106,7 +106,7 @@ namespace CONTROL
             foreach (DataRow item in estoque.Rows)
             {
                 registro = new ModelRegistro();
-                registro.Fk_produto = Convert.ToInt32(item["Fk_produto"].ToString());
+                registro.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
                 registro.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
                 registro.tipo_operacao = int.Parse(item["tipo_operacao"].ToString());
 

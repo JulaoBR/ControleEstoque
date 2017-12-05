@@ -111,7 +111,7 @@ namespace CONTROL
             while (LinhaAtual < LinhasPorPagina && doc.Offset < doc.Texto.Count)
             {
                 //obtem os valores do datareader
-                var produto = doc.Texto[doc.Offset].dsc_produto.ToString();
+                var produto = doc.Texto[doc.Offset].Dsc_produto.ToString();
                 var lote = doc.Texto[doc.Offset].lote.ToString();
                 var quantidade = doc.Texto[doc.Offset].qtd_produto.ToString();
                 var fabricacao = doc.Texto[doc.Offset].data_fabricacao.ToString();

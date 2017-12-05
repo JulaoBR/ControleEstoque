@@ -2,6 +2,7 @@
 using MODEL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -104,6 +105,7 @@ namespace PassaTempo
         {
             RelatorioEstoque re = new RelatorioEstoque(sender, e);                      
             re.Relatorio();
-        }
+        }   
+
     }
 }

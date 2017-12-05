@@ -173,16 +173,14 @@ namespace PassaTempo
         private void txtDataFabricacao_Leave(object sender, EventArgs e)
         {
             try
-            {
-                if (txtDataVencimento.Text == "")
-                {
-                    DateTime data = Convert.ToDateTime(txtDataFabricacao.Text);
-                    txtDataVencimento.Text = data.AddDays(prazoValidade).ToString("dd/MM/yyyy");
-                }
+            {             
+                DateTime data = Convert.ToDateTime(txtDataFabricacao.Text);
+                txtDataVencimento.Text = data.AddDays(prazoValidade).ToString("dd/MM/yyyy");              
             }
             catch
             {
-
+                txtDataVencimento.Clear();
+                return;
             }
         }
         //=========================================================
@@ -225,7 +223,7 @@ namespace PassaTempo
             {
                 modelo = new ModelRegistro();
 
-                modelo.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
+                modelo.Id_produto = Convert.ToInt32(txtCodProduto.Text);
                 modelo.lote = txtLote.Text;
                 modelo.qtd_produto = Convert.ToDouble(txtQuantidade.Text);
                 modelo.data_fabricacao = txtDataFabricacao.Text;
@@ -320,6 +318,7 @@ namespace PassaTempo
             txtDataFabricacao.Text = tb.Rows[0]["FABRICAÇÃO"].ToString();
             txtDataVencimento.Text = tb.Rows[0]["VENCIMENTO"].ToString();
             txtObservacao.Text = tb.Rows[0]["OBSERVAÇÃO"].ToString();
+            dateTimePicker1.Text = tb.Rows[0]["OPERAÇÃO"].ToString();
 
             tipoProduto = Convert.ToInt32(tb.Rows[0]["tipo_produto"].ToString());
 

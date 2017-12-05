@@ -179,6 +179,12 @@
     <Compile Include="frmPesquisaProduto.Designer.cs">
       <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPesquisaQuantidadeLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaQuantidadeLotes.Designer.cs">
+      <DependentUpon>frmPesquisaQuantidadeLotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPesquisaSaida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisaProduto.resx">
       <DependentUpon>frmPesquisaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaQuantidadeLotes.resx">
+      <DependentUpon>frmPesquisaQuantidadeLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisaSaida.resx">
       <DependentUpon>frmPesquisaSaida.cs</DependentUpon>

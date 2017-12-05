@@ -25,7 +25,7 @@ namespace DAO
                 cmd.Connection = conexao.ObjetoConexao;
                 cmd.CommandText = "INSERT INTO registro(Fk_produto, lote, qtd_produto, data_fabricacao, data_vencimento, data_operacao, tipo_operacao, tipo_produto, Fk_carga, marcacao, ajuste, observacao)" +
                     "VALUES (@produto, @lote, @quantidade, @fabricacao, @vencimento, @operacao, @tipoOperacao, @tipoProduto, @carga, @marcacao, @ajuste, @observacao)";
-                cmd.Parameters.AddWithValue("@produto", modelo.Fk_produto);
+                cmd.Parameters.AddWithValue("@produto", modelo.Id_produto);
                 cmd.Parameters.AddWithValue("@lote", modelo.lote);
                 cmd.Parameters.AddWithValue("@quantidade", modelo.qtd_produto);
                 cmd.Parameters.AddWithValue("@fabricacao", modelo.data_fabricacao);
@@ -61,7 +61,7 @@ namespace DAO
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 cmd.CommandText = "UPDATE registro SET Fk_produto = @produto, lote = @lote, qtd_produto = @quantidade, data_fabricacao = @fabricacao, data_vencimento = @vencimento, data_operacao = @operacao, tipo_operacao = @tipoOperacao, tipo_produto = @tipoProduto, Fk_carga = @carga, marcacao = @marcacao, ajuste = @ajuste, observacao = @observacao WHERE Id_registro = @IdRegistro";
-                cmd.Parameters.AddWithValue("@produto", modelo.Fk_produto);
+                cmd.Parameters.AddWithValue("@produto", modelo.Id_produto);
                 cmd.Parameters.AddWithValue("@lote", modelo.lote);
                 cmd.Parameters.AddWithValue("@quantidade", modelo.qtd_produto);
                 cmd.Parameters.AddWithValue("@fabricacao", modelo.data_fabricacao);

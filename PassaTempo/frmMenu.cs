@@ -2,12 +2,7 @@
 using MODEL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PassaTempo
@@ -202,6 +197,12 @@ namespace PassaTempo
         {
             frmPesquisaTotal frmTotal = new frmPesquisaTotal();
             frmTotal.ShowDialog();
+        }
+
+        private void qUANTIDADEDECADALOTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPesquisaQuantidadeLotes qtdLotes = new frmPesquisaQuantidadeLotes();
+            qtdLotes.ShowDialog();
         }
     }
 }

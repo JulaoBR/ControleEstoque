@@ -24,7 +24,7 @@ namespace CONTROL
             foreach (var item in lista)
             {
                 modelo = new ModelRegistro();
-                modelo.Fk_produto = item.Fk_produto;
+                modelo.Id_produto = item.Id_produto;
                 modelo.lote = item.lote;
                 modelo.qtd_produto = item.qtd_produto;
                 modelo.data_fabricacao = item.data_fabricacao;
@@ -59,7 +59,7 @@ namespace CONTROL
                     modelo.Id_registro = item.Id_registro;
                 }
 
-                modelo.Fk_produto = item.Fk_produto;
+                modelo.Id_produto = item.Id_produto;
                 modelo.lote = item.lote;
                 modelo.qtd_produto = item.qtd_produto;
                 modelo.data_fabricacao = item.data_fabricacao;
@@ -136,8 +136,8 @@ namespace CONTROL
             foreach (DataRow item in dt.Rows)
             {
                 ModelRegistro model = new ModelRegistro();
-                model.Fk_produto = Convert.ToInt32(item["Fk_produto"].ToString());
-                model.dsc_produto = item["dsc_produto"].ToString();
+                model.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
+                model.Dsc_produto = item["dsc_produto"].ToString();
                 model.lote = item["lote"].ToString();
                 model.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
                 model.pesoLiquido += Convert.ToDouble(string.Format("{0:N}", Convert.ToDouble(item["peso_liquido"].ToString()) * Convert.ToDouble(item["qtd_produto"].ToString())));

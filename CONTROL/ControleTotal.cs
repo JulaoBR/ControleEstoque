@@ -31,8 +31,8 @@ namespace CONTROL
             {
                 modelRegistro = new ModelRegistro();
 
-                modelRegistro.Fk_produto = Convert.ToInt32(item["ID"].ToString());
-                modelRegistro.dsc_produto = item["PRODUTO"].ToString();
+                modelRegistro.Id_produto = Convert.ToInt32(item["ID"].ToString());
+                modelRegistro.Dsc_produto = item["PRODUTO"].ToString();
                 modelRegistro.qtd_produto = 0;
 
                 Lista.Add(modelRegistro);
@@ -52,7 +52,7 @@ namespace CONTROL
             {
                 modelRegistro = new ModelRegistro();
 
-                modelRegistro.Fk_produto = Convert.ToInt32(item["Fk_produto"].ToString());
+                modelRegistro.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
                 modelRegistro.qtd_produto = Convert.ToDouble(item["qtd_produto"].ToString());
                 modelRegistro.tipo_operacao = Convert.ToInt32(item["tipo_operacao"].ToString());
 
@@ -68,7 +68,7 @@ namespace CONTROL
 
             foreach (var item in listaProdutos)
             {
-                var listaRegistro = BuscaRegistros(item.Fk_produto, data1, data2, tipoOperacao);
+                var listaRegistro = BuscaRegistros(item.Id_produto, data1, data2, tipoOperacao);
 
                 foreach (var item2 in listaRegistro)
                 {

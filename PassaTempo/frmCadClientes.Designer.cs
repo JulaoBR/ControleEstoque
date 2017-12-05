@@ -42,6 +42,7 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.cbCidade);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -187,7 +189,7 @@
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Location = new System.Drawing.Point(19, 96);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(562, 23);
+            this.cbEstado.Size = new System.Drawing.Size(498, 23);
             this.cbEstado.TabIndex = 3;
             this.cbEstado.SelectedValueChanged += new System.EventHandler(this.cbEstado_SelectedValueChanged);
             this.cbEstado.Validating += new System.ComponentModel.CancelEventHandler(this.cbEstado_Validating);
@@ -198,13 +200,23 @@
             this.txtEndereco.Location = new System.Drawing.Point(19, 54);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(562, 21);
+            this.txtEndereco.Size = new System.Drawing.Size(498, 21);
             this.txtEndereco.TabIndex = 2;
             this.txtEndereco.Validating += new System.ComponentModel.CancelEventHandler(this.txtEndereco_Validating);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(524, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 65);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmCadClientes
             // 
@@ -242,5 +254,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -111,7 +111,7 @@ namespace PassaTempo
             {
                 ModelRegistro model = new ModelRegistro();
 
-                model.dsc_produto = item[1].ToString();
+                model.Dsc_produto = item[1].ToString();
                 model.lote = item[2].ToString();
                 model.qtd_produto = Convert.ToDouble(item[3].ToString());
                 model.data_fabricacao = item[4].ToString();

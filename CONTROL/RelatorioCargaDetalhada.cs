@@ -118,8 +118,8 @@ namespace CONTROL
             while (LinhaAtual < LinhasPorPagina && TotalRegistro > 0)
             {
                 //obtem os valores do datareader
-                int cod = Convert.ToInt32(Lista[i].Fk_produto.ToString());
-                var produto = Lista[i].dsc_produto.ToString();
+                int cod = Convert.ToInt32(Lista[i].Id_produto.ToString());
+                var produto = Lista[i].Dsc_produto.ToString();
                 var quantidade = Lista[i].qtd_produto.ToString();
                 var lote = Lista[i].lote.ToString();
 
