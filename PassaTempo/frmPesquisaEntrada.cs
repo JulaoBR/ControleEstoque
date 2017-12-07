@@ -33,15 +33,23 @@ namespace PassaTempo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PrintDocument pd = new ImprimirDocumentoEntrada(lista);
-            pd.PrintPage += this.printDocument1_PrintPage;
-            PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
+            if (lista.Count > 0)
+            {
+                PrintDocument pd = new ImprimirDocumentoEntrada(lista);
+                pd.PrintPage += this.printDocument1_PrintPage;
+                PrintPreviewDialog objPrintPreview = new PrintPreviewDialog();
 
-            var _with1 = objPrintPreview;
-            _with1.Document = pd;
-            _with1.WindowState = FormWindowState.Maximized;
-            _with1.PrintPreviewControl.Zoom = 1;
-            _with1.ShowDialog();
+                var _with1 = objPrintPreview;
+                _with1.Document = pd;
+                _with1.WindowState = FormWindowState.Maximized;
+                _with1.PrintPreviewControl.Zoom = 1;
+                _with1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Operação Invalida!","Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         private void rbAjuste_CheckedChanged(object sender, EventArgs e)

@@ -55,6 +55,7 @@ namespace CONTROL
 
             //Define o valor para linha atual e da impressao
             LinhaAtual = 0;
+            doc.NumeroPagina += 1;
 
             e.Graphics.DrawLine(CanetaDaImpressora, MargemEsq, 60, MargemDir, 60);           
 

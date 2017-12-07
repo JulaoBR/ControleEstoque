@@ -16,6 +16,7 @@ namespace PassaTempo
         private int codigo = 0; // CODIGO DO PRODUTO QUE SERA ALTERADO
         private int prazoValidade = 0;
         private ModelRegistro modelo;
+        private ModelLotes modeloLotes;
         private int tipoProduto;
 
         public frmMovimentacao()
@@ -222,6 +223,7 @@ namespace PassaTempo
             if (!VerificaCampos())
             {
                 modelo = new ModelRegistro();
+                modeloLotes = new ModelLotes();
 
                 modelo.Id_produto = Convert.ToInt32(txtCodProduto.Text);
                 modelo.lote = txtLote.Text;
@@ -233,9 +235,15 @@ namespace PassaTempo
                 modelo.marcacao = 0;
                 modelo.observacao = txtObservacao.Text;
 
-                if(editar == 1)
+                //PARA CONTROLE DOS LOTES
+                modeloLotes.Fk_carga = 0;
+                modeloLotes.Fk_produto = Convert.ToInt32(txtCodProduto.Text);
+                modeloLotes.lote = txtLote.Text;
+                modeloLotes.qtd_produto = Convert.ToDouble(txtQuantidade.Text);
+
+                if (editar == 1)
                 {
-                    modelo.Id_registro = codigo;
+                    modelo.Id_registro = codigo;                    
                 }
                 else
                 {
@@ -276,8 +284,10 @@ namespace PassaTempo
         private void SalvaRegistro()
         {
             ControleRegistro controle = new ControleRegistro();
+            ControleLotes lotes = new ControleLotes();
             List<ModelRegistro> lista = new List<ModelRegistro>();
-            try
+            List<ModelLotes> listaLotes = new List<ModelLotes>();
+             try
             {
                 if (rbEntrada.Checked)
                 {
@@ -289,13 +299,18 @@ namespace PassaTempo
                 }
 
                 if (rbAjuste.Checked)
+                {
                     modelo.ajuste = 1;
-              
+                    listaLotes.Add(modeloLotes);
+                    lotes.Inserir(listaLotes);
+                }
+
                 lista.Add(modelo);
                 if(editar == 0)
                 {
                     controle.Inserir(lista);
-                }else if (editar == 1)
+                }
+                else if (editar == 1)
                 {
                     controle.Atualizar(lista);
                 }

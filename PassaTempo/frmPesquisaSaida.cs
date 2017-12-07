@@ -115,7 +115,7 @@ namespace PassaTempo
                     if (opcao == 1) // SE IGUAL A EXCLUI CARGA
                     {
                         ExcluirCarga(codigo);
-
+                        frmPesquisaSaida_Load(sender, e);
                     }
                     else if (opcao == 2) // ABRE TELA DE CARGA DETALHADA
                     {

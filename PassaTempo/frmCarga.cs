@@ -82,12 +82,21 @@ namespace PassaTempo
 
             if (!VerificaCamposCodigos())
             {
+
+                if ((Convert.ToInt32(txtCodCliente.Text) == 298) && txtNomeComprador.Text == "")
+                {
+                    MessageBox.Show("Informe o nome do comprador!!", "Operação Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNomeComprador.Focus();
+                    return;
+                }
+
                 PreencheCarga();
 
                 foreach (var item in listaLoteAux)
                 {
                     listaLote.Add(item);
-                }
+                }                
+
                 PreencheListaRegistro();
                 AtualizaGrid();
                 AtualizaInfoCarga();

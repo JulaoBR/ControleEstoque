@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MODEL
 {
-    public class ModelRegistro 
+    public class ModelRegistro
     {
         public ModelRegistro()
         {

@@ -44,10 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridDadosCarga = new System.Windows.Forms.DataGridView();
-            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkExibirListaLotes = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -99,6 +95,10 @@
             this.gridLotesDisponiveis = new System.Windows.Forms.DataGridView();
             this.lote1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDadosCarga)).BeginInit();
             this.panel2.SuspendLayout();
@@ -226,42 +226,6 @@
             this.gridDadosCarga.Size = new System.Drawing.Size(734, 318);
             this.gridDadosCarga.TabIndex = 0;
             this.gridDadosCarga.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDadosCarga_CellDoubleClick);
-            // 
-            // Fk_produto
-            // 
-            this.Fk_produto.DataPropertyName = "Fk_produto";
-            this.Fk_produto.HeaderText = "ID";
-            this.Fk_produto.Name = "Fk_produto";
-            this.Fk_produto.ReadOnly = true;
-            this.Fk_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Fk_produto.Width = 60;
-            // 
-            // dsc_produto
-            // 
-            this.dsc_produto.DataPropertyName = "dsc_produto";
-            this.dsc_produto.HeaderText = "PRODUTO";
-            this.dsc_produto.Name = "dsc_produto";
-            this.dsc_produto.ReadOnly = true;
-            this.dsc_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dsc_produto.Width = 295;
-            // 
-            // lote
-            // 
-            this.lote.DataPropertyName = "lote";
-            this.lote.HeaderText = "LOTES";
-            this.lote.Name = "lote";
-            this.lote.ReadOnly = true;
-            this.lote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.lote.Width = 286;
-            // 
-            // qtd_produto
-            // 
-            this.qtd_produto.DataPropertyName = "qtd_produto";
-            this.qtd_produto.HeaderText = "TOTAL";
-            this.qtd_produto.Name = "qtd_produto";
-            this.qtd_produto.ReadOnly = true;
-            this.qtd_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.qtd_produto.Width = 90;
             // 
             // panel2
             // 
@@ -842,6 +806,42 @@
             this.quantidade1.Name = "quantidade1";
             this.quantidade1.ReadOnly = true;
             // 
+            // Fk_produto
+            // 
+            this.Fk_produto.DataPropertyName = "Id_produto";
+            this.Fk_produto.HeaderText = "ID";
+            this.Fk_produto.Name = "Fk_produto";
+            this.Fk_produto.ReadOnly = true;
+            this.Fk_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Fk_produto.Width = 60;
+            // 
+            // dsc_produto
+            // 
+            this.dsc_produto.DataPropertyName = "dsc_produto";
+            this.dsc_produto.HeaderText = "PRODUTO";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            this.dsc_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dsc_produto.Width = 295;
+            // 
+            // lote
+            // 
+            this.lote.DataPropertyName = "lote";
+            this.lote.HeaderText = "LOTES";
+            this.lote.Name = "lote";
+            this.lote.ReadOnly = true;
+            this.lote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.lote.Width = 286;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.HeaderText = "TOTAL";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            this.qtd_produto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.qtd_produto.Width = 90;
+            // 
             // frmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -939,15 +939,15 @@
         private System.Windows.Forms.DataGridView gridLotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fk_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.CheckBox checkExibirListaLotes;
         private System.Windows.Forms.Panel panelListaDeLotes;
         private System.Windows.Forms.DataGridView gridLotesDisponiveis;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridViewTextBoxColumn lote1;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fk_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
     }
 }
