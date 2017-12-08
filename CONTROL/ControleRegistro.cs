@@ -81,6 +81,15 @@ namespace CONTROL
 
         public bool Excluir(int Id)
         {
+            if (dao.Excluir(Id))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool Excluir2(int Id)
+        {
             if (dao.Excluir2(Id))
             {
                 return true;

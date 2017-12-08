@@ -759,6 +759,12 @@ namespace PassaTempo
             }
         }
 
+        private void btnMovimento_Click(object sender, EventArgs e)
+        {
+            frmMovimentacao movi = new frmMovimentacao();
+            movi.ShowDialog();
+        }
+
         //METODO PARA REMOVER ITENS DA LISTA
         private void RemoverItemListaRegistro(int codigo)
         {

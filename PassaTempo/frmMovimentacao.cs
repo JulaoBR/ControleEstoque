@@ -113,12 +113,23 @@ namespace PassaTempo
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //Comando que questiona ao usuário se relamente deseja sair do programa
-            DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
-               "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (txtCodProduto.Text != string.Empty)
             {
+                //Comando que questiona ao usuário se relamente deseja sair do programa
+                DialogResult result = MessageBox.Show("Deseja excluir o item selecionado?",
+                   "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ControleRegistro registro = new ControleRegistro();
+                    registro.Excluir(codigo);
 
+                    LimpaCampoProduto();
+                    txtCodProduto.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item que deseja excluir!", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

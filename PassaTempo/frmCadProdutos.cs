@@ -13,6 +13,7 @@ namespace PassaTempo
         // 0 = NOVO 
         // 1 = EDITAR
         private int controle = 0;
+        private int Id_registro = 0;
 
         //MODELO
         private ModelProduto model = new ModelProduto();
