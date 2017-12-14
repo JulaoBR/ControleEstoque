@@ -141,6 +141,7 @@ namespace CONTROL
             filaLotes = lote.LocalizarLotes(cod_produto);               //SAIDAS DOS PRODUTOS
             filaRegistros = registro.LocalizarRegistro(cod_produto);    //ENTRADAS DOS PRODUTOS
 
+
             foreach (var item in filaRegistros)
             {
                 foreach (var item2 in filaLotes)

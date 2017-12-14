@@ -227,7 +227,7 @@ namespace DAO
         public Queue<ModelCalculaLotes> LocalizarRegistro(int valor)
         {
             Queue<ModelCalculaLotes> filaRegistros = new Queue<ModelCalculaLotes>();
-
+            int i = 0;
             try
             {
                 DataTable tb = new DataTable();
@@ -242,9 +242,22 @@ namespace DAO
                     obj.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
                     obj.lote = item["lote"].ToString();
                     obj.quantidade = Convert.ToDouble(item["qtd_produto"].ToString());
-                    obj.total = 0;
+                    obj.total = 0;                                    
 
-                    filaRegistros.Enqueue(obj);
+                    foreach (var item2 in filaRegistros)
+                    {
+                        if (obj.lote.Equals(item2.lote))
+                        {
+                            item2.quantidade += obj.quantidade;
+                            i = 1;
+                        }                        
+                    }
+
+                    if (i == 0)
+                    {
+                        filaRegistros.Enqueue(obj);
+                        i = 0;
+                    }
                 }
 
                 return filaRegistros;
