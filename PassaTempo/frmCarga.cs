@@ -788,22 +788,20 @@ namespace PassaTempo
         //METODO PARA REMOVER ITENS DA LISTA
         private void RemoverItemListalotes(int codigo)
         {
-            int i = 0;
+           // int i = 0;
 
-            do {
+            for (int i = 0; i < listaLote.Count; i++){
 
                 if (codigo == listaLote[i].Fk_produto)
                 {
                     //REMOVE O PRODUTO SELECIONADO
                     listaLote.Remove(listaLote[i]);
+                    i--;
                 }
+            } 
 
-                //ATUALIZA O GRID COM A LISTA SEM O VALOR RETIRADO
-                AtualizaGrid();
-
-                i++;
-            } while (listaLote.Count != 0);
-            
+            //ATUALIZA O GRID COM A LISTA SEM O VALOR RETIRADO
+            AtualizaGrid();
         }
     }
 }
