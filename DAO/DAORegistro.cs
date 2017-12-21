@@ -96,7 +96,7 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "DELETE FROM registro WHERE Id_registro = @registro;";
+                cmd.CommandText = "DELETE FROM registro WHERE Fk_carga = @registro;";
                 cmd.Parameters.AddWithValue("@registro", codigo);
 
                 conexao.Conectar();
@@ -237,6 +237,7 @@ namespace DAO
 
                 foreach (DataRow item in tb.Rows)
                 {
+                    i = 0;
                     ModelCalculaLotes obj = new ModelCalculaLotes();
 
                     obj.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
@@ -256,7 +257,6 @@ namespace DAO
                     if (i == 0)
                     {
                         filaRegistros.Enqueue(obj);
-                        i = 0;
                     }
                 }
 

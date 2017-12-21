@@ -83,35 +83,41 @@ namespace PassaTempo
             if (!VerificaCamposCodigos())
             {
 
-                if ((Convert.ToInt32(txtCodCliente.Text) == 298) && txtNomeComprador.Text == "")
+                if (VerificaQuantidadeProdutos(Convert.ToInt32(txtCodProduto.Text)))
                 {
-                    MessageBox.Show("Informe o nome do comprador!!", "Operação Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNomeComprador.Focus();
-                    return;
+                    if ((Convert.ToInt32(txtCodCliente.Text) == 298) && txtNomeComprador.Text == "")
+                    {
+                        MessageBox.Show("Informe o nome do comprador!!", "Operação Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtNomeComprador.Focus();
+                        return;
+                    }
+
+                    PreencheCarga();
+
+                    foreach (var item in listaLoteAux)
+                    {
+                        listaLote.Add(item);
+                    }                
+
+                    PreencheListaRegistro();
+                    AtualizaGrid();
+                    AtualizaInfoCarga();
+                    LimpaCampoProduto();
+                    txtCodProduto.Focus();
+                    pesoBruto = 0;
+                    pesoLiquido = 0;
+
+                    //LIMPA GRIDS E LISTA
+                    gridLotes.DataSource = null;
+                    gridLotesDisponiveis.DataSource = null;
+                    listaLoteAux.Clear();
+
+                    btnSalvar.Enabled = true;
                 }
-
-                PreencheCarga();
-
-                foreach (var item in listaLoteAux)
+                else
                 {
-                    listaLote.Add(item);
-                }                
-
-                PreencheListaRegistro();
-                AtualizaGrid();
-                AtualizaInfoCarga();
-                LimpaCampoProduto();
-                txtCodProduto.Focus();
-                pesoBruto = 0;
-                pesoLiquido = 0;
-
-                //LIMPA GRIDS E LISTA
-                gridLotes.DataSource = null;
-                gridLotesDisponiveis.DataSource = null;
-                listaLoteAux.Clear();
-
-                btnSalvar.Enabled = true;
-
+                    MessageBox.Show("Verifique as quantidades digitadas!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
@@ -170,6 +176,11 @@ namespace PassaTempo
             LimpaCampoCliente();
             LimpaCampoProduto();
             LimpaGrid();
+
+            listaLote.Clear();
+            listaLoteAux.Clear();
+            listaRegistro.Clear();
+            filaLotes.Clear();
         }
 
         private void frmCarga_KeyDown(object sender, KeyEventArgs e)
@@ -556,7 +567,7 @@ namespace PassaTempo
             txtQtdTotal.Clear();
             txtQtd1.Clear();
             txtLote1.Clear();
-        }
+    }
 
         private void LimpaGrid()
         {
@@ -663,21 +674,14 @@ namespace PassaTempo
                 if (VerificaQuantidate())
                 {
                     if (!VerificaListaLotes(Convert.ToInt32(txtCodProduto.Text), txtLote1.Text))
-                    {
-                        if (!VerificaQuantidadeProdutos(Convert.ToInt32(txtCodProduto.Text)))
-                        {
-                            PreencheListaLotes();
-                            PrencheGridLote();
+                    {                        
+                         PreencheListaLotes();
+                         PrencheGridLote();
 
-                            txtQtd1.Clear();
-                            txtLote1.Clear();
+                         txtQtd1.Clear();
+                         txtLote1.Clear();
 
-                            txtQtd1.Focus();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Verifique as quantidades digitadas!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                         txtQtd1.Focus();                       
                     }
                     else
                     {
@@ -713,7 +717,7 @@ namespace PassaTempo
             }
 
             //VERIFICA SE A QUANTIDADE JA INSERIDA É MAIOR QUE VALOR DIGITADO
-            if (Convert.ToDouble(txtQtdTotal.Text) < aux + Convert.ToDouble(txtQtd1.Text))
+            if (Convert.ToDouble(txtQtdTotal.Text) == aux)
             {
                 return true;
             }
@@ -784,17 +788,22 @@ namespace PassaTempo
         //METODO PARA REMOVER ITENS DA LISTA
         private void RemoverItemListalotes(int codigo)
         {
-            foreach (var item in listaLote)
-            {
-                if (codigo == item.Fk_produto)
+            int i = 0;
+
+            do {
+
+                if (codigo == listaLote[i].Fk_produto)
                 {
                     //REMOVE O PRODUTO SELECIONADO
-                    listaLote.Remove(item);
-                    //ATUALIZA O GRID COM A LISTA SEM O VALOR RETIRADO
-                    AtualizaGrid();
-                    return;
+                    listaLote.Remove(listaLote[i]);
                 }
-            }
+
+                //ATUALIZA O GRID COM A LISTA SEM O VALOR RETIRADO
+                AtualizaGrid();
+
+                i++;
+            } while (listaLote.Count != 0);
+            
         }
     }
 }
