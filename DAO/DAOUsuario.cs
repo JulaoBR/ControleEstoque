@@ -132,5 +132,52 @@ namespace DAO
                 return tb;
             }
         }
+
+        //METODO PARA FAZER O LOGIN
+        public int ExeScalar(ModelUsuario user)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand())
+            {
+                cmd.Connection = conexao.ObjetoConexao;
+                cmd.CommandText = "SELECT login, senha FROM usuario WHERE login = @login AND senha = @senha;";
+                cmd.Parameters.AddWithValue("@login", user.login);
+                cmd.Parameters.AddWithValue("@senha", user.senha);
+                try
+                {
+                    conexao.Conectar();
+                    var comando = cmd.ExecuteScalar();
+
+                    if (comando != null)
+                    {
+                        //dados coretos
+                        return 1;
+                    }
+                    else
+                    {
+                        //2 = dados incorreta
+                        return 2;
+                    }
+                }
+                catch
+                {       
+                    //erro na autenticação            
+                    return 3;
+                }
+                finally
+                {
+                    conexao.Desconectar();
+                }
+            }
+        }
+
+        //METODO PARA BUSCAR DADOS DO BANCO DE APENAS 1 REGISTRO
+        public DataTable LocalizarUsuarioLogado(ModelUsuario user)
+        {
+            DataTable tb = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM usuario WHERE login = '" + user.login + "' AND senha = '" + user.senha + "'", conexao.StringConexao);
+            da.Fill(tb);
+            conexao.Desconectar();
+            return tb;
+        }
     }
 }

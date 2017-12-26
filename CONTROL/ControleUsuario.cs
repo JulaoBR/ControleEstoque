@@ -64,5 +64,32 @@ namespace CONTROL
             DAOUsuario dao = new DAOUsuario(cx);
             return dao.LocalizarPorInt(Id);
         }
+
+        public bool VerificaUsuario(ModelUsuario modelo)
+        {
+            DAOUsuario dao = new DAOUsuario(cx);
+
+            int valor = dao.ExeScalar(modelo);
+
+            if (valor == 1)
+            {
+                return true;
+            }else if (valor == 2)
+            {
+                MessageBox.Show("SENHA/LOGIN Incorretos", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }else
+            {
+                MessageBox.Show("ERRO na operação", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+        }
+
+        public DataTable BuscaUsuarioLogado(ModelUsuario modelo)
+        {
+            DAOUsuario dao = new DAOUsuario(cx);
+            return dao.LocalizarUsuarioLogado(modelo);
+        }
     }
 }

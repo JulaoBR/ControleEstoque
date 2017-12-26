@@ -2,6 +2,7 @@
 using MODEL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -9,9 +10,12 @@ namespace PassaTempo
 {
     public partial class frmMenu : Form
     {
-        public frmMenu()
+        private string userLogado;
+
+        public frmMenu(ModelUsuario usuario)
         {
             InitializeComponent();
+            RodapeDoMenu(usuario);
             gridProduto.AutoGenerateColumns = false;
         }
 
@@ -204,5 +208,18 @@ namespace PassaTempo
             frmPesquisaQuantidadeLotes qtdLotes = new frmPesquisaQuantidadeLotes();
             qtdLotes.ShowDialog();
         }
+
+        //METODO PARA PREENCHER O NOME DO FUNCIONARIO LOGADO
+        private void RodapeDoMenu(ModelUsuario user)
+        {
+            ControleUsuario controle = new ControleUsuario();
+            DataTable dados = controle.BuscaUsuarioLogado(user);
+
+            userLogado = dados.Rows[0]["nome_usuario"].ToString();
+
+            stripUsuario.Text = userLogado ;
+        }
+
+
     }
 }

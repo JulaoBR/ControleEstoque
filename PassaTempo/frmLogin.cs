@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CONTROL;
+using MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +20,24 @@ namespace PassaTempo
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            frmMenu menu = new frmMenu();
-            menu.Show();
-            this.Hide();
+        {           
+            ControleUsuario controle = new ControleUsuario();
+            ModelUsuario user = new ModelUsuario();
+
+            user.login = txtUsuario.Text;
+            user.senha = txtSenha.Text;
+
+            if (controle.VerificaUsuario(user))
+            {
+                frmMenu menu = new frmMenu(user);
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                LimpaCampo();
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -37,6 +53,14 @@ namespace PassaTempo
             }
         }
 
+
+        private void LimpaCampo()
+        {
+            txtSenha.Clear();
+            txtUsuario.Clear();
+
+            txtUsuario.Focus();
+        }
         //========================================
     }
 }
