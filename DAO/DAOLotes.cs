@@ -84,7 +84,7 @@ namespace DAO
             try
             {
                 DataTable tb = new DataTable();
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Fk_produto, qtd_produto, lote FROM lote WHERE Fk_produto = '" + valor + "'", conexao.StringConexao);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_lote, Fk_produto, qtd_produto, lote FROM lote WHERE Fk_produto = '" + valor + "'", conexao.StringConexao);
                 da.Fill(tb);
                 conexao.Desconectar();
 
@@ -92,6 +92,7 @@ namespace DAO
                 {
                     ModelCalculaLotes obj = new ModelCalculaLotes();
 
+                    obj.Id_lote = Convert.ToInt32(item["Id_lote"].ToString());
                     obj.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
                     obj.quantidade = Convert.ToDouble(item["qtd_produto"].ToString());
                     obj.lote = item["lote"].ToString();

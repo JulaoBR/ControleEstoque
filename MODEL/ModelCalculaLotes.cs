@@ -8,6 +8,7 @@ namespace MODEL
             
         }
 
+        public int Id_lote { set; get; }
         public int Id_produto { set; get; }
         public string lote { set; get; }
         public double quantidade { set; get; }

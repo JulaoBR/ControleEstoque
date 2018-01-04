@@ -146,9 +146,10 @@ namespace CONTROL
             {
                 foreach (var item2 in filaLotes)
                 {
+                    item.Id_lote = item2.Id_lote;
                     if (item2.lote.Equals(item.lote))
                     {
-                        item.total += item2.quantidade;
+                        item.total += item2.quantidade;                      
                     }
                 }
 

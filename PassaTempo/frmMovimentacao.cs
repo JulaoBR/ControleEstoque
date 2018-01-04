@@ -294,8 +294,7 @@ namespace PassaTempo
 
         private void SalvaRegistro()
         {
-            ControleRegistro controle = new ControleRegistro();
-            ControleLotes lotes = new ControleLotes();
+            ControleRegistro controle = new ControleRegistro();           
             List<ModelRegistro> lista = new List<ModelRegistro>();
             List<ModelLotes> listaLotes = new List<ModelLotes>();
              try
@@ -313,7 +312,6 @@ namespace PassaTempo
                 {
                     modelo.ajuste = 1;
                     listaLotes.Add(modeloLotes);
-                    lotes.Inserir(listaLotes);
                 }
 
                 lista.Add(modelo);
