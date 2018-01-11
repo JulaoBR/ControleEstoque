@@ -11,6 +11,7 @@ namespace PassaTempo
     public partial class frmMenu : Form
     {
         private string userLogado;
+        private ModelConfiguracao model;
 
         public frmMenu(ModelUsuario usuario)
         {
@@ -133,8 +134,29 @@ namespace PassaTempo
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            var lista = ControleEstoqueAtual.BuscaDados(1, "");
-            PreencheGrid(lista);
+            model = ControleConfiguracao.BuscaValor();
+
+            //CONFIGURACAO DOS BOTOES
+            if (model.controle_botoes_menu != 1)
+            {
+                panel2.Visible = false;
+            }
+            else
+            {
+                panel2.Visible = true;
+            }
+
+            //CONFIGURACAO DO GRID DE PRODUTO
+            if (model.lista_produto_menu != 1)
+            {
+                gridProduto.Visible = false;
+            }
+            else
+            {
+                var lista = ControleEstoqueAtual.BuscaDados(model.item_lista_produto_menu, "");
+                PreencheGrid(lista);
+                gridProduto.Visible = true;
+            }
         }
 
         //==========================================================================
@@ -219,7 +241,5 @@ namespace PassaTempo
 
             stripUsuario.Text = userLogado ;
         }
-
-
     }
 }

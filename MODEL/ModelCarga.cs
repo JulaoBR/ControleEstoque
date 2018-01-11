@@ -1,5 +1,4 @@
-﻿
-namespace MODEL
+﻿namespace MODEL
 {
     public class ModelCarga : ModelCliente
     {

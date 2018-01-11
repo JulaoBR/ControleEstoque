@@ -49,6 +49,7 @@
     <Compile Include="ControleCarga.cs" />
     <Compile Include="ControleCidadeEstado.cs" />
     <Compile Include="ControleCliente.cs" />
+    <Compile Include="ControleConfiguracao.cs" />
     <Compile Include="ControleEstoqueAtual.cs" />
     <Compile Include="ControleFormato.cs" />
     <Compile Include="ControleLotes.cs" />

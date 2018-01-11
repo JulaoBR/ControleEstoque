@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridLotes = new System.Windows.Forms.DataGridView();
-            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -47,6 +43,10 @@
             this.txtLote = new System.Windows.Forms.TextBox();
             this.txtProduto = new System.Windows.Forms.TextBox();
             this.txtCodProduto = new System.Windows.Forms.TextBox();
+            this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).BeginInit();
@@ -98,36 +98,6 @@
             this.gridLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridLotes.Size = new System.Drawing.Size(909, 452);
             this.gridLotes.TabIndex = 0;
-            // 
-            // Id_produto
-            // 
-            this.Id_produto.DataPropertyName = "Id_registro";
-            this.Id_produto.HeaderText = "ID LOTE";
-            this.Id_produto.Name = "Id_produto";
-            this.Id_produto.ReadOnly = true;
-            // 
-            // Id_lote
-            // 
-            this.Id_lote.DataPropertyName = "Id_produto";
-            this.Id_lote.HeaderText = "ID PRODUTO";
-            this.Id_lote.Name = "Id_lote";
-            this.Id_lote.ReadOnly = true;
-            // 
-            // PRODUTO
-            // 
-            this.PRODUTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PRODUTO.DataPropertyName = "Dsc_produto";
-            this.PRODUTO.HeaderText = "PRODUTO";
-            this.PRODUTO.Name = "PRODUTO";
-            this.PRODUTO.ReadOnly = true;
-            // 
-            // lote
-            // 
-            this.lote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lote.DataPropertyName = "lote";
-            this.lote.HeaderText = "LOTE";
-            this.lote.Name = "lote";
-            this.lote.ReadOnly = true;
             // 
             // btnImprimir
             // 
@@ -243,6 +213,36 @@
             this.txtCodProduto.Size = new System.Drawing.Size(100, 21);
             this.txtCodProduto.TabIndex = 0;
             this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
+            // 
+            // Id_produto
+            // 
+            this.Id_produto.DataPropertyName = "Id_registro";
+            this.Id_produto.HeaderText = "ID LOTE";
+            this.Id_produto.Name = "Id_produto";
+            this.Id_produto.ReadOnly = true;
+            // 
+            // Id_lote
+            // 
+            this.Id_lote.DataPropertyName = "Id_produto";
+            this.Id_lote.HeaderText = "ID PRODUTO";
+            this.Id_lote.Name = "Id_lote";
+            this.Id_lote.ReadOnly = true;
+            // 
+            // PRODUTO
+            // 
+            this.PRODUTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PRODUTO.DataPropertyName = "Dsc_produto";
+            this.PRODUTO.HeaderText = "PRODUTO";
+            this.PRODUTO.Name = "PRODUTO";
+            this.PRODUTO.ReadOnly = true;
+            // 
+            // lote
+            // 
+            this.lote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lote.DataPropertyName = "lote";
+            this.lote.HeaderText = "LOTE - QUANTIDADE";
+            this.lote.Name = "lote";
+            this.lote.ReadOnly = true;
             // 
             // frmPesquisaQuantidadeLotes
             // 

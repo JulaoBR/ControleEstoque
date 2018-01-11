@@ -47,6 +47,7 @@
     <Compile Include="ModelCalculaLotes.cs" />
     <Compile Include="ModelCarga.cs" />
     <Compile Include="ModelCliente.cs" />
+    <Compile Include="ModelConfiguracao.cs" />
     <Compile Include="ModelEstadoCidade.cs" />
     <Compile Include="ModelLotes.cs" />
     <Compile Include="ModelProduto.cs" />
