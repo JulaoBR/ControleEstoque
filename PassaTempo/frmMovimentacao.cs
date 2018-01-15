@@ -81,8 +81,8 @@ namespace PassaTempo
 
             if (frmPesquisa.codigo != 0)
             {
-                PreencheCampos(control.BuscaInt(frmPesquisa.codigo));               
-                
+                PreencheCampos(control.BuscaInt(frmPesquisa.codigo));
+                codigo = frmPesquisa.codigo;
             }
             else
             {
@@ -333,8 +333,7 @@ namespace PassaTempo
         }
 
         private void PreencheCampos(DataTable tb)
-        {
-            codigo = Convert.ToInt32(tb.Rows[0]["ID REGIS"].ToString()); //CODIGO DA CHAVE PRIMARIA PARA ALTERAR O PRODUTO
+        {          
             txtCodProduto.Text = tb.Rows[0]["ID PRO"].ToString();
             txtNomeProduto.Text = tb.Rows[0]["PRODUTO"].ToString();
             txtQuantidade.Text = tb.Rows[0]["QUANTIDADE"].ToString();

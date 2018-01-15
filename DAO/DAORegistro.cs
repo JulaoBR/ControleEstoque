@@ -96,7 +96,7 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "DELETE FROM registro WHERE Fk_carga = @registro;";
+                cmd.CommandText = "DELETE FROM registro WHERE Id_registro = @registro;";
                 cmd.Parameters.AddWithValue("@registro", codigo);
 
                 conexao.Conectar();

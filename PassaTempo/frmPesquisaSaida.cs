@@ -146,7 +146,7 @@ namespace PassaTempo
                 ControleLotes lotes = new ControleLotes();
                 ControleCarga carga = new ControleCarga();
 
-                registro.Excluir(codigo);
+                registro.Excluir2(codigo);
                 lotes.Excluir(codigo);
                 carga.Excluir(codigo);
 
