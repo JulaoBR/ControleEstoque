@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaDetalhada));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTotaCaixas = new System.Windows.Forms.Label();
@@ -43,10 +43,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.gridCarga = new System.Windows.Forms.DataGridView();
-            this.Fk_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCep = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -69,6 +65,9 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCarga)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -202,20 +201,19 @@
             // 
             // gridCarga
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridCarga.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridCarga.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridCarga.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCarga.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCarga.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCarga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCarga.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Fk_produto,
             this.dsc_produto,
             this.lote,
             this.qtd_produto});
@@ -227,34 +225,6 @@
             this.gridCarga.Size = new System.Drawing.Size(712, 279);
             this.gridCarga.TabIndex = 1;
             this.gridCarga.TabStop = false;
-            // 
-            // Fk_produto
-            // 
-            this.Fk_produto.DataPropertyName = "Fk_produto";
-            this.Fk_produto.HeaderText = "ID";
-            this.Fk_produto.Name = "Fk_produto";
-            this.Fk_produto.ReadOnly = true;
-            // 
-            // dsc_produto
-            // 
-            this.dsc_produto.DataPropertyName = "dsc_produto";
-            this.dsc_produto.HeaderText = "PRODUTO";
-            this.dsc_produto.Name = "dsc_produto";
-            this.dsc_produto.ReadOnly = true;
-            // 
-            // lote
-            // 
-            this.lote.DataPropertyName = "lote";
-            this.lote.HeaderText = "LOTES";
-            this.lote.Name = "lote";
-            this.lote.ReadOnly = true;
-            // 
-            // qtd_produto
-            // 
-            this.qtd_produto.DataPropertyName = "qtd_produto";
-            this.qtd_produto.HeaderText = "QTD TOTAL";
-            this.qtd_produto.Name = "qtd_produto";
-            this.qtd_produto.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -479,6 +449,27 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // dsc_produto
+            // 
+            this.dsc_produto.DataPropertyName = "dsc_produto";
+            this.dsc_produto.HeaderText = "PRODUTO";
+            this.dsc_produto.Name = "dsc_produto";
+            this.dsc_produto.ReadOnly = true;
+            // 
+            // lote
+            // 
+            this.lote.DataPropertyName = "lote";
+            this.lote.HeaderText = "LOTES";
+            this.lote.Name = "lote";
+            this.lote.ReadOnly = true;
+            // 
+            // qtd_produto
+            // 
+            this.qtd_produto.DataPropertyName = "qtd_produto";
+            this.qtd_produto.HeaderText = "QTD TOTAL";
+            this.qtd_produto.Name = "qtd_produto";
+            this.qtd_produto.ReadOnly = true;
+            // 
             // frmCargaDetalhada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,15 +520,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnImprimirCarga;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fk_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.Label lbTotaCaixas;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsc_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
     }
 }
