@@ -65,6 +65,8 @@ namespace PassaTempo
                     registro.Id_produto = item2.Id_produto;                
                     registro.Dsc_produto = item["PRODUTO"].ToString();
                     registro.lote = Convert.ToString(item2.lote + " - " + item2.restante);
+                    registro.data_fabricacao = item2.data_fabricacao;
+                    registro.data_vencimento = item2.data_vencimento;
 
                     lista.Add(registro);
                 }

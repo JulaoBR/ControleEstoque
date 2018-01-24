@@ -47,6 +47,8 @@
             this.Id_lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FABRICAÇÃO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VENCIMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).BeginInit();
@@ -92,7 +94,9 @@
             this.Id_produto,
             this.Id_lote,
             this.PRODUTO,
-            this.lote});
+            this.lote,
+            this.FABRICAÇÃO,
+            this.VENCIMENTO});
             this.gridLotes.Location = new System.Drawing.Point(4, 4);
             this.gridLotes.Name = "gridLotes";
             this.gridLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -238,11 +242,24 @@
             // 
             // lote
             // 
-            this.lote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lote.DataPropertyName = "lote";
             this.lote.HeaderText = "LOTE - QUANTIDADE";
             this.lote.Name = "lote";
             this.lote.ReadOnly = true;
+            // 
+            // FABRICAÇÃO
+            // 
+            this.FABRICAÇÃO.DataPropertyName = "data_fabricacao";
+            this.FABRICAÇÃO.HeaderText = "FABRICAÇÃO";
+            this.FABRICAÇÃO.Name = "FABRICAÇÃO";
+            this.FABRICAÇÃO.ReadOnly = true;
+            // 
+            // VENCIMENTO
+            // 
+            this.VENCIMENTO.DataPropertyName = "data_vencimento";
+            this.VENCIMENTO.HeaderText = "VENCIMENTO";
+            this.VENCIMENTO.Name = "VENCIMENTO";
+            this.VENCIMENTO.ReadOnly = true;
             // 
             // frmPesquisaQuantidadeLotes
             // 
@@ -282,5 +299,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_lote;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FABRICAÇÃO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VENCIMENTO;
     }
 }

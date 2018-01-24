@@ -215,7 +215,7 @@ namespace PassaTempo
             model.DscProduto = txtNomeProduto.Text;
             model.unidade_medida = cbUnidadeMedida.Text;
 
-            if (cbTipoProduto.Equals("MP"))     //VERIFICA SE È MATERIA PRIMA OU PRODUTO FINAL
+            if (cbTipoProduto.Text.Equals("MP"))     //VERIFICA SE È MATERIA PRIMA OU PRODUTO FINAL
             {
                 model.tipo_produto = 0;
             }

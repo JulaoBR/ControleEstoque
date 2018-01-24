@@ -1,7 +1,7 @@
 ﻿
 namespace MODEL
 {
-    public class ModelCalculaLotes
+    public class ModelCalculaLotes : ModelRegistro
     {
         public ModelCalculaLotes()
         {
@@ -9,8 +9,6 @@ namespace MODEL
         }
 
         public int Id_lote { set; get; }
-        public int Id_produto { set; get; }
-        public string lote { set; get; }
         public double quantidade { set; get; }
         public double total { set; get; }
         public double restante { set; get; }

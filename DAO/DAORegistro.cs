@@ -231,7 +231,7 @@ namespace DAO
             try
             {
                 DataTable tb = new DataTable();
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Fk_produto, lote, qtd_produto FROM registro WHERE Fk_produto = '" + valor + "' AND tipo_operacao = 0 AND marcacao = 0", conexao.StringConexao);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Fk_produto, lote, qtd_produto, data_fabricacao, data_vencimento FROM registro WHERE Fk_produto = '" + valor + "' AND tipo_operacao = 0 AND marcacao = 0", conexao.StringConexao);
                 da.Fill(tb);
                 conexao.Desconectar();
 
@@ -243,6 +243,8 @@ namespace DAO
                     obj.Id_produto = Convert.ToInt32(item["Fk_produto"].ToString());
                     obj.lote = item["lote"].ToString();
                     obj.quantidade = Convert.ToDouble(item["qtd_produto"].ToString());
+                    obj.data_fabricacao = item["data_fabricacao"].ToString();
+                    obj.data_vencimento = item["data_vencimento"].ToString();
                     obj.total = 0;                                    
 
                     foreach (var item2 in filaRegistros)
