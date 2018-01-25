@@ -34,6 +34,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stripFuncao = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,15 +66,14 @@
             this.dsc_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.stripFuncao = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
@@ -105,6 +106,20 @@
             this.stripUsuario.Name = "stripUsuario";
             this.stripUsuario.Size = new System.Drawing.Size(16, 17);
             this.stripUsuario.Text = "...";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(49, 17);
+            this.toolStripStatusLabel2.Text = "Função:";
+            // 
+            // stripFuncao
+            // 
+            this.stripFuncao.ForeColor = System.Drawing.Color.Red;
+            this.stripFuncao.Name = "stripFuncao";
+            this.stripFuncao.Size = new System.Drawing.Size(16, 17);
+            this.stripFuncao.Text = "...";
             // 
             // menuStrip1
             // 
@@ -367,6 +382,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -379,17 +395,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(152, 593);
             this.panel2.TabIndex = 3;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.Location = new System.Drawing.Point(0, 545);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 44);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Atualizar Tabela";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
@@ -451,19 +456,30 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // toolStripStatusLabel2
+            // button6
             // 
-            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(49, 17);
-            this.toolStripStatusLabel2.Text = "Função:";
+            this.button6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button6.Location = new System.Drawing.Point(0, 501);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(148, 44);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Atualizar Tabela";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // stripFuncao
+            // button7
             // 
-            this.stripFuncao.ForeColor = System.Drawing.Color.Red;
-            this.stripFuncao.Name = "stripFuncao";
-            this.stripFuncao.Size = new System.Drawing.Size(16, 17);
-            this.stripFuncao.Text = "...";
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Image = global::PassaTempo.Properties.Resources.exit;
+            this.button7.Location = new System.Drawing.Point(0, 545);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(148, 44);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "LOGOUT";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // frmMenu
             // 
@@ -536,6 +552,7 @@
         private System.Windows.Forms.ToolStripStatusLabel stripUsuario;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel stripFuncao;
+        private System.Windows.Forms.Button button6;
     }
 }
 

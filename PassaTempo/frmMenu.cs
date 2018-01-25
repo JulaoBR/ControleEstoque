@@ -168,7 +168,13 @@ namespace PassaTempo
 
         private void button7_Click(object sender, EventArgs e)
         {
-            frmMenu_Load( sender, e);
+            //Comando que questiona ao usuário se relamente deseja sair do programa
+            DialogResult result = MessageBox.Show("Deseja realmente encerrar a aplicação?",
+               "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
@@ -280,6 +286,11 @@ namespace PassaTempo
             nivel_acesso = Convert.ToInt32(dados.Rows[0]["nivel"].ToString());
             stripFuncao.Text = dados.Rows[0]["funcao"].ToString();
             stripUsuario.Text = userLogado ;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmMenu_Load(sender, e);
         }
     }
 }
