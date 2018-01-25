@@ -18,10 +18,12 @@ namespace PassaTempo
         private double pesoLiquido = 0, total1 = 0; 
         private double pesoBruto = 0, total2 = 0;
         private double totalCaixas = 0;
+        private string userLogado;
 
-        public frmCarga()
+        public frmCarga(string userLogado)
         {
             InitializeComponent();
+            this.userLogado = userLogado;
             gridDadosCarga.AutoGenerateColumns = false;
             gridLotes.AutoGenerateColumns = false;
             gridLotesDisponiveis.AutoGenerateColumns = false;
@@ -140,11 +142,12 @@ namespace PassaTempo
                     {
                         if (lotes.Inserir(listaLote))
                         {
+                            ControleUsuario.RegistroAtividade(userLogado, "cadastrou a carga " + txtPedido.Text);
                             LimpaCampoCliente();
                             LimpaCampoProduto();
                             inicioBotoes();
                             LimpaGrid();
-                            txtPedido.Focus();
+                            txtPedido.Focus();                           
                         }
                         else
                         {

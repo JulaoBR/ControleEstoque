@@ -170,6 +170,9 @@ namespace PassaTempo
             model.funcao = cdFuncao.Text;
             model.login = txtLogin.Text;
             model.senha = txtSenha.Text;
+            model.nivel = Convert.ToInt32(cbNivelAcesso.Text);
+            model.controle = Convert.ToInt32(cbPrimeiroAcesso.Text);
+
         }
 
         private void SalvarModelo()
@@ -219,6 +222,7 @@ namespace PassaTempo
                 return true;
             }
         }
-        
+
+ 
     }
 }

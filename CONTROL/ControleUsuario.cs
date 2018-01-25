@@ -1,5 +1,6 @@
 ﻿using DAO;
 using MODEL;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -38,6 +39,20 @@ namespace CONTROL
                 MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dao = null;     
+        }
+
+        public void AlterarAtualizacaoSenha(ModelUsuario modelo)
+        {
+            DAOUsuario dao = new DAOUsuario(cx);
+            if (dao.AlterarAtualizacao(modelo))
+            {
+                MessageBox.Show("Atualização realizada com sucesso!", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro na atualização", "Operação Invalida!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            dao = null;
         }
 
         public void Excluir(int codigo)
@@ -90,6 +105,18 @@ namespace CONTROL
         {
             DAOUsuario dao = new DAOUsuario(cx);
             return dao.LocalizarUsuarioLogado(modelo);
+        }
+
+        //METODO PARA RESGITRAR AS ATIVIDADES DO USUARIO
+        public static void RegistroAtividade(string usuario, string atividade)
+        {
+            //MONTA A MENSAGEM DE LOG 
+            string msgDeLog = usuario + " " + atividade
+                + " em " + DateTime.Now.ToString("dd/MM/yyyy") + " às " + DateTime.Now.ToString("HH:mm:ss");
+            //CRIA UM OBJETO
+            // E CHAMA O METODO ARQUIVO DA CLASSE DAO PARA CRIAÇÃO DO ARQUIVO
+            DAOControleAcesso log = new DAOControleAcesso();
+            log.arquivo(msgDeLog);
         }
     }
 }

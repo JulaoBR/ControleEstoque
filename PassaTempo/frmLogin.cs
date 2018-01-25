@@ -29,9 +29,21 @@ namespace PassaTempo
 
             if (controle.VerificaUsuario(user))
             {
-                frmMenu menu = new frmMenu(user);
-                menu.Show();
-                this.Hide();
+                DataTable dados = controle.BuscaUsuarioLogado(user);
+                ControleUsuario.RegistroAtividade(dados.Rows[0]["nome_usuario"].ToString(), "fez login");
+
+                if(Convert.ToInt32(dados.Rows[0]["controle"].ToString()) == 0)
+                {
+                    frmPrimeiroAcesso acesso = new frmPrimeiroAcesso(Convert.ToInt32(dados.Rows[0]["Id_usuario"].ToString()));
+                    acesso.ShowDialog();
+                    this.Hide();
+                }else
+                {
+                    frmMenu menu = new frmMenu(user);
+                    menu.Show();
+                    this.Hide();
+                }
+                                        
             }
             else
             {

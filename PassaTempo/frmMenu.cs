@@ -11,13 +11,51 @@ namespace PassaTempo
     public partial class frmMenu : Form
     {
         private string userLogado;
+        private int nivel_acesso;
         private ModelConfiguracao model;
 
         public frmMenu(ModelUsuario usuario)
         {
             InitializeComponent();
             RodapeDoMenu(usuario);
+            NivelAcesso();
             gridProduto.AutoGenerateColumns = false;
+
+        }
+
+        private void NivelAcesso()
+        {
+            if (nivel_acesso == 1)
+            {
+                cADASTROToolStripMenuItem.Enabled = true;
+                mOVIMENTAÇÃOToolStripMenuItem.Enabled = true;
+                vISUALIZAÇÃOToolStripMenuItem.Enabled = true;
+                fERRAMENTASToolStripMenuItem.Enabled = true;
+                cONFIGURAÇÕESToolStripMenuItem.Enabled = true;
+                button1.Enabled = true;
+                button2.Enabled = true;
+
+            }else if (nivel_acesso == 2)
+            {
+                cADASTROToolStripMenuItem.Enabled = false;
+                mOVIMENTAÇÃOToolStripMenuItem.Enabled = true;
+                vISUALIZAÇÃOToolStripMenuItem.Enabled = true;
+                fERRAMENTASToolStripMenuItem.Enabled = true;
+                cONFIGURAÇÕESToolStripMenuItem.Enabled = true;
+                button1.Enabled = true;
+                button2.Enabled = true;
+
+            }else if (nivel_acesso == 3)
+            {
+                cADASTROToolStripMenuItem.Enabled = false;
+                mOVIMENTAÇÃOToolStripMenuItem.Enabled = false;
+                vISUALIZAÇÃOToolStripMenuItem.Enabled = true;
+                fERRAMENTASToolStripMenuItem.Enabled = true;
+                cONFIGURAÇÕESToolStripMenuItem.Enabled = true;
+                button1.Enabled = false;
+                button2.Enabled = false;
+
+            }
         }
 
         private void pRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +78,7 @@ namespace PassaTempo
 
         private void cARGASToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCarga frmCarga = new frmCarga();
+            frmCarga frmCarga = new frmCarga(userLogado);
             frmCarga.ShowDialog();
         }
 
@@ -91,7 +129,8 @@ namespace PassaTempo
             DialogResult result = MessageBox.Show("Deseja realmente encerrar a aplicação?",
                "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
-           {        
+           {
+                ControleUsuario.RegistroAtividade(userLogado, "terminou a sessão");  
                 Application.Exit();
             }
         }
@@ -236,9 +275,10 @@ namespace PassaTempo
         {
             ControleUsuario controle = new ControleUsuario();
             DataTable dados = controle.BuscaUsuarioLogado(user);
-
+                
             userLogado = dados.Rows[0]["nome_usuario"].ToString();
-
+            nivel_acesso = Convert.ToInt32(dados.Rows[0]["nivel"].ToString());
+            stripFuncao.Text = dados.Rows[0]["funcao"].ToString();
             stripUsuario.Text = userLogado ;
         }
     }

@@ -18,5 +18,7 @@ namespace MODEL
         public string funcao { get; set; }
         public string login { get; set; }
         public string senha { get; set; }
+        public int nivel { get; set; }
+        public int controle { get; set; }
     }
 }

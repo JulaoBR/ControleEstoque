@@ -24,12 +24,14 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "INSERT INTO usuario(nome_usuario, funcao, login, senha)" +
-                    "VALUES (@nome, @funcao, @login, @senha)";
+                cmd.CommandText = "INSERT INTO usuario(nome_usuario, funcao, login, senha, nivel, controle)" +
+                    "VALUES (@nome, @funcao, @login, @senha, @nivel, @controle)";
                 cmd.Parameters.AddWithValue("@nome", modelo.nome_usuario);
                 cmd.Parameters.AddWithValue("@funcao", modelo.funcao);
                 cmd.Parameters.AddWithValue("@login", modelo.login);
                 cmd.Parameters.AddWithValue("@senha", modelo.senha);
+                cmd.Parameters.AddWithValue("@nivel", modelo.nivel);
+                cmd.Parameters.AddWithValue("@controle", modelo.controle);
 
                 conexao.Conectar();
                 cmd.ExecuteNonQuery();
@@ -52,11 +54,40 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "UPDATE usuario SET nome_usuario=@nome, funcao=@funcao, login=@login, senha=@senha WHERE Id_usuario = @Id_usuario;";
+                cmd.CommandText = "UPDATE usuario SET nome_usuario=@nome, funcao=@funcao, login=@login, senha=@senha, nivel=@nivel, controle=@controle WHERE Id_usuario = @Id_usuario;";
                 cmd.Parameters.AddWithValue("@nome", modelo.nome_usuario);
                 cmd.Parameters.AddWithValue("@funcao", modelo.funcao);
                 cmd.Parameters.AddWithValue("@login", modelo.login);
                 cmd.Parameters.AddWithValue("@senha", modelo.senha);
+                cmd.Parameters.AddWithValue("@nivel", modelo.nivel);
+                cmd.Parameters.AddWithValue("@controle", modelo.controle);
+                cmd.Parameters.AddWithValue("@Id_usuario", modelo.Id_usuario);
+
+                conexao.Conectar();
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+
+        public bool AlterarAtualizacao(ModelUsuario modelo)
+        {
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                cmd.CommandText = "UPDATE usuario SET  login=@login, senha=@senha, controle=@controle WHERE Id_usuario = @Id_usuario;";
+                cmd.Parameters.AddWithValue("@login", modelo.login);
+                cmd.Parameters.AddWithValue("@senha", modelo.senha);             
+                cmd.Parameters.AddWithValue("@controle", modelo.controle);
                 cmd.Parameters.AddWithValue("@Id_usuario", modelo.Id_usuario);
 
                 conexao.Conectar();

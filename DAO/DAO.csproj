@@ -73,6 +73,7 @@
     <Compile Include="DAOCidade.cs" />
     <Compile Include="DAOCliente.cs" />
     <Compile Include="DAOConfiguracao.cs" />
+    <Compile Include="DAOControleAcesso.cs" />
     <Compile Include="DAOEstado.cs" />
     <Compile Include="DAOLotes.cs" />
     <Compile Include="DAOProduto.cs" />
