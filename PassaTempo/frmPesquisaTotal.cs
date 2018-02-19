@@ -96,5 +96,10 @@ namespace PassaTempo
             tipoOperacao = 1;
             nomeOperacao = "SAIDA";
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

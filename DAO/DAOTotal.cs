@@ -25,7 +25,7 @@ namespace DAO
             try
             {
                 SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_registro, Fk_produto, qtd_produto, tipo_operacao " +
-                "FROM registro  WHERE Fk_produto = '" + id_produto + "' AND tipo_operacao = '" + tipo + "' AND data_operacao BETWEEN '" + data1 + "' AND '" + data2 + "'", conexao.StringConexao);
+                "FROM registro  WHERE Fk_produto = '" + id_produto + "' AND tipo_operacao = '" + tipo + "'AND ajuste = 0 AND data_operacao BETWEEN '" + data1 + "' AND '" + data2 + "'", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
             }

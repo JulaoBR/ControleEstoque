@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisaTotal));
             this.gridTotal = new System.Windows.Forms.DataGridView();
             this.Id_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +68,7 @@
             // 
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btmImprimir);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.Controls.SetChildIndex(this.txtPesquisa, 0);
             this.panel2.Controls.SetChildIndex(this.btnPesquisar, 0);
             this.panel2.Controls.SetChildIndex(this.btnCancelar, 0);
@@ -84,8 +85,8 @@
             // 
             // gridTotal
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gridTotal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridTotal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTotal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_produto,

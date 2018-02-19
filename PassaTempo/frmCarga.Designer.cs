@@ -49,6 +49,7 @@
             this.lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMovimento = new System.Windows.Forms.Button();
             this.checkExibirListaLotes = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -99,7 +100,6 @@
             this.gridLotesDisponiveis = new System.Windows.Forms.DataGridView();
             this.lote1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnMovimento = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDadosCarga)).BeginInit();
             this.panel2.SuspendLayout();
@@ -278,6 +278,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(185, 341);
             this.panel2.TabIndex = 1;
+            // 
+            // btnMovimento
+            // 
+            this.btnMovimento.Location = new System.Drawing.Point(37, 257);
+            this.btnMovimento.Name = "btnMovimento";
+            this.btnMovimento.Size = new System.Drawing.Size(112, 37);
+            this.btnMovimento.TabIndex = 19;
+            this.btnMovimento.TabStop = false;
+            this.btnMovimento.Text = "AJUSTE";
+            this.btnMovimento.UseVisualStyleBackColor = true;
+            this.btnMovimento.Click += new System.EventHandler(this.btnMovimento_Click);
             // 
             // checkExibirListaLotes
             // 
@@ -843,17 +854,6 @@
             this.quantidade1.HeaderText = "QTD";
             this.quantidade1.Name = "quantidade1";
             this.quantidade1.ReadOnly = true;
-            // 
-            // btnMovimento
-            // 
-            this.btnMovimento.Location = new System.Drawing.Point(37, 257);
-            this.btnMovimento.Name = "btnMovimento";
-            this.btnMovimento.Size = new System.Drawing.Size(112, 37);
-            this.btnMovimento.TabIndex = 19;
-            this.btnMovimento.TabStop = false;
-            this.btnMovimento.Text = "AJUSTE";
-            this.btnMovimento.UseVisualStyleBackColor = true;
-            this.btnMovimento.Click += new System.EventHandler(this.btnMovimento_Click);
             // 
             // frmCarga
             // 

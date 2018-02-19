@@ -99,7 +99,7 @@ namespace PassaTempo
                     foreach (var item in listaLoteAux)
                     {
                         listaLote.Add(item);
-                    }                
+                    }
 
                     PreencheListaRegistro();
                     AtualizaGrid();
