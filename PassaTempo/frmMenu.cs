@@ -292,5 +292,17 @@ namespace PassaTempo
         {
             frmMenu_Load(sender, e);
         }
+
+        private void mATERIAPRIMAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMateriaPrima prima = new frmMateriaPrima();
+            prima.ShowDialog();
+        }
+
+        private void pEDIDOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadPedidosMateriaPrima materia = new frmCadPedidosMateriaPrima();
+            materia.ShowDialog();
+        }
     }
 }

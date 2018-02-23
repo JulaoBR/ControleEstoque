@@ -67,7 +67,6 @@
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -75,6 +74,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.mATERIAPRIMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pEDIDOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
@@ -146,7 +148,8 @@
             this.cLIENTESToolStripMenuItem,
             this.uSUARIOSToolStripMenuItem,
             this.cIDADEESTADOToolStripMenuItem,
-            this.vEICULOSToolStripMenuItem});
+            this.vEICULOSToolStripMenuItem,
+            this.pEDIDOSToolStripMenuItem});
             this.cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
             this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.cADASTROToolStripMenuItem.Text = "CADASTRO";
@@ -190,7 +193,8 @@
             // 
             this.mOVIMENTAÇÃOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cARGASToolStripMenuItem,
-            this.eNTRADASAIDAToolStripMenuItem});
+            this.eNTRADASAIDAToolStripMenuItem,
+            this.mATERIAPRIMAToolStripMenuItem});
             this.mOVIMENTAÇÃOToolStripMenuItem.Name = "mOVIMENTAÇÃOToolStripMenuItem";
             this.mOVIMENTAÇÃOToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.mOVIMENTAÇÃOToolStripMenuItem.Text = "MOVIMENTAÇÃO";
@@ -198,15 +202,15 @@
             // cARGASToolStripMenuItem
             // 
             this.cARGASToolStripMenuItem.Name = "cARGASToolStripMenuItem";
-            this.cARGASToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
+            this.cARGASToolStripMenuItem.Size = new System.Drawing.Size(228, 24);
             this.cARGASToolStripMenuItem.Text = "CARGAS";
             this.cARGASToolStripMenuItem.Click += new System.EventHandler(this.cARGASToolStripMenuItem_Click);
             // 
             // eNTRADASAIDAToolStripMenuItem
             // 
             this.eNTRADASAIDAToolStripMenuItem.Name = "eNTRADASAIDAToolStripMenuItem";
-            this.eNTRADASAIDAToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
-            this.eNTRADASAIDAToolStripMenuItem.Text = "ENTRADA/SAIDA";
+            this.eNTRADASAIDAToolStripMenuItem.Size = new System.Drawing.Size(228, 24);
+            this.eNTRADASAIDAToolStripMenuItem.Text = "PRODUTO ACABADO";
             this.eNTRADASAIDAToolStripMenuItem.Click += new System.EventHandler(this.eNTRADASAIDAToolStripMenuItem_Click);
             // 
             // vISUALIZAÇÃOToolStripMenuItem
@@ -408,20 +412,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Image = global::PassaTempo.Properties.Resources.exit;
-            this.button7.Location = new System.Drawing.Point(0, 545);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 44);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "LOGOUT";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -482,6 +472,34 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // mATERIAPRIMAToolStripMenuItem
+            // 
+            this.mATERIAPRIMAToolStripMenuItem.Name = "mATERIAPRIMAToolStripMenuItem";
+            this.mATERIAPRIMAToolStripMenuItem.Size = new System.Drawing.Size(228, 24);
+            this.mATERIAPRIMAToolStripMenuItem.Text = "MATERIA PRIMA";
+            this.mATERIAPRIMAToolStripMenuItem.Click += new System.EventHandler(this.mATERIAPRIMAToolStripMenuItem_Click);
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Image = global::PassaTempo.Properties.Resources.exit;
+            this.button7.Location = new System.Drawing.Point(0, 545);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(148, 44);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "LOGOUT";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // pEDIDOSToolStripMenuItem
+            // 
+            this.pEDIDOSToolStripMenuItem.Name = "pEDIDOSToolStripMenuItem";
+            this.pEDIDOSToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.pEDIDOSToolStripMenuItem.Text = "PEDIDOS MP";
+            this.pEDIDOSToolStripMenuItem.Click += new System.EventHandler(this.pEDIDOSToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,7 +515,7 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";
-            this.Load += new System.EventHandler(this.frmMenu_Load);          
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -555,6 +573,8 @@
         private System.Windows.Forms.ToolStripStatusLabel stripFuncao;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem mATERIAPRIMAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pEDIDOSToolStripMenuItem;
     }
 }
 

@@ -77,6 +77,12 @@
     <Compile Include="frmCadClientes.Designer.cs">
       <DependentUpon>frmCadClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCadPedidosMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadPedidosMateriaPrima.Designer.cs">
+      <DependentUpon>frmCadPedidosMateriaPrima.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMateriaPrima.Designer.cs">
+      <DependentUpon>frmMateriaPrima.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -244,6 +256,9 @@
     <EmbeddedResource Include="frmCadClientes.resx">
       <DependentUpon>frmCadClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCadPedidosMateriaPrima.resx">
+      <DependentUpon>frmCadPedidosMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadProdutos.resx">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMateriaPrima.resx">
+      <DependentUpon>frmMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
