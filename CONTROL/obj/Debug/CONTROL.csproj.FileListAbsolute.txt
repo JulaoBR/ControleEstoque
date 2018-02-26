@@ -70,3 +70,15 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\bin\Debug\System.Da
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\obj\Debug\CONTROL.csprojResolveAssemblyReference.cache
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\obj\Debug\CONTROL.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\CONTROL\obj\Debug\CONTROL.pdb
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\CONTROL.exe.config
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\CONTROL.exe
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\CONTROL.pdb
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\DAO.exe
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\MODEL.exe
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\DAO.pdb
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\MODEL.pdb
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\obj\Debug\CONTROL.csprojResolveAssemblyReference.cache
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\obj\Debug\CONTROL.exe
+C:\Users\Julio\Documents\ControleEstoque\CONTROL\obj\Debug\CONTROL.pdb
