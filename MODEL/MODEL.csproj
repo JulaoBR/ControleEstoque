@@ -50,6 +50,7 @@
     <Compile Include="ModelConfiguracao.cs" />
     <Compile Include="ModelEstadoCidade.cs" />
     <Compile Include="ModelLotes.cs" />
+    <Compile Include="ModelPedido.cs" />
     <Compile Include="ModelProduto.cs" />
     <Compile Include="ModelRegistro.cs" />
     <Compile Include="ModelRelatorio.cs">

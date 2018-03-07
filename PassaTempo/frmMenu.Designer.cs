@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripUsuario = new System.Windows.Forms.ToolStripStatusLabel();
@@ -43,9 +44,11 @@
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cIDADEESTADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vEICULOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pEDIDOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mOVIMENTAÇÃOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cARGASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eNTRADASAIDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mATERIAPRIMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vISUALIZAÇÃOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTOQUEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +70,7 @@
             this.qtd_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -74,9 +78,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.mATERIAPRIMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button7 = new System.Windows.Forms.Button();
-            this.pEDIDOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
@@ -189,6 +190,13 @@
             this.vEICULOSToolStripMenuItem.Text = "VEICULOS";
             this.vEICULOSToolStripMenuItem.Click += new System.EventHandler(this.vEICULOSToolStripMenuItem_Click);
             // 
+            // pEDIDOSToolStripMenuItem
+            // 
+            this.pEDIDOSToolStripMenuItem.Name = "pEDIDOSToolStripMenuItem";
+            this.pEDIDOSToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.pEDIDOSToolStripMenuItem.Text = "PEDIDOS ";
+            this.pEDIDOSToolStripMenuItem.Click += new System.EventHandler(this.pEDIDOSToolStripMenuItem_Click);
+            // 
             // mOVIMENTAÇÃOToolStripMenuItem
             // 
             this.mOVIMENTAÇÃOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -212,6 +220,13 @@
             this.eNTRADASAIDAToolStripMenuItem.Size = new System.Drawing.Size(228, 24);
             this.eNTRADASAIDAToolStripMenuItem.Text = "PRODUTO ACABADO";
             this.eNTRADASAIDAToolStripMenuItem.Click += new System.EventHandler(this.eNTRADASAIDAToolStripMenuItem_Click);
+            // 
+            // mATERIAPRIMAToolStripMenuItem
+            // 
+            this.mATERIAPRIMAToolStripMenuItem.Name = "mATERIAPRIMAToolStripMenuItem";
+            this.mATERIAPRIMAToolStripMenuItem.Size = new System.Drawing.Size(228, 24);
+            this.mATERIAPRIMAToolStripMenuItem.Text = "MATERIA PRIMA";
+            this.mATERIAPRIMAToolStripMenuItem.Click += new System.EventHandler(this.mATERIAPRIMAToolStripMenuItem_Click);
             // 
             // vISUALIZAÇÃOToolStripMenuItem
             // 
@@ -339,25 +354,25 @@
             // 
             // gridProduto
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dsc_produto,
             this.qtd_produto});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProduto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridProduto.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridProduto.Dock = System.Windows.Forms.DockStyle.Right;
             this.gridProduto.Location = new System.Drawing.Point(731, 28);
             this.gridProduto.Name = "gridProduto";
@@ -411,6 +426,20 @@
             this.button6.Text = "Atualizar Tabela";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Image = global::ProEstoque.Properties.Resources.exit;
+            this.button7.Location = new System.Drawing.Point(0, 545);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(148, 44);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "LOGOUT";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
@@ -472,34 +501,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // mATERIAPRIMAToolStripMenuItem
-            // 
-            this.mATERIAPRIMAToolStripMenuItem.Name = "mATERIAPRIMAToolStripMenuItem";
-            this.mATERIAPRIMAToolStripMenuItem.Size = new System.Drawing.Size(228, 24);
-            this.mATERIAPRIMAToolStripMenuItem.Text = "MATERIA PRIMA";
-            this.mATERIAPRIMAToolStripMenuItem.Click += new System.EventHandler(this.mATERIAPRIMAToolStripMenuItem_Click);
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Image = global::PassaTempo.Properties.Resources.exit;
-            this.button7.Location = new System.Drawing.Point(0, 545);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 44);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "LOGOUT";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // pEDIDOSToolStripMenuItem
-            // 
-            this.pEDIDOSToolStripMenuItem.Name = "pEDIDOSToolStripMenuItem";
-            this.pEDIDOSToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.pEDIDOSToolStripMenuItem.Text = "PEDIDOS MP";
-            this.pEDIDOSToolStripMenuItem.Click += new System.EventHandler(this.pEDIDOSToolStripMenuItem_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,6 +512,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

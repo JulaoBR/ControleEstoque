@@ -64,6 +64,11 @@ namespace CONTROL
             return dao.LocalizaPorString(valor);
         }
 
+        public DataTable BuscaPreencheComboBox()
+        {
+            return dao.PreencheComboBox();
+        }
+
         public DataTable BuscaInt(int Id)
         {
             return dao.LocalizarPorInt(Id);

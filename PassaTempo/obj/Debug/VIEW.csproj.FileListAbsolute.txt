@@ -1,6 +1,3 @@
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.exe.config
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.exe
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\CONTROL.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\DAO.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\MetroFramework.Design.dll
@@ -37,10 +34,7 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaT
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmRastreioDeLotes.resources
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmRotasEntregas.resources
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmTelaDePesquisa.resources
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.Properties.Resources.resources
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\VIEW.csproj.GenerateResource.Cache
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.exe
-C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\VIEW.csprojResolveAssemblyReference.cache
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.frmTelaConfiguracao.resources
 D:\MEUS_PROJETOS\POJETO_GIT\ControleEstoque\PassaTempo\bin\Debug\PassaTempo.exe.config
@@ -144,3 +138,9 @@ C:\Users\Julio\Documents\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.Propert
 C:\Users\Julio\Documents\ControleEstoque\PassaTempo\obj\Debug\VIEW.csproj.GenerateResource.Cache
 C:\Users\Julio\Documents\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.exe
 C:\Users\Julio\Documents\ControleEstoque\PassaTempo\obj\Debug\PassaTempo.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\ProEstoque.exe.config
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\ProEstoque.Properties.Resources.resources
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\ProEstoque.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\ProEstoque.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\ProEstoque.exe
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\ProEstoque.pdb

@@ -123,6 +123,25 @@ namespace DAO
 
         }
 
+
+        public DataTable PreencheComboBox()
+        {
+            DataTable tb = new DataTable();
+            try
+            {
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT Id_produto, dsc_produto FROM produto ORDER BY dsc_produto", conexao.StringConexao))
+                {
+                    da.Fill(tb);
+                    return tb;
+                }
+            }
+            catch
+            {
+                return tb;
+            }
+        }
+
+
         public DataTable LocalizarPorInt(int Id)      //BUSCA POR ID
         {
             DataTable tb = new DataTable();
