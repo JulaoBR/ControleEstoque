@@ -144,3 +144,4 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\ProEst
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\bin\Debug\ProEstoque.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\ProEstoque.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\ProEstoque.pdb
+C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\PassaTempo\obj\Debug\ProEstoque.frmPesquisaPedidos.resources

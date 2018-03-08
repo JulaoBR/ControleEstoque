@@ -78,6 +78,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pEDIDOSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduto)).BeginInit();
@@ -236,7 +237,8 @@
             this.eNTRADASToolStripMenuItem,
             this.rASTREAMENTODELOTEToolStripMenuItem,
             this.tOTALENTRADASAIDAToolStripMenuItem,
-            this.qUANTIDADEDECADALOTEToolStripMenuItem});
+            this.qUANTIDADEDECADALOTEToolStripMenuItem,
+            this.pEDIDOSToolStripMenuItem1});
             this.vISUALIZAÇÃOToolStripMenuItem.Name = "vISUALIZAÇÃOToolStripMenuItem";
             this.vISUALIZAÇÃOToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.vISUALIZAÇÃOToolStripMenuItem.Text = "VISUALIZAÇÃO";
@@ -501,6 +503,13 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // pEDIDOSToolStripMenuItem1
+            // 
+            this.pEDIDOSToolStripMenuItem1.Name = "pEDIDOSToolStripMenuItem1";
+            this.pEDIDOSToolStripMenuItem1.Size = new System.Drawing.Size(287, 24);
+            this.pEDIDOSToolStripMenuItem1.Text = "PEDIDOS";
+            this.pEDIDOSToolStripMenuItem1.Click += new System.EventHandler(this.pEDIDOSToolStripMenuItem1_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -577,6 +586,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem mATERIAPRIMAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pEDIDOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pEDIDOSToolStripMenuItem1;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using CONTROL;
 using MODEL;
+using ProEstoque;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -301,8 +302,14 @@ namespace PassaTempo
 
         private void pEDIDOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadPedidosMateriaPrima materia = new frmCadPedidosMateriaPrima();
+            frmCadPedidosMateriaPrima materia = new frmCadPedidosMateriaPrima(userLogado);
             materia.ShowDialog();
+        }
+
+        private void pEDIDOSToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmPesquisaPedidos pedidos = new frmPesquisaPedidos();
+            pedidos.ShowDialog();
         }
     }
 }

@@ -135,7 +135,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM cidade WHERE Fk_estado = '" + Id + "'", conexao.StringConexao))
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM cidade WHERE Fk_estado = '" + Id + "' ORDER BY nome_cidade", conexao.StringConexao))
                 {
                     da.Fill(tb);
                     conexao.Desconectar();

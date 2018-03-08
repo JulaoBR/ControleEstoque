@@ -33,9 +33,6 @@
             this.datePedido = new System.Windows.Forms.DateTimePicker();
             this.datePrevista = new System.Windows.Forms.DateTimePicker();
             this.gridProdutos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +40,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTipoOperacao = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProdutos)).BeginInit();
@@ -55,9 +55,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtObservacao);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbTipoOperacao);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -129,29 +129,7 @@
             this.gridProdutos.Size = new System.Drawing.Size(640, 131);
             this.gridProdutos.TabIndex = 5;
             this.gridProdutos.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id_produto";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "dsc_produto";
-            this.Column2.HeaderText = "PRODUTO";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "quantidade";
-            this.Column3.HeaderText = "QUANTIDADE";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.gridProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProdutos_CellDoubleClick);
             // 
             // txtQuantidade
             // 
@@ -226,17 +204,18 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Quantidade*:";
             // 
-            // comboBox1
+            // cbTipoOperacao
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTipoOperacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoOperacao.FormattingEnabled = true;
+            this.cbTipoOperacao.Items.AddRange(new object[] {
             "PEDIDO INTERNO",
             "PEDIDO DE COMPRA"});
-            this.comboBox1.Location = new System.Drawing.Point(406, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(237, 21);
-            this.comboBox1.TabIndex = 20;
+            this.cbTipoOperacao.Location = new System.Drawing.Point(406, 31);
+            this.cbTipoOperacao.Name = "cbTipoOperacao";
+            this.cbTipoOperacao.Size = new System.Drawing.Size(237, 21);
+            this.cbTipoOperacao.TabIndex = 20;
+            this.cbTipoOperacao.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -244,19 +223,19 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(403, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 15);
+            this.label2.Size = new System.Drawing.Size(191, 15);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Selecione o tipo da operação:";
+            this.label2.Text = "Selecione o tipo do PEDIDO:";
             // 
-            // textBox1
+            // txtObservacao
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(157, 198);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(352, 59);
-            this.textBox1.TabIndex = 22;
+            this.txtObservacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtObservacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObservacao.Location = new System.Drawing.Point(157, 198);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(352, 59);
+            this.txtObservacao.TabIndex = 22;
             // 
             // label7
             // 
@@ -267,6 +246,29 @@
             this.label7.Size = new System.Drawing.Size(92, 15);
             this.label7.TabIndex = 23;
             this.label7.Text = "Observação*:";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id_produto";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "DscProduto";
+            this.Column2.HeaderText = "PRODUTO";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "quantidade";
+            this.Column3.HeaderText = "QUANTIDADE";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // frmCadPedidosMateriaPrima
             // 
@@ -298,9 +300,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipoOperacao;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

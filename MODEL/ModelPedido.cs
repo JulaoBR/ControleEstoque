@@ -15,13 +15,12 @@ namespace MODEL
         public int Id_pedito { get; set; }
         public int id_cliente { get; set; }
         public string nome_cliente { get; set; }
-        public int id_produto { get; set; }
-        public string dsc_produto { get; set; }
         public string data_pedito { get; set; }
         public string data_prevista { get; set; }
         public string data_entrega { get; set; }
-        public string contato { get; set; }
-        public double quantidade { get; set; }
-        public double vl_unitario { get; set; }
+        public int tipoPedido { get; set; }
+        public string observcao { get; set; }
+        public string resp_pedido { get; set; }
+        public string data_hora { get; set; }
     }
 }

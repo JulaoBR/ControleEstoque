@@ -53,6 +53,7 @@
     <Compile Include="ControleEstoqueAtual.cs" />
     <Compile Include="ControleFormato.cs" />
     <Compile Include="ControleLotes.cs" />
+    <Compile Include="ControlePedido.cs" />
     <Compile Include="ControleProduto.cs" />
     <Compile Include="ControleRegistro.cs" />
     <Compile Include="ControleTotal.cs" />

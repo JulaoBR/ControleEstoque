@@ -76,6 +76,7 @@
     <Compile Include="DAOControleAcesso.cs" />
     <Compile Include="DAOEstado.cs" />
     <Compile Include="DAOLotes.cs" />
+    <Compile Include="DAOPedido.cs" />
     <Compile Include="DAOProduto.cs" />
     <Compile Include="DAORegistro.cs" />
     <Compile Include="DAOTotal.cs" />
