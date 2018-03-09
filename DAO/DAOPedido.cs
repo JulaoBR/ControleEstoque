@@ -22,8 +22,8 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "INSERT INTO pedido(Id_fornecedor, dt_pedido, dt_prevista, observacao, tipoPedido, resp_pedido, dt_hora_pedido )" +
-                    "VALUES (@fornecedor, @dtPedido, @dtPrevista, @observacao, @tipoPedido, @respPedido, @dataHora)";
+                cmd.CommandText = "INSERT INTO pedido(Id_fornecedor, dt_pedido, dt_prevista, observacao, tipoPedido, resp_pedido, dt_hora_pedido, status )" +
+                    "VALUES (@fornecedor, @dtPedido, @dtPrevista, @observacao, @tipoPedido, @respPedido, @dataHora, @status)";
                 cmd.Parameters.AddWithValue("@fornecedor", modelo.id_cliente);
                 cmd.Parameters.AddWithValue("@dtPedido", modelo.data_pedito);
                 cmd.Parameters.AddWithValue("@dtPrevista", modelo.data_prevista);
@@ -31,6 +31,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@tipoPedido", modelo.tipoPedido);
                 cmd.Parameters.AddWithValue("@respPedido", modelo.resp_pedido);
                 cmd.Parameters.AddWithValue("@dataHora", modelo.data_hora);
+                cmd.Parameters.AddWithValue("@status", modelo.status);
 
                 conexao.Conectar();
                 cmd.ExecuteNonQuery();

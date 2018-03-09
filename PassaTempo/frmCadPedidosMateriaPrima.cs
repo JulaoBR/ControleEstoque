@@ -62,6 +62,7 @@ namespace PassaTempo
                 pedido.observcao = txtObservacao.Text;
                 pedido.data_hora = Convert.ToString(DateTime.Now);
                 pedido.resp_pedido = userLogado;
+                pedido.status = false;
 
             }
             catch

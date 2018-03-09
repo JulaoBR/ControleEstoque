@@ -64,8 +64,6 @@
             // 
             // gridPedidos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -103,8 +101,8 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "dt_pedido";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column3.HeaderText = "DATA PEDIDO";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -113,6 +111,8 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "dt_prevista";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "DATA PREVISTA";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -152,7 +152,7 @@
             // Column9
             // 
             this.Column9.DataPropertyName = "status";
-            this.Column9.HeaderText = "STATUS";
+            this.Column9.HeaderText = "RECEBIDO";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
