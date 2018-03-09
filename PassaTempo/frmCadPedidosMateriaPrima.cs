@@ -84,6 +84,9 @@ namespace PassaTempo
                 
                     listaProduto.Add(produto);
                     AtualizaGrid();
+                    txtQuantidade.Clear();
+                    cbProduto.SelectedIndex = -1;
+                    txtObservacao.Clear();
                 }
                 else
                 {
@@ -138,8 +141,9 @@ namespace PassaTempo
 
             if (listaProduto.Count > 0)
             {
-                if (control.Inserir(pedido))
+                if (VerificaCampo())
                 {
+                    control.Inserir(pedido);
                     panel2.Enabled = false;
                     LimpaCampo();
                     this.inicioBotoes();
@@ -153,9 +157,19 @@ namespace PassaTempo
             else
             {             
                 MessageBox.Show("Sem produtos para salvar", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }                
+        }
+
+        private bool VerificaCampo()
+        {
+            if(cbFornecedor.Text == string.Empty && cbTipoOperacao.Text == string.Empty && cbProduto.Text == string.Empty && txtQuantidade.Text == string.Empty)
+            {
+                return false;
             }
-            
-          
+            else
+            {
+                return true;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -217,6 +231,18 @@ namespace PassaTempo
             cbTipoOperacao.SelectedIndex = -1;
             gridProdutos.DataSource = null;
             listaProduto.Clear();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                datePedido.Enabled = true;
+            }
+            else
+            {
+                datePedido.Enabled = false;
+            }
         }
     }
 }

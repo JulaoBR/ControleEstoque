@@ -22,6 +22,7 @@ namespace ProEstoque
 
             gridPedidos.DataSource = null;
             gridPedidos.DataSource = control.BuscaPedidos();
+            gridPedidos.ClearSelection();
         }
     }
 }

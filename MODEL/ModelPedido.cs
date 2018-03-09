@@ -22,5 +22,6 @@ namespace MODEL
         public string observcao { get; set; }
         public string resp_pedido { get; set; }
         public string data_hora { get; set; }
+        public bool status { get; set; }
     }
 }

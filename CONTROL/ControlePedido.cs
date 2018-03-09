@@ -14,15 +14,13 @@ namespace CONTROL
 
         }
 
-        public bool Inserir(ModelPedido modelo)
+        public void Inserir(ModelPedido modelo)
         {
             try
             {              
-              return dao.Inserir(modelo);               
+              dao.Inserir(modelo);               
             }
-            catch { }
-            
-            return false;
+            catch { }            
         }
 
 

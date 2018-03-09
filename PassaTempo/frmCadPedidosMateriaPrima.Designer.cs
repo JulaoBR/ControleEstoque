@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
             this.cbProduto = new System.Windows.Forms.ComboBox();
             this.datePedido = new System.Windows.Forms.DateTimePicker();
             this.datePrevista = new System.Windows.Forms.DateTimePicker();
             this.gridProdutos = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,9 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProdutos)).BeginInit();
@@ -54,6 +56,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtObservacao);
             this.panel2.Controls.Add(this.label2);
@@ -103,6 +106,7 @@
             // 
             // datePedido
             // 
+            this.datePedido.Enabled = false;
             this.datePedido.Location = new System.Drawing.Point(3, 90);
             this.datePedido.Name = "datePedido";
             this.datePedido.Size = new System.Drawing.Size(237, 20);
@@ -117,6 +121,8 @@
             // 
             // gridProdutos
             // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -130,6 +136,29 @@
             this.gridProdutos.TabIndex = 5;
             this.gridProdutos.TabStop = false;
             this.gridProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProdutos_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id_produto";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "DscProduto";
+            this.Column2.HeaderText = "PRODUTO";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "quantidade";
+            this.Column3.HeaderText = "QUANTIDADE";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // txtQuantidade
             // 
@@ -235,7 +264,7 @@
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(352, 59);
-            this.txtObservacao.TabIndex = 22;
+            this.txtObservacao.TabIndex = 6;
             // 
             // label7
             // 
@@ -247,28 +276,16 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "Observação*:";
             // 
-            // Column1
+            // checkBox1
             // 
-            this.Column1.DataPropertyName = "Id_produto";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "DscProduto";
-            this.Column2.HeaderText = "PRODUTO";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "quantidade";
-            this.Column3.HeaderText = "QUANTIDADE";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(157, 72);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(82, 17);
+            this.checkBox1.TabIndex = 24;
+            this.checkBox1.Text = "HABILITAR";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // frmCadPedidosMateriaPrima
             // 
@@ -306,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

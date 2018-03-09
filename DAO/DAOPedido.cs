@@ -22,7 +22,7 @@ namespace DAO
             {
                 SQLiteCommand cmd = new SQLiteCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "INSERT INTO pedido(Id_fornecedor dt_pedido, dt_prevista, observacao, tipoPedido, resp_pedido, dt_hora_pedido )" +
+                cmd.CommandText = "INSERT INTO pedido(Id_fornecedor, dt_pedido, dt_prevista, observacao, tipoPedido, resp_pedido, dt_hora_pedido )" +
                     "VALUES (@fornecedor, @dtPedido, @dtPrevista, @observacao, @tipoPedido, @respPedido, @dataHora)";
                 cmd.Parameters.AddWithValue("@fornecedor", modelo.id_cliente);
                 cmd.Parameters.AddWithValue("@dtPedido", modelo.data_pedito);
@@ -53,7 +53,7 @@ namespace DAO
             DataTable tb = new DataTable();
             try
             {
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_pedido, B.nome_cliente, A.dt_pedido, A.dt_prevista, A.dt_entrega, A.observacao, A.resp_pedido, A.dt_hora_pedido FROM pedido AS A JOIN cliente AS B WHERE A.Id_fornecedor = B.Id_cliente ORDER BY A.dt_prevista", conexao.StringConexao);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT A.Id_pedido, B.nome_cliente, A.dt_pedido, A.dt_prevista, A.dt_entrega, A.observacao, A.resp_pedido, A.dt_hora_pedido, A.status FROM pedido AS A JOIN cliente AS B WHERE A.Id_fornecedor = B.Id_cliente ORDER BY A.dt_prevista", conexao.StringConexao);
                 da.Fill(tb);
                 return tb;
             }
