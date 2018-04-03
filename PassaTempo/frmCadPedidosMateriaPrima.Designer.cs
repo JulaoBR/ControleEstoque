@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
             this.cbProduto = new System.Windows.Forms.ComboBox();
             this.datePedido = new System.Windows.Forms.DateTimePicker();
@@ -103,6 +103,7 @@
             this.cbProduto.Name = "cbProduto";
             this.cbProduto.Size = new System.Drawing.Size(640, 21);
             this.cbProduto.TabIndex = 4;
+            this.cbProduto.SelectedValueChanged += new System.EventHandler(this.cbProduto_SelectedValueChanged);
             // 
             // datePedido
             // 
@@ -121,8 +122,8 @@
             // 
             // gridProdutos
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,

@@ -245,5 +245,10 @@ namespace PassaTempo
                 datePedido.Enabled = false;
             }
         }
+
+        private void cbProduto_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txtQuantidade.Focus();
+        }
     }
 }
