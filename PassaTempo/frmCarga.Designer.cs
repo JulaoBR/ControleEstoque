@@ -56,6 +56,9 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelData = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label17 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPesquisaProduto = new System.Windows.Forms.Button();
@@ -104,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDadosCarga)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelData.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -352,6 +356,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panelData);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.btnPesquisaProduto);
@@ -369,6 +374,35 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(935, 278);
             this.panel3.TabIndex = 2;
+            // 
+            // panelData
+            // 
+            this.panelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panelData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelData.Controls.Add(this.monthCalendar1);
+            this.panelData.Controls.Add(this.label17);
+            this.panelData.Location = new System.Drawing.Point(15, 35);
+            this.panelData.Name = "panelData";
+            this.panelData.Size = new System.Drawing.Size(924, 272);
+            this.panelData.TabIndex = 52;
+            this.panelData.Visible = false;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(379, 56);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(328, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(337, 24);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Selecione a data do carregamento:";
             // 
             // label7
             // 
@@ -880,6 +914,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelData.ResumeLayout(false);
+            this.panelData.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).EndInit();
@@ -963,5 +999,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lote;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtd_produto;
         private System.Windows.Forms.Button btnMovimento;
+        private System.Windows.Forms.Panel panelData;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label17;
     }
 }

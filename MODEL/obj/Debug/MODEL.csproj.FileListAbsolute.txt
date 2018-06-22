@@ -28,3 +28,9 @@ C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\bin\Debug\MODEL.pdb
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.exe
 C:\Users\Usuário\Desktop\PassaTempo\ControleEstoque\MODEL\obj\Debug\MODEL.pdb
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\MODEL\bin\Debug\MODEL.exe.config
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\MODEL\bin\Debug\MODEL.exe
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\MODEL\bin\Debug\MODEL.pdb
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\MODEL\obj\Debug\MODEL.exe
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\MODEL\obj\Debug\MODEL.pdb

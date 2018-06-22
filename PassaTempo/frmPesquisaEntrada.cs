@@ -23,7 +23,7 @@ namespace PassaTempo
 
         private void frmPesquisaEntrada_Load(object sender, EventArgs e)
         {
-            
+            BuscaDados();
         }        
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)

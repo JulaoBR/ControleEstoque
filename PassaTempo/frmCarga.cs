@@ -1,5 +1,6 @@
 ﻿using CONTROL;
 using MODEL;
+using ProEstoque;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,9 +32,10 @@ namespace PassaTempo
 
         private void frmCarga_Load(object sender, EventArgs e)
         {
-            inicioBotoes();
+            inicioBotoes();        
             txtPedido.Focus();
             gridDadosCarga.AutoGenerateColumns = false;
+
         }
 
         private void btnPesquisaCliente_Click(object sender, EventArgs e)
@@ -94,27 +96,35 @@ namespace PassaTempo
                         return;
                     }
 
-                    PreencheCarga();
-
-                    foreach (var item in listaLoteAux)
+                    if (!VerificaProdLista(Convert.ToInt32(txtCodProduto.Text)))
                     {
-                        listaLote.Add(item);
+                        PreencheCarga();
+
+                        foreach (var item in listaLoteAux)
+                        {
+                            listaLote.Add(item);
+                        }
+
+                        PreencheListaRegistro();
+                        AtualizaGrid();
+                        AtualizaInfoCarga();
+                        LimpaCampoProduto();
+                        txtCodProduto.Focus();
+                        pesoBruto = 0;
+                        pesoLiquido = 0;
+
+                        //LIMPA GRIDS E LISTA
+                        gridLotes.DataSource = null;
+                        gridLotesDisponiveis.DataSource = null;
+                        listaLoteAux.Clear();
+
+                        btnSalvar.Enabled = true;
                     }
-
-                    PreencheListaRegistro();
-                    AtualizaGrid();
-                    AtualizaInfoCarga();
-                    LimpaCampoProduto();
-                    txtCodProduto.Focus();
-                    pesoBruto = 0;
-                    pesoLiquido = 0;
-
-                    //LIMPA GRIDS E LISTA
-                    gridLotes.DataSource = null;
-                    gridLotesDisponiveis.DataSource = null;
-                    listaLoteAux.Clear();
-
-                    btnSalvar.Enabled = true;
+                    else
+                    {
+                        MessageBox.Show("Produto ja foi selecionado!", "Operação invalida!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 else
                 {
@@ -355,6 +365,9 @@ namespace PassaTempo
                     txtPedido.Focus();
                     return;
                 }
+
+                panelData.Visible = true;
+                monthCalendar1.Focus();
             }
             catch
             {           
@@ -770,6 +783,13 @@ namespace PassaTempo
         {
             frmMovimentacao movi = new frmMovimentacao();
             movi.ShowDialog();
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            dateTimePicker1.Text = monthCalendar1.SelectionStart.ToString();
+            panelData.Visible = false;
+            txtCodCliente.Focus();
         }
 
         //METODO PARA REMOVER ITENS DA LISTA

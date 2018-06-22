@@ -82,3 +82,15 @@ C:\Users\Julio\Documents\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.xm
 C:\Users\Julio\Documents\ControleEstoque\CONTROL\obj\Debug\CONTROL.csprojResolveAssemblyReference.cache
 C:\Users\Julio\Documents\ControleEstoque\CONTROL\obj\Debug\CONTROL.exe
 C:\Users\Julio\Documents\ControleEstoque\CONTROL\obj\Debug\CONTROL.pdb
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\CONTROL.exe.config
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\CONTROL.exe
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\CONTROL.pdb
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\DAO.exe
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\MODEL.exe
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.dll
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\DAO.pdb
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\MODEL.pdb
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\bin\Debug\System.Data.SQLite.xml
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\obj\Debug\CONTROL.csprojResolveAssemblyReference.cache
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\obj\Debug\CONTROL.exe
+\\ESTOQUE\ProEstoque\ProEstoque\ControleEstoque\CONTROL\obj\Debug\CONTROL.pdb
