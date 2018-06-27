@@ -109,9 +109,18 @@ namespace PassaTempo
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            SaldaDados();
-            LimpaCampoProduto();
-            QuantidadeLotes();
+            if (txtLote.Text != string.Empty || txtQuantidade.Text != string.Empty)
+            {
+                SaldaDados();
+                LimpaCampoProduto();
+                QuantidadeLotes();
+            }
+            else
+            {
+                MessageBox.Show("Digite um lote valido e a quantidade..","Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLote.Focus();
+            }
+            
         }
 
         private void LimpaCampoProduto()
@@ -154,6 +163,16 @@ namespace PassaTempo
             }
             
         }
-    
+
+        private void gridLotes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                txtCodProduto.Text = Convert.ToString(gridLotes.Rows[e.RowIndex].Cells[1].Value);
+                txtProduto.Text = Convert.ToString(gridLotes.Rows[e.RowIndex].Cells[2].Value);
+
+                txtLote.Focus();
+            }
+        }
     }
 }

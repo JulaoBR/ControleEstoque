@@ -381,9 +381,9 @@
             this.panelData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelData.Controls.Add(this.monthCalendar1);
             this.panelData.Controls.Add(this.label17);
-            this.panelData.Location = new System.Drawing.Point(15, 35);
+            this.panelData.Location = new System.Drawing.Point(3, 3);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(924, 272);
+            this.panelData.Size = new System.Drawing.Size(922, 268);
             this.panelData.TabIndex = 52;
             this.panelData.Visible = false;
             // 
